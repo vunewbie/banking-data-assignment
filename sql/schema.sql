@@ -37,6 +37,7 @@ CREATE TABLE customer (
     last_login_at TIMESTAMPTZ,
     failed_login_attempts INT DEFAULT 0,
     account_locked_until TIMESTAMPTZ,
+    password VARCHAR(255) NOT NULL,
     password_last_changed TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     kyc_completed_at TIMESTAMPTZ,
 

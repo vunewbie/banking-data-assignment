@@ -1,18 +1,6 @@
 FROM postgres:17
-
-# Set environment variables
 ENV POSTGRES_PASSWORD=postgres
 ENV POSTGRES_DB=banking_system
 ENV POSTGRES_USER=postgres
-
-# Expose PostgreSQL port
 EXPOSE 5432
-
-# Copy schema.sql vào thư mục init của PostgreSQL container
-# PostgreSQL sẽ tự động chạy tất cả .sql files trong thư mục này khi khởi tạo database
 COPY ./sql/schema.sql /docker-entrypoint-initdb.d/
-
-# PostgreSQL container sẽ tự động:
-# 1. Tạo database 'banking_system'
-# 2. Chạy schema.sql để tạo tables, constraints, indexes
-# 3. Ready để sử dụng 
