@@ -2,5 +2,6 @@ FROM postgres:17
 ENV POSTGRES_PASSWORD=postgres
 ENV POSTGRES_DB=banking_system
 ENV POSTGRES_USER=postgres
-EXPOSE 5432
+ENV PGPORT=5433
+EXPOSE 5433
 COPY ./sql/schema.sql /docker-entrypoint-initdb.d/

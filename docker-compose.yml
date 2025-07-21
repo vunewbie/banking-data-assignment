@@ -17,21 +17,18 @@ x-airflow-common:
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-pandas psycopg2-binary}
     # Banking database connection info (accessible in DAGs)
     BANKING_DB_HOST: banking-db
-    BANKING_DB_PORT: 5432
+    BANKING_DB_PORT: 5433
     BANKING_DB_NAME: banking_system
     BANKING_DB_USER: postgres
     BANKING_DB_PASSWORD: postgres
   volumes:
-    # Airflow standard mounts
+    # Airflow essential mounts
     - ${AIRFLOW_PROJ_DIR:-.}/dags_or_jobs:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
-    - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
-    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     # Banking project mounts
     - ${AIRFLOW_PROJ_DIR:-.}/src:/opt/airflow/src
     - ${AIRFLOW_PROJ_DIR:-.}/reports:/opt/airflow/reports
     - ${AIRFLOW_PROJ_DIR:-.}/sql:/opt/airflow/sql
-    - ${AIRFLOW_PROJ_DIR:-.}/docs:/opt/airflow/docs
     - ${AIRFLOW_PROJ_DIR:-.}/requirements.txt:/opt/airflow/requirements.txt
   user: "50000:0"
   depends_on:
@@ -74,9 +71,9 @@ services:
     volumes:
       - banking-db-volume:/var/lib/postgresql/data
     ports:
-      - "5433:5432"  # Different port to avoid conflict
+      - "5433:5433"  # Both host and container use same port 5433
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "postgres"]
+      test: ["CMD", "pg_isready", "-U", "postgres", "-p", "5433"]
       interval: 10s
       retries: 5
       start_period: 5s
@@ -207,8 +204,8 @@ services:
           echo "   https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#before-you-begin"
           echo
         fi
-        mkdir -p /sources/logs /sources/dags_or_jobs /sources/plugins /sources/reports
-        chown -R "50000:0" /sources/{logs,dags_or_jobs,plugins,reports}
+        mkdir -p /sources/logs /sources/dags_or_jobs /sources/reports
+        chown -R "50000:0" /sources/{logs,dags_or_jobs,reports}
         exec /entrypoint airflow version
     environment:
       <<: *airflow-common-env

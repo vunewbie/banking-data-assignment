@@ -1,6 +1,5 @@
 docs/
 img/
 __pycache__/
-config/
-plugins/
 logs/
+reports/
