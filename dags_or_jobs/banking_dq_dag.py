@@ -1,26 +1,6 @@
-"""
-BANKING DATA QUALITY AIRFLOW DAG
-================================
-
-Daily scheduled data quality monitoring for banking system compliance.
-Implements regulatory requirements from 2345/QĐ-NHNN 2023.
-
-Features:
-- Optional data generation
-- Comprehensive quality audits  
-- Risk-based compliance checks
-- Automated alerting on failures
-- Detailed logging and reporting
-
-Schedule: Daily at 2:00 AM
-Retries: 2 times with 5 minute delay
-"""
-
 import os
 import sys
 from datetime import datetime, timedelta
-from typing import Dict, Any
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
@@ -105,18 +85,10 @@ def check_dependencies():
 def send_alert_notification(context, message: str, alert_type: str = "ERROR"):
     """Send alert notifications for failures"""
     logger = setup_logging()
-    
-    # Log alert
     logger.error(f"BANKING ALERT [{alert_type}]: {message}")
     
-    # In production, add integrations with:
-    # - Slack notifications
-    # - PagerDuty alerts  
-    # - Email alerts
-    # - SMS alerts for critical failures
-    
     print(f"\n{'='*60}")
-    print(f"🚨 BANKING DATA QUALITY ALERT 🚨")
+    print(f"BANKING DATA QUALITY ALERT")
     print(f"Type: {alert_type}")
     print(f"Message: {message}")
     print(f"Time: {datetime.now()}")
@@ -127,7 +99,6 @@ def send_alert_notification(context, message: str, alert_type: str = "ERROR"):
 # =====================================================
 # DAG TASK FUNCTIONS
 # =====================================================
-
 def generate_banking_data(**context):
     """
     Task: Generate new banking data
@@ -547,54 +518,3 @@ cleanup_task = BashOperator(
 
 # Define task flow
 check_deps_task >> generate_data_task >> quality_audit_task >> load_data_task >> evaluate_results_task >> alert_task >> cleanup_task
-
-# Alternative flow: skip data generation and go straight to audit
-# check_deps_task >> quality_audit_task >> load_data_task >> evaluate_results_task >> alert_task >> cleanup_task
-
-# =====================================================
-# DAG DOCUMENTATION
-# =====================================================
-
-dag.doc_md = """
-# Banking Data Quality Daily DAG
-
-## Overview
-This DAG implements daily data quality monitoring for the banking system, ensuring compliance with Vietnamese banking regulations (2345/QĐ-NHNN 2023).
-
-## Schedule
-- **Frequency**: Daily at 2:00 AM
-- **Timezone**: UTC (adjust as needed)
-- **Max Active Runs**: 1 (prevents overlapping runs)
-
-## Tasks Flow
-1. **Check Dependencies** → Validate environment
-2. **Generate Data** → Create test data (optional)
-3. **Quality Audit** → Run comprehensive checks & data cleaning
-4. **Load Database** → Save clean data to database
-5. **Evaluate Results** → Determine alert levels  
-6. **Send Alerts** → Notify on issues
-7. **Cleanup** → Finalize and cleanup
-
-## Configuration
-- `banking_dq_generate_data`: Enable/disable data generation
-- Email alerts configured via `default_args`
-- Retry policy: 2 retries with 5-minute delay
-
-## Monitoring
-- All tasks log to Airflow logs
-- Failed checks trigger email alerts
-- Critical issues send immediate notifications
-- Reports saved to `/reports` directory
-
-## Compliance
-Implements checks for:
-- Transaction authentication requirements (≥10M VND)
-- Device verification for untrusted devices  
-- Daily transaction limits (≥20M VND)
-- General data quality standards
-
-## Contacts
-- **Owner**: banking-data-team
-- **Alerts**: banking-alerts@company.com
-- **On-call**: Update contact info as needed
-"""

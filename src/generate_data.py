@@ -65,11 +65,11 @@ def generate_face_template_data(customer_df):
             current_time = datetime.now()
             
             face_template = {
-                'template_id': face_template_id,                    # FIXED: field name
+                'template_id': face_template_id,                   
                 'customer_id': customer_id,
-                'encrypted_face_encoding': face_encoding,          # FIXED: field name
+                'encrypted_face_encoding': face_encoding,          
                 'created_at': current_time,
-                'last_used_at': current_time                       # FIXED: field name
+                'last_used_at': current_time                      
             }
             
             face_templates.append(face_template)
@@ -227,7 +227,7 @@ def generate_authentication_log_data(customer_df, device_df):
             
         # Generate authentication attempts for each device
         for _, device in customer_devices.iterrows():
-            device_identifier = device['device_identifier']  # Fixed: use device_identifier (PK)
+            device_identifier = device['device_identifier']  
             first_seen = device['first_seen_at']
             last_used = device['last_used_at']
             device_status = device['status']
@@ -322,18 +322,17 @@ def generate_authentication_log_data(customer_df, device_df):
                 auth_log = {
                     'log_id': str(uuid.uuid4()),
                     'customer_id': customer_id,
-                    'device_identifier': device_identifier,  # Fixed field name
-                    'authentication_type': auth_type,        # Fixed field name + mapping
-                    'transaction_id': None,                  # Login auth - no transaction
+                    'device_identifier': device_identifier,  
+                    'authentication_type': auth_type,        
+                    'transaction_id': None,                  
                     'ip_address': ip_address,
-                    'status': status,                        # Fixed field name
+                    'status': status,                       
                     'failure_reason': failure_reason,
-                    'otp_sent_to': None,                     # TODO: Add for OTP methods
+                    'otp_sent_to': None,                     
                     'biometric_score': round(random.uniform(0.85, 0.99), 4) if 'Biometric' in auth_method else None,
                     'attempt_count': 1,
-                    'session_id': str(uuid.uuid4())[:16],    # 16 char session ID
+                    'session_id': str(uuid.uuid4())[:16],    
                     'created_at': auth_timestamp
-                    # Removed: user_agent (not in schema)
                 }
                 
                 auth_logs.append(auth_log)
@@ -344,8 +343,6 @@ def generate_authentication_log_data(customer_df, device_df):
             print(f"Progress: {index + 1}/{len(customer_df)} ({progress:.1f}%)")
     
     auth_log_df = pd.DataFrame(auth_logs)
-    
-    # Statistics - FIXED: Use 'status' field instead of 'is_successful'
     total_attempts = len(auth_log_df)
     successful_attempts = len(auth_log_df[auth_log_df['status'] == 'Success'])
     success_rate = (successful_attempts / total_attempts * 100) if total_attempts > 0 else 0
@@ -356,7 +353,6 @@ def generate_authentication_log_data(customer_df, device_df):
     print(f"   - Successful: {successful_attempts} ({success_rate:.1f}%)")
     print(f"   - Failed: {total_attempts - successful_attempts} ({100 - success_rate:.1f}%)")
     
-    # Method distribution - FIXED: Use 'authentication_type' field
     method_counts = auth_log_df['authentication_type'].value_counts()
     print(f"   - Method distribution:")
     for method, count in method_counts.items():
@@ -413,7 +409,7 @@ def generate_bank_account_data(customer_df, device_df):
             
             # Account status and flags
             account_status = generate_account_status()
-            is_primary = generate_is_primary(account_num)  # Fixed parameter name
+            is_primary = generate_is_primary(account_num)  
             
             # Generate additional schema fields
             is_online_payment_enabled = generate_is_online_payment_enabled(account_type, account_status)
@@ -437,7 +433,6 @@ def generate_bank_account_data(customer_df, device_df):
                 'account_number': account_number,
                 'account_type': account_type,
                 'currency': currency,
-                # FIXED: Use schema-compliant balance fields
                 'available_balance': balance_info['available_balance'],
                 'current_balance': balance_info['current_balance'], 
                 'hold_amount': balance_info['hold_amount'],
@@ -445,13 +440,11 @@ def generate_bank_account_data(customer_df, device_df):
                 'daily_online_payment_limit': daily_online_payment_limit,
                 'is_primary': is_primary,
                 'status': account_status,
-                # ADDED: Missing schema fields
                 'is_online_payment_enabled': is_online_payment_enabled,
                 'interest_rate': interest_rate,
                 'last_transaction_at': last_transaction_at,
-                # FIXED: Field name (created_at → open_at) + ADDED updated_at
                 'open_at': account_open_at,
-                'updated_at': account_open_at                       # ADDED: Missing schema field
+                'updated_at': account_open_at                      
             }
             
             bank_accounts.append(bank_account)
@@ -497,7 +490,7 @@ def generate_transaction_data(customer_df, bank_account_df, device_df, face_temp
     for index, account in bank_account_df.iterrows():
         customer_id = account['customer_id']
         account_id = account['account_id']
-        account_balance = account['current_balance']  # FIXED: use correct field name
+        account_balance = account['current_balance']  
         
         # Get customer info
         customer = customer_df[customer_df['customer_id'] == customer_id].iloc[0]
@@ -518,19 +511,17 @@ def generate_transaction_data(customer_df, bank_account_df, device_df, face_temp
         for trans_num in range(transaction_count):
             # Select random device for transaction
             device = customer_devices.sample(1).iloc[0]
-            device_identifier = device['device_identifier']  # Fixed: use device_identifier (PK)
+            device_identifier = device['device_identifier']  
             device_trusted = device['is_trusted']
-            
-            # Generate transaction details using NEW FUNCTIONS
-            transaction_type = generate_transaction_type()  # Now returns schema types
+            transaction_type = generate_transaction_type()  
             amount = generate_transaction_amount(transaction_type, customer_income)
-            currency = generate_transaction_currency()  # ADDED: Missing currency field
-            fee = generate_fee(transaction_type, amount)  # Fixed function name
-            note = generate_note(transaction_type, amount)  # Fixed function name
-            auth_method = generate_authentication_method(amount, device_trusted)  # NEW: Single method
-            recipient_info = generate_recipient_info(transaction_type)  # Updated logic
-            bill_info = generate_bill_payment_info(transaction_type)  # NEW: Bill payment fields
-            fraud_info = generate_fraud_detection_info(amount, auth_method, device_trusted)  # NEW: Fraud fields
+            currency = generate_transaction_currency()  
+            fee = generate_fee(transaction_type, amount)  
+            note = generate_note(transaction_type, amount)  
+            auth_method = generate_authentication_method(amount, device_trusted)  
+            recipient_info = generate_recipient_info(transaction_type)  
+            bill_info = generate_bill_payment_info(transaction_type)  
+            fraud_info = generate_fraud_detection_info(amount, auth_method, device_trusted)  
             
             # Generate transaction timestamp (past 30 days)
             days_ago = random.randint(0, 30)
@@ -556,24 +547,24 @@ def generate_transaction_data(customer_df, bank_account_df, device_df, face_temp
                 'account_id': account_id,
                 'transaction_type': transaction_type,
                 'amount': amount,
-                'currency': currency,                                                    # ADDED: Missing field
-                'fee': fee,                                                             # FIXED: Field name
+                'currency': currency,                                                    
+                'fee': fee,                                                             
                 'status': transaction_status,
-                'note': note,                                                           # FIXED: Field name (was description)
-                'authentication_method': auth_method,                                   # ADDED: Missing field
+                'note': note,                                                           
+                'authentication_method': auth_method,                                  
                 # Recipient info (conditional based on transaction type)
-                'recipient_account_number': recipient_info['recipient_account_number'], # FIXED: Field name
-                'recipient_bank_code': recipient_info['recipient_bank_code'],           # FIXED: Field name (was recipient_bank)
+                'recipient_account_number': recipient_info['recipient_account_number'], 
+                'recipient_bank_code': recipient_info['recipient_bank_code'],           
                 'recipient_name': recipient_info['recipient_name'],
                 # Bill payment info (conditional based on transaction type)
-                'service_provider_code': bill_info['service_provider_code'],           # ADDED: Missing field
-                'bill_number': bill_info['bill_number'],                               # ADDED: Missing field
+                'service_provider_code': bill_info['service_provider_code'],         
+                'bill_number': bill_info['bill_number'],                               
                 # Fraud detection info
-                'is_fraud': fraud_info['is_fraud'],                                    # ADDED: Missing field
-                'fraud_score': fraud_info['fraud_score'],                              # ADDED: Missing field
+                'is_fraud': fraud_info['is_fraud'],                                    
+                'fraud_score': fraud_info['fraud_score'],                              
                 # Timestamps
                 'created_at': transaction_time,
-                'completed_at': completed_at                                           # ADDED: Missing field
+                'completed_at': completed_at                                           
                 # REMOVED: device_id, balance_before, balance_after, updated_at (not in schema)
             }
             
@@ -630,11 +621,11 @@ def generate_transaction_data(customer_df, bank_account_df, device_df, face_temp
             auth_log = {
                 'log_id': str(uuid.uuid4()),
                 'customer_id': customer_id,
-                'device_identifier': device_identifier,  # Fixed field name
-                'authentication_type': auth_type,        # Fixed field name + mapping
-                'transaction_id': transaction_record['transaction_id'],  # Link to transaction
+                'device_identifier': device_identifier,  
+                'authentication_type': auth_type,        
+                'transaction_id': transaction_record['transaction_id'],  
                 'ip_address': ip_address,
-                'status': status,                        # Fixed field name
+                'status': status,                       
                 'failure_reason': failure_reason,
                 'otp_sent_to': customer['phone_number'] if 'OTP' in auth_method else None,
                 'biometric_score': round(random.uniform(0.85, 0.99), 4) if 'Biometric' in auth_method else None,

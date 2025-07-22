@@ -1,0 +1,72 @@
+[2025-07-22T07:51:02.543+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-07-22T07:51:02.568+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_data_quality_daily.generate_data_task manual__2025-07-22T07:49:25.044715+00:00 [queued]>
+[2025-07-22T07:51:02.578+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_data_quality_daily.generate_data_task manual__2025-07-22T07:49:25.044715+00:00 [queued]>
+[2025-07-22T07:51:02.578+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 3
+[2025-07-22T07:51:02.592+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): generate_data_task> on 2025-07-22 07:49:25.044715+00:00
+[2025-07-22T07:51:02.598+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=346) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-07-22T07:51:02.600+0000] {standard_task_runner.py:72} INFO - Started process 348 to run task
+[2025-07-22T07:51:02.601+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'banking_data_quality_daily', 'generate_data_task', 'manual__2025-07-22T07:49:25.044715+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/banking_dq_dag.py', '--cfg-path', '/tmp/tmpa417ec_h']
+[2025-07-22T07:51:02.604+0000] {standard_task_runner.py:105} INFO - Job 11: Subtask generate_data_task
+[2025-07-22T07:51:02.672+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_data_quality_daily.generate_data_task manual__2025-07-22T07:49:25.044715+00:00 [running]> on host 1e992391132c
+[2025-07-22T07:51:02.950+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='vulocninh1@gmail.com' AIRFLOW_CTX_DAG_OWNER='banking-data-assignment' AIRFLOW_CTX_DAG_ID='banking_data_quality_daily' AIRFLOW_CTX_TASK_ID='generate_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-07-22T07:49:25.044715+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-22T07:49:25.044715+00:00'
+[2025-07-22T07:51:02.951+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-07-22T07:51:02.964+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:51:02] INFO - Starting banking data generation...
+[2025-07-22T07:51:02.963+0000] {banking_dq_dag.py:109} INFO - Starting banking data generation...
+[2025-07-22T07:51:02.965+0000] {logging_mixin.py:190} INFO - ================================================================================
+[2025-07-22T07:51:02.965+0000] {logging_mixin.py:190} INFO - COMPLETE BANKING DATA PIPELINE
+[2025-07-22T07:51:02.965+0000] {logging_mixin.py:190} INFO - ================================================================================
+[2025-07-22T07:51:02.966+0000] {logging_mixin.py:190} INFO - STEP 1: CUSTOMER DATA GENERATION
+[2025-07-22T07:51:02.966+0000] {logging_mixin.py:190} INFO - --------------------------------------------------
+[2025-07-22T07:51:02.967+0000] {logging_mixin.py:190} INFO - Starting customer data generation for bank account opening...
+[2025-07-22T07:51:02.967+0000] {logging_mixin.py:190} INFO - Generating 2000 customer records...
+[2025-07-22T07:51:02.968+0000] {logging_mixin.py:190} INFO - Reset phone number tracking for uniqueness...
+[2025-07-22T07:51:02.984+0000] {logging_mixin.py:190} INFO - Progress: 100/2000 (5.0%)
+[2025-07-22T07:51:03.000+0000] {logging_mixin.py:190} INFO - Progress: 200/2000 (10.0%)
+[2025-07-22T07:51:03.015+0000] {logging_mixin.py:190} INFO - Progress: 300/2000 (15.0%)
+[2025-07-22T07:51:03.031+0000] {logging_mixin.py:190} INFO - Progress: 400/2000 (20.0%)
+[2025-07-22T07:51:03.047+0000] {logging_mixin.py:190} INFO - Progress: 500/2000 (25.0%)
+[2025-07-22T07:51:03.063+0000] {logging_mixin.py:190} INFO - Progress: 600/2000 (30.0%)
+[2025-07-22T07:51:03.080+0000] {logging_mixin.py:190} INFO - Progress: 700/2000 (35.0%)
+[2025-07-22T07:51:03.105+0000] {logging_mixin.py:190} INFO - Progress: 800/2000 (40.0%)
+[2025-07-22T07:51:03.132+0000] {logging_mixin.py:190} INFO - Progress: 900/2000 (45.0%)
+[2025-07-22T07:51:03.147+0000] {logging_mixin.py:190} INFO - Progress: 1000/2000 (50.0%)
+[2025-07-22T07:51:03.162+0000] {logging_mixin.py:190} INFO - Progress: 1100/2000 (55.0%)
+[2025-07-22T07:51:03.177+0000] {logging_mixin.py:190} INFO - Progress: 1200/2000 (60.0%)
+[2025-07-22T07:51:03.191+0000] {logging_mixin.py:190} INFO - Progress: 1300/2000 (65.0%)
+[2025-07-22T07:51:03.206+0000] {logging_mixin.py:190} INFO - Progress: 1400/2000 (70.0%)
+[2025-07-22T07:51:03.221+0000] {logging_mixin.py:190} INFO - Progress: 1500/2000 (75.0%)
+[2025-07-22T07:51:03.236+0000] {logging_mixin.py:190} INFO - Progress: 1600/2000 (80.0%)
+[2025-07-22T07:51:03.251+0000] {logging_mixin.py:190} INFO - Progress: 1700/2000 (85.0%)
+[2025-07-22T07:51:03.267+0000] {logging_mixin.py:190} INFO - Progress: 1800/2000 (90.0%)
+[2025-07-22T07:51:03.284+0000] {logging_mixin.py:190} INFO - Progress: 1900/2000 (95.0%)
+[2025-07-22T07:51:03.299+0000] {logging_mixin.py:190} INFO - Progress: 2000/2000 (100.0%)
+[2025-07-22T07:51:03.314+0000] {logging_mixin.py:190} INFO - Successfully generated 2000 customer records
+[2025-07-22T07:51:03.314+0000] {logging_mixin.py:190} INFO - DataFrame shape: (2000, 33)
+[2025-07-22T07:51:03.315+0000] {logging_mixin.py:190} INFO - Columns: ['customer_id', 'full_name', 'gender', 'date_of_birth', 'phone_number', 'email', 'tax_identification_number', 'id_passport_number', 'issue_date', 'expiry_date', 'issuing_authority', 'is_resident', 'occupation', 'position', 'work_address', 'residential_address', 'contact_address', 'pin', 'password', 'password_last_changed', 'risk_rating', 'risk_score', 'customer_type', 'monthly_income', 'sms_notification_enabled', 'email_notification_enabled', 'created_at', 'last_login_at', 'failed_login_attempts', 'account_locked_until', 'kyc_completed_at', 'updated_at', 'status']
+[2025-07-22T07:51:03.316+0000] {logging_mixin.py:190} INFO - 
+Generated: 2000 customers
+[2025-07-22T07:51:03.317+0000] {logging_mixin.py:190} INFO - STEP 2: CUSTOMER DEVICE DATA GENERATION
+[2025-07-22T07:51:03.317+0000] {logging_mixin.py:190} INFO - --------------------------------------------------
+[2025-07-22T07:51:03.318+0000] {logging_mixin.py:190} INFO - Starting customer device data generation...
+[2025-07-22T07:51:03.319+0000] {logging_mixin.py:190} INFO - Processing 2000 customers for device generation...
+[2025-07-22T07:51:03.366+0000] {logging_mixin.py:190} INFO - Progress: 300/2000 (15.0%)
+[2025-07-22T07:51:03.406+0000] {logging_mixin.py:190} INFO - Progress: 600/2000 (30.0%)
+[2025-07-22T07:51:03.445+0000] {logging_mixin.py:190} INFO - Progress: 900/2000 (45.0%)
+[2025-07-22T07:51:03.487+0000] {logging_mixin.py:190} INFO - Progress: 1200/2000 (60.0%)
+[2025-07-22T07:51:03.537+0000] {logging_mixin.py:190} INFO - Progress: 1500/2000 (75.0%)
+[2025-07-22T07:51:03.584+0000] {logging_mixin.py:190} INFO - Progress: 1800/2000 (90.0%)
+[2025-07-22T07:51:03.621+0000] {logging_mixin.py:190} INFO - Progress: 2000/2000 (100.0%)
+[2025-07-22T07:51:03.631+0000] {logging_mixin.py:190} INFO - Successfully generated 2281 customer devices
+[2025-07-22T07:51:03.631+0000] {logging_mixin.py:190} INFO - Device distribution:
+[2025-07-22T07:51:03.632+0000] {logging_mixin.py:190} INFO -    - Total devices: 2281
+[2025-07-22T07:51:03.633+0000] {logging_mixin.py:190} INFO -    - Customers with 1 device: 1719
+[2025-07-22T07:51:03.633+0000] {logging_mixin.py:190} INFO -    - Customers with 2 devices: 281
+[2025-07-22T07:51:03.634+0000] {logging_mixin.py:190} INFO -    - Average devices per customer: 1.14
+[2025-07-22T07:51:03.635+0000] {logging_mixin.py:190} INFO - 
+Generated: 2281 devices
+[2025-07-22T07:51:03.636+0000] {logging_mixin.py:190} INFO - STEP 3: AUTHENTICATION LOG DATA GENERATION (Device Login)
+[2025-07-22T07:51:03.636+0000] {logging_mixin.py:190} INFO - --------------------------------------------------
+[2025-07-22T07:51:03.636+0000] {logging_mixin.py:190} INFO - Starting authentication log data generation...
+[2025-07-22T07:51:03.637+0000] {logging_mixin.py:190} INFO - Processing authentication logs for 2000 customers...
