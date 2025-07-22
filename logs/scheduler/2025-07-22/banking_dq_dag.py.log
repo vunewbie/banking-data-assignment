@@ -1,60 +1,334 @@
-[2025-07-22T07:47:20.364+0000] {processor.py:186} INFO - Started process (PID=90) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:47:20.365+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:47:20.368+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:20.367+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:47:22.137+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:47:22.540+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.539+0000] {override.py:1912} INFO - Created Permission View: can read on DAG:banking_data_quality_daily
-[2025-07-22T07:47:22.551+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.550+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG:banking_data_quality_daily
-[2025-07-22T07:47:22.559+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.558+0000] {override.py:1912} INFO - Created Permission View: can edit on DAG:banking_data_quality_daily
-[2025-07-22T07:47:22.571+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.571+0000] {override.py:1912} INFO - Created Permission View: menu access on DAG Run:banking_data_quality_daily
-[2025-07-22T07:47:22.579+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.579+0000] {override.py:1912} INFO - Created Permission View: can create on DAG Run:banking_data_quality_daily
-[2025-07-22T07:47:22.588+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.587+0000] {override.py:1912} INFO - Created Permission View: can read on DAG Run:banking_data_quality_daily
-[2025-07-22T07:47:22.598+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.597+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG Run:banking_data_quality_daily
-[2025-07-22T07:47:22.598+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.598+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:47:22.611+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.610+0000] {dag.py:3262} INFO - Creating ORM DAG for banking_data_quality_daily
-[2025-07-22T07:47:22.620+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:22.620+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-21 02:00:00+00:00, run_after=2025-07-22 02:00:00+00:00
-[2025-07-22T07:47:22.643+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 2.286 seconds
-[2025-07-22T07:47:53.118+0000] {processor.py:186} INFO - Started process (PID=98) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:47:53.120+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:47:53.123+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:53.122+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:47:53.728+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:47:53.756+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:53.755+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:47:53.805+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:47:53.804+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-21 02:00:00+00:00, run_after=2025-07-22 02:00:00+00:00
-[2025-07-22T07:47:53.838+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.727 seconds
-[2025-07-22T07:48:24.149+0000] {processor.py:186} INFO - Started process (PID=112) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:48:24.151+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:48:24.153+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:48:24.153+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:48:24.675+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:48:24.703+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:48:24.703+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:48:24.723+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:48:24.722+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-21 02:00:00+00:00, run_after=2025-07-22 02:00:00+00:00
-[2025-07-22T07:48:24.740+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.597 seconds
-[2025-07-22T07:48:54.844+0000] {processor.py:186} INFO - Started process (PID=120) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:48:54.845+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:48:54.847+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:48:54.847+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:48:55.342+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:48:55.367+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:48:55.367+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:48:55.385+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:48:55.385+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-21 02:00:00+00:00, run_after=2025-07-22 02:00:00+00:00
-[2025-07-22T07:48:55.436+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.599 seconds
-[2025-07-22T07:49:25.780+0000] {processor.py:186} INFO - Started process (PID=128) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:49:25.781+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:49:25.784+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:49:25.783+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:49:26.011+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:49:26.036+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:49:26.036+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:49:26.086+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.636 seconds
-[2025-07-22T07:49:56.414+0000] {processor.py:186} INFO - Started process (PID=136) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:49:56.416+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:49:56.418+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:49:56.418+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:49:56.933+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:49:56.959+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:49:56.959+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:49:57.036+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.629 seconds
-[2025-07-22T07:50:27.239+0000] {processor.py:186} INFO - Started process (PID=144) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:50:27.240+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:50:27.243+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:50:27.242+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:50:27.720+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:50:27.748+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:50:27.748+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:50:27.784+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.551 seconds
-[2025-07-22T07:50:58.484+0000] {processor.py:186} INFO - Started process (PID=152) to work on /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:50:58.486+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
-[2025-07-22T07:50:58.488+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:50:58.488+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:50:58.990+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
-[2025-07-22T07:50:59.016+0000] {logging_mixin.py:190} INFO - [2025-07-22T07:50:59.015+0000] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-07-22T07:50:59.054+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.576 seconds
+[2025-07-22T08:44:19.817+0000] {processor.py:186} INFO - Started process (PID=85) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:44:19.819+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:44:19.821+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:19.820+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:44:21.485+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:44:21.768+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.767+0000] {override.py:1912} INFO - Created Permission View: can edit on DAG:banking_data_quality_daily
+[2025-07-22T08:44:21.780+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.780+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG:banking_data_quality_daily
+[2025-07-22T08:44:21.789+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.789+0000] {override.py:1912} INFO - Created Permission View: can read on DAG:banking_data_quality_daily
+[2025-07-22T08:44:21.800+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.799+0000] {override.py:1912} INFO - Created Permission View: can delete on DAG Run:banking_data_quality_daily
+[2025-07-22T08:44:21.809+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.808+0000] {override.py:1912} INFO - Created Permission View: can read on DAG Run:banking_data_quality_daily
+[2025-07-22T08:44:21.818+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.817+0000] {override.py:1912} INFO - Created Permission View: menu access on DAG Run:banking_data_quality_daily
+[2025-07-22T08:44:21.827+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.827+0000] {override.py:1912} INFO - Created Permission View: can create on DAG Run:banking_data_quality_daily
+[2025-07-22T08:44:21.828+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.828+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:44:21.841+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.841+0000] {dag.py:3262} INFO - Creating ORM DAG for banking_data_quality_daily
+[2025-07-22T08:44:21.852+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:21.852+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-21 02:00:00+00:00, run_after=2025-07-22 02:00:00+00:00
+[2025-07-22T08:44:21.876+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 2.071 seconds
+[2025-07-22T08:44:52.143+0000] {processor.py:186} INFO - Started process (PID=99) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:44:52.144+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:44:52.146+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:52.146+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:44:52.684+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:44:52.713+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:44:52.713+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:44:52.752+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.615 seconds
+[2025-07-22T08:45:23.201+0000] {processor.py:186} INFO - Started process (PID=107) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:45:23.203+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:45:23.206+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:45:23.206+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:45:23.841+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:45:23.875+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:45:23.875+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:45:23.919+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.727 seconds
+[2025-07-22T08:45:54.281+0000] {processor.py:186} INFO - Started process (PID=115) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:45:54.282+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:45:54.286+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:45:54.285+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:45:54.814+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:45:54.841+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:45:54.841+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:45:54.879+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.606 seconds
+[2025-07-22T08:46:25.075+0000] {processor.py:186} INFO - Started process (PID=123) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:46:25.076+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:46:25.079+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:46:25.079+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:46:25.575+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:46:25.601+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:46:25.601+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:46:25.623+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:46:25.623+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:46:25.653+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.584 seconds
+[2025-07-22T08:46:55.747+0000] {processor.py:186} INFO - Started process (PID=131) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:46:55.748+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:46:55.750+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:46:55.750+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:46:56.208+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:46:56.232+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:46:56.232+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:46:56.251+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:46:56.251+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:46:56.268+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.529 seconds
+[2025-07-22T08:47:26.705+0000] {processor.py:186} INFO - Started process (PID=139) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:47:26.706+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:47:26.708+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:47:26.708+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:47:27.217+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:47:27.245+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:47:27.245+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:47:27.265+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:47:27.265+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:47:27.295+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.597 seconds
+[2025-07-22T08:47:57.837+0000] {processor.py:186} INFO - Started process (PID=147) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:47:57.838+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:47:57.841+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:47:57.840+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:47:58.396+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:47:58.425+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:47:58.425+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:47:58.445+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:47:58.444+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:47:58.475+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.648 seconds
+[2025-07-22T08:48:28.579+0000] {processor.py:186} INFO - Started process (PID=155) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:48:28.580+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:48:28.583+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:48:28.582+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:48:29.148+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:48:29.179+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:48:29.178+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:48:29.201+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:48:29.201+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:48:29.236+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.665 seconds
+[2025-07-22T08:48:59.336+0000] {processor.py:186} INFO - Started process (PID=163) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:48:59.337+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:48:59.339+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:48:59.339+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:48:59.822+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:48:59.850+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:48:59.850+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:48:59.874+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:48:59.873+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:48:59.904+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.576 seconds
+[2025-07-22T08:49:30.314+0000] {processor.py:186} INFO - Started process (PID=171) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:49:30.315+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:49:30.318+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:49:30.317+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:49:30.826+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:49:30.853+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:49:30.853+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:49:30.874+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:49:30.874+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:49:30.893+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.588 seconds
+[2025-07-22T08:50:01.015+0000] {processor.py:186} INFO - Started process (PID=185) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:50:01.016+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:50:01.019+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:50:01.019+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:50:01.534+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:50:01.557+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:50:01.557+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:50:01.575+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:50:01.575+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:50:01.604+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.595 seconds
+[2025-07-22T08:50:31.839+0000] {processor.py:186} INFO - Started process (PID=194) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:50:31.840+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:50:31.843+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:50:31.842+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:50:32.500+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:50:32.534+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:50:32.534+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:50:32.560+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:50:32.560+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:50:32.586+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.754 seconds
+[2025-07-22T08:51:03.114+0000] {processor.py:186} INFO - Started process (PID=202) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:51:03.115+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:51:03.117+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:51:03.117+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:51:03.589+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:51:03.620+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:51:03.620+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:51:03.645+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:51:03.644+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:51:03.665+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.559 seconds
+[2025-07-22T08:51:33.796+0000] {processor.py:186} INFO - Started process (PID=210) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:51:33.797+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:51:33.800+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:51:33.800+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:51:34.331+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:51:34.360+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:51:34.359+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:51:34.380+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:51:34.380+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:51:34.399+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.610 seconds
+[2025-07-22T08:52:04.640+0000] {processor.py:186} INFO - Started process (PID=218) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:52:04.642+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:52:04.644+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:52:04.644+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:52:05.179+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:52:05.209+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:52:05.209+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:52:05.234+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:52:05.233+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:52:05.267+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.636 seconds
+[2025-07-22T08:52:35.710+0000] {processor.py:186} INFO - Started process (PID=226) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:52:35.711+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:52:35.713+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:52:35.713+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:52:36.204+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:52:36.228+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:52:36.228+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:52:36.248+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:52:36.248+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:52:36.269+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.566 seconds
+[2025-07-22T08:53:06.732+0000] {processor.py:186} INFO - Started process (PID=234) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:53:06.733+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:53:06.735+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:53:06.735+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:53:07.238+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:53:07.271+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:53:07.270+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:53:07.293+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:53:07.293+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:53:07.310+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.585 seconds
+[2025-07-22T08:53:37.923+0000] {processor.py:186} INFO - Started process (PID=242) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:53:37.924+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:53:37.927+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:53:37.927+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:53:38.443+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:53:38.471+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:53:38.470+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:53:38.493+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:53:38.493+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:53:38.518+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.602 seconds
+[2025-07-22T08:54:08.686+0000] {processor.py:186} INFO - Started process (PID=251) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:54:08.687+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:54:08.689+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:54:08.689+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:54:09.267+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:54:09.298+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:54:09.297+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:54:09.323+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:54:09.323+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:54:09.355+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.676 seconds
+[2025-07-22T08:54:39.555+0000] {processor.py:186} INFO - Started process (PID=259) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:54:39.556+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:54:39.559+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:54:39.559+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:54:40.144+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:54:40.174+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:54:40.174+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:54:40.200+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:54:40.200+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:54:40.240+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.692 seconds
+[2025-07-22T08:55:10.923+0000] {processor.py:186} INFO - Started process (PID=273) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:55:10.924+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:55:10.926+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:55:10.926+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:55:11.503+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:55:11.533+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:55:11.533+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:55:11.560+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:55:11.560+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:55:11.578+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.662 seconds
+[2025-07-22T08:55:42.101+0000] {processor.py:186} INFO - Started process (PID=281) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:55:42.103+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:55:42.107+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:55:42.107+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:55:42.817+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:55:42.854+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:55:42.853+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:55:42.881+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:55:42.881+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:55:42.904+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.814 seconds
+[2025-07-22T08:56:13.512+0000] {processor.py:186} INFO - Started process (PID=289) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:56:13.513+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:56:13.516+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:56:13.516+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:56:14.093+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:56:14.123+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:56:14.123+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:56:14.145+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:56:14.145+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:56:14.164+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.658 seconds
+[2025-07-22T08:56:44.241+0000] {processor.py:186} INFO - Started process (PID=297) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:56:44.243+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:56:44.245+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:56:44.245+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:56:44.835+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:56:44.864+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:56:44.864+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:56:44.887+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:56:44.887+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:56:44.921+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.687 seconds
+[2025-07-22T08:57:15.145+0000] {processor.py:186} INFO - Started process (PID=305) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:57:15.146+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:57:15.149+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:57:15.148+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:57:15.650+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:57:15.679+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:57:15.678+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:57:15.701+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:57:15.701+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:57:15.719+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.581 seconds
+[2025-07-22T08:57:46.075+0000] {processor.py:186} INFO - Started process (PID=313) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:57:46.077+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:57:46.081+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:57:46.080+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:57:46.707+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:57:46.741+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:57:46.741+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:57:46.768+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:57:46.768+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:57:46.789+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.724 seconds
+[2025-07-22T08:58:17.271+0000] {processor.py:186} INFO - Started process (PID=321) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:58:17.272+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:58:17.275+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:58:17.275+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:58:17.820+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:58:17.846+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:58:17.846+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:58:17.866+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:58:17.865+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:58:17.884+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.622 seconds
+[2025-07-22T08:58:48.429+0000] {processor.py:186} INFO - Started process (PID=329) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:58:48.431+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:58:48.435+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:58:48.434+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:58:49.033+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:58:49.062+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:58:49.062+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:58:49.083+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:58:49.083+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:58:49.114+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.694 seconds
+[2025-07-22T08:59:19.387+0000] {processor.py:186} INFO - Started process (PID=337) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:59:19.389+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:59:19.392+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:59:19.392+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:59:20.001+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:59:20.031+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:59:20.031+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:59:20.053+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:59:20.053+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:59:20.074+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.696 seconds
+[2025-07-22T08:59:50.732+0000] {processor.py:186} INFO - Started process (PID=351) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:59:50.734+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T08:59:50.740+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:59:50.740+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:59:51.386+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T08:59:51.417+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:59:51.416+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T08:59:51.440+0000] {logging_mixin.py:190} INFO - [2025-07-22T08:59:51.440+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T08:59:51.460+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.740 seconds
+[2025-07-22T09:00:21.987+0000] {processor.py:186} INFO - Started process (PID=359) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:00:21.988+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:00:21.991+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:00:21.991+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:00:22.607+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:00:22.655+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:00:22.654+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:00:22.689+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:00:22.689+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:00:22.716+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.737 seconds
+[2025-07-22T09:00:52.895+0000] {processor.py:186} INFO - Started process (PID=367) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:00:52.896+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:00:52.899+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:00:52.898+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:00:53.442+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:00:53.468+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:00:53.468+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:00:53.488+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:00:53.488+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:00:53.507+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.621 seconds
+[2025-07-22T09:01:23.732+0000] {processor.py:186} INFO - Started process (PID=375) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:01:23.734+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:01:23.738+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:01:23.737+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:01:24.209+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:01:24.233+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:01:24.233+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:01:24.253+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:01:24.252+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:01:24.270+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.546 seconds
+[2025-07-22T09:01:54.499+0000] {processor.py:186} INFO - Started process (PID=383) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:01:54.500+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:01:54.503+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:01:54.503+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:01:55.039+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:01:55.070+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:01:55.070+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:01:55.092+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:01:55.092+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:01:55.110+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.618 seconds
+[2025-07-22T09:02:25.449+0000] {processor.py:186} INFO - Started process (PID=391) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:02:25.450+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:02:25.454+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:02:25.453+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:02:23.955+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:02:23.986+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:02:23.986+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:02:24.019+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:02:24.018+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:02:24.039+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.604 seconds
+[2025-07-22T09:02:54.741+0000] {processor.py:186} INFO - Started process (PID=399) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:02:54.742+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:02:54.745+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:02:54.744+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:02:55.281+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:02:55.309+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:02:55.308+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:02:55.330+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:02:55.330+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:02:55.351+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.618 seconds
+[2025-07-22T09:03:25.877+0000] {processor.py:186} INFO - Started process (PID=407) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:03:25.878+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:03:25.880+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:03:25.880+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:03:26.382+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:03:26.407+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:03:26.407+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:03:26.427+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:03:26.427+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:03:26.446+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.576 seconds
+[2025-07-22T09:03:56.601+0000] {processor.py:186} INFO - Started process (PID=415) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:03:56.602+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:03:56.606+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:03:56.606+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:03:57.150+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:03:57.183+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:03:57.183+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:03:57.206+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:03:57.206+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:03:57.224+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.631 seconds
+[2025-07-22T09:04:27.321+0000] {processor.py:186} INFO - Started process (PID=423) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:04:27.323+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:04:27.325+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:04:27.325+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:04:27.956+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:04:27.985+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:04:27.985+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:04:28.004+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:04:28.004+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:04:28.021+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.710 seconds
+[2025-07-22T09:04:58.165+0000] {processor.py:186} INFO - Started process (PID=438) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:04:58.166+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:04:58.169+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:04:58.169+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:04:58.661+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:04:58.689+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:04:58.689+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:04:58.710+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:04:58.709+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:04:58.741+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.582 seconds
+[2025-07-22T09:05:29.085+0000] {processor.py:186} INFO - Started process (PID=446) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:05:29.086+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:05:29.090+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:05:29.089+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:05:29.619+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:05:29.650+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:05:29.650+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:05:29.674+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:05:29.674+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:05:29.707+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.630 seconds
+[2025-07-22T09:06:00.317+0000] {processor.py:186} INFO - Started process (PID=454) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:06:00.318+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:06:00.320+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:06:00.320+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:06:00.830+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:06:00.862+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:06:00.862+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:06:00.885+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:06:00.884+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:06:00.904+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.593 seconds
+[2025-07-22T09:06:31.477+0000] {processor.py:186} INFO - Started process (PID=462) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:06:31.478+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:06:31.481+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:06:31.481+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:06:32.037+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:06:32.069+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:06:32.069+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:06:32.095+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:06:32.094+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:06:32.126+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.656 seconds
+[2025-07-22T09:07:02.530+0000] {processor.py:186} INFO - Started process (PID=470) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:07:02.531+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:07:02.534+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:07:02.534+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:07:03.046+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:07:03.074+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:07:03.073+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:07:03.095+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:07:03.094+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:07:03.115+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.592 seconds
+[2025-07-22T09:07:33.806+0000] {processor.py:186} INFO - Started process (PID=478) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:07:33.807+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:07:33.809+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:07:33.809+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:07:34.340+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:07:34.369+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:07:34.368+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:07:34.392+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:07:34.391+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:07:34.414+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.614 seconds
+[2025-07-22T09:08:04.800+0000] {processor.py:186} INFO - Started process (PID=486) to work on /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:08:04.801+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/banking_dq_dag.py for tasks to queue
+[2025-07-22T09:08:04.804+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:08:04.803+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:08:05.489+0000] {processor.py:925} INFO - DAG(s) 'banking_data_quality_daily' retrieved from /opt/airflow/dags/banking_dq_dag.py
+[2025-07-22T09:08:05.518+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:08:05.518+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-07-22T09:08:05.540+0000] {logging_mixin.py:190} INFO - [2025-07-22T09:08:05.539+0000] {dag.py:4180} INFO - Setting next_dagrun for banking_data_quality_daily to 2025-07-22 02:00:00+00:00, run_after=2025-07-23 02:00:00+00:00
+[2025-07-22T09:08:05.572+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/banking_dq_dag.py took 0.780 seconds

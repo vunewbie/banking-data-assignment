@@ -1,9 +1,0 @@
-check_name,requirement,status,issues_count,check_type,timestamp,violation_count
-null_missing_values,Null/missing values - Required fields must not be empty,PASS,0,null_missing_values,2025-07-22T07:50:33.628625,
-uniqueness_constraints,Uniqueness - Primary keys and unique fields must be unique across table,PASS,0,uniqueness_constraints,2025-07-22T07:50:33.628625,
-format_validation,"Format/length validation - Data must match specified formats (phone numbers, emails, account numbers, etc.)",FAIL,2,format_validation,2025-07-22T07:50:33.628625,
-foreign_key_integrity,Foreign key integrity - All foreign key references must exist in parent tables,PASS,0,foreign_key_integrity,2025-07-22T07:50:33.628625,
-high_value_transaction_auth,Transactions more than 10M VND must use strong auth (biometric or OTP) - per 2345/QĐ-NHNN 2023,PASS,0,high_value_transaction_auth,2025-07-22T07:50:33.628625,
-device_verification_requirement,Device must be verified if new or untrusted - Active devices must be trusted/verified,FAIL,1,device_verification_requirement,2025-07-22T07:50:33.628625,
-daily_transaction_limit_auth,Total transaction amount per customer more than 20M VND in a day must have at least one strong auth method - per 2345/QĐ-NHNN 2023,FAIL,1,daily_transaction_limit_auth,2025-07-22T07:50:33.628625,4.0
-transaction_type_constraints,Transaction type constraints - Transaction-specific field requirements must be satisfied based on transaction type,PASS,0,transaction_type_constraints,2025-07-22T07:50:33.628625,

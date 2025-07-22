@@ -1,294 +1,294 @@
-[2025-07-22T07:50:22.847+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
-[2025-07-22T07:50:22.871+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_data_quality_daily.quality_audit_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
-[2025-07-22T07:50:22.880+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_data_quality_daily.quality_audit_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
-[2025-07-22T07:50:22.880+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 3
-[2025-07-22T07:50:22.893+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): quality_audit_task> on 2025-07-21 02:00:00+00:00
-[2025-07-22T07:50:22.900+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=164) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-22T08:45:35.549+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-07-22T08:45:35.574+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_data_quality_daily.quality_audit_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
+[2025-07-22T08:45:35.583+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_data_quality_daily.quality_audit_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
+[2025-07-22T08:45:35.584+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 3
+[2025-07-22T08:45:35.598+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): quality_audit_task> on 2025-07-21 02:00:00+00:00
+[2025-07-22T08:45:35.606+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=145) is multi-threaded, use of fork() may lead to deadlocks in the child.
   pid = os.fork()
 
-[2025-07-22T07:50:22.902+0000] {standard_task_runner.py:72} INFO - Started process 166 to run task
-[2025-07-22T07:50:22.902+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'banking_data_quality_daily', 'quality_audit_task', 'scheduled__2025-07-21T02:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/banking_dq_dag.py', '--cfg-path', '/tmp/tmpip1wgl5v']
-[2025-07-22T07:50:22.905+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask quality_audit_task
-[2025-07-22T07:50:22.972+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_data_quality_daily.quality_audit_task scheduled__2025-07-21T02:00:00+00:00 [running]> on host 1e992391132c
-[2025-07-22T07:50:23.065+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='vulocninh1@gmail.com' AIRFLOW_CTX_DAG_OWNER='banking-data-assignment' AIRFLOW_CTX_DAG_ID='banking_data_quality_daily' AIRFLOW_CTX_TASK_ID='quality_audit_task' AIRFLOW_CTX_EXECUTION_DATE='2025-07-21T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-21T02:00:00+00:00'
-[2025-07-22T07:50:23.068+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2025-07-22T07:50:23.083+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Starting banking data quality audit...
-[2025-07-22T07:50:23.083+0000] {banking_dq_dag.py:151} INFO - Starting banking data quality audit...
-[2025-07-22T07:50:23.889+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Running comprehensive quality audit with report generation...
-[2025-07-22T07:50:23.889+0000] {banking_dq_dag.py:162} INFO - Running comprehensive quality audit with report generation...
-[2025-07-22T07:50:23.895+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Logging configured. Log file: /opt/***/logs/scheduler/2025-07-22/banking_audit_20250722_075023.log
-[2025-07-22T07:50:23.895+0000] {monitoring_audit.py:85} INFO - Logging configured. Log file: /opt/***/logs/scheduler/2025-07-22/banking_audit_20250722_075023.log
-[2025-07-22T07:50:23.897+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Starting comprehensive banking data audit with intelligent cleaning...
-[2025-07-22T07:50:23.897+0000] {monitoring_audit.py:407} INFO - Starting comprehensive banking data audit with intelligent cleaning...
-[2025-07-22T07:50:23.898+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Received data: 6 tables, 177743 total records
-[2025-07-22T07:50:23.898+0000] {monitoring_audit.py:415} INFO - Received data: 6 tables, 177743 total records
-[2025-07-22T07:50:23.899+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Data structure validation: 6/6 expected tables found
-[2025-07-22T07:50:23.899+0000] {monitoring_audit.py:389} INFO - Data structure validation: 6/6 expected tables found
-[2025-07-22T07:50:23.900+0000] {data_quality_standards.py:1012} INFO - Starting comprehensive data quality audit and cleaning...
-[2025-07-22T07:50:23.900+0000] {data_quality_standards.py:790} INFO - Starting comprehensive data quality audit...
-[2025-07-22T07:50:23.901+0000] {data_quality_standards.py:73} INFO - Starting null/missing values check...
-[2025-07-22T07:50:23.932+0000] {data_quality_standards.py:130} INFO - Null check completed: PASS
-[2025-07-22T07:50:23.933+0000] {data_quality_standards.py:145} INFO - Starting uniqueness constraints check (with database comparison)...
-[2025-07-22T07:50:23.934+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Connecting to database: banking-db:5433/banking_system as postgres
-[2025-07-22T07:50:23.934+0000] {monitoring_audit.py:117} INFO - Connecting to database: banking-db:5433/banking_system as postgres
-[2025-07-22T07:50:23.949+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:23] INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[2025-07-22T07:50:23.948+0000] {monitoring_audit.py:132} INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[2025-07-22T07:50:23.951+0000] {data_quality_standards.py:162} INFO - Database connection established for uniqueness check
-[2025-07-22T07:50:24.063+0000] {data_quality_standards.py:246} INFO - Enhanced uniqueness check completed: PASS
-[2025-07-22T07:50:24.067+0000] {data_quality_standards.py:259} INFO - Starting format/length validation check...
-[2025-07-22T07:50:24.081+0000] {data_quality_standards.py:341} INFO - Format validation completed: FAIL
-[2025-07-22T07:50:24.082+0000] {data_quality_standards.py:354} INFO - Starting foreign key integrity check...
-[2025-07-22T07:50:24.205+0000] {data_quality_standards.py:413} INFO - Foreign key check completed: PASS
-[2025-07-22T07:50:24.217+0000] {data_quality_standards.py:430} INFO - Starting high value transaction authentication check...
-[2025-07-22T07:50:24.237+0000] {data_quality_standards.py:496} INFO - High value transaction auth check completed: PASS
-[2025-07-22T07:50:24.238+0000] {data_quality_standards.py:510} INFO - Starting device verification requirement check...
-[2025-07-22T07:50:24.250+0000] {data_quality_standards.py:563} INFO - Device verification check completed: FAIL
-[2025-07-22T07:50:24.252+0000] {data_quality_standards.py:577} INFO - Starting daily transaction limit authentication check...
-[2025-07-22T07:50:29.643+0000] {data_quality_standards.py:663} INFO - Daily transaction limit auth check completed: FAIL
-[2025-07-22T07:50:29.650+0000] {data_quality_standards.py:676} INFO - Starting transaction type constraints check...
-[2025-07-22T07:50:33.618+0000] {data_quality_standards.py:774} INFO - Transaction type constraints check completed: PASS
-[2025-07-22T07:50:33.628+0000] {data_quality_standards.py:845} INFO - Data quality audit completed: FAIL (5/8 checks passed)
-[2025-07-22T07:50:33.629+0000] {data_quality_standards.py:861} INFO - Aggregating failed rows from all quality checks...
-[2025-07-22T07:50:33.630+0000] {data_quality_standards.py:879} INFO - Aggregated 855 failed rows across 2 tables
-[2025-07-22T07:50:33.631+0000] {data_quality_standards.py:948} INFO - Cleaning DataFrames by removing failed rows...
-[2025-07-22T07:50:33.634+0000] {data_quality_standards.py:976} INFO - customer: 1611/1999 (80.59%) clean rows
-[2025-07-22T07:50:33.636+0000] {data_quality_standards.py:976} INFO - customer_device: 1820/2287 (79.58%) clean rows
-[2025-07-22T07:50:33.646+0000] {data_quality_standards.py:894} INFO - Handling foreign key dependencies after cleaning...
-[2025-07-22T07:50:33.651+0000] {data_quality_standards.py:929} INFO - Removed 332 face_template records due to missing customer references
-[2025-07-22T07:50:33.654+0000] {data_quality_standards.py:929} INFO - Removed 464 bank_account records due to missing customer references
-[2025-07-22T07:50:33.656+0000] {data_quality_standards.py:929} INFO - Removed 353 customer_device records due to missing customer references
-[2025-07-22T07:50:33.675+0000] {data_quality_standards.py:929} INFO - Removed 13695 transaction records due to missing bank_account references
-[2025-07-22T07:50:33.705+0000] {data_quality_standards.py:929} INFO - Removed 18838 authentication_log records due to missing customer references
-[2025-07-22T07:50:33.810+0000] {data_quality_standards.py:929} INFO - Removed 15625 authentication_log records due to missing customer_device references
-[2025-07-22T07:50:33.811+0000] {data_quality_standards.py:932} INFO - Foreign key dependency handling completed: 49307 additional records removed
-[2025-07-22T07:50:33.815+0000] {data_quality_standards.py:998} INFO - Data cleaning completed: 127581/177743 (71.78%) records retained
-[2025-07-22T07:50:33.818+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - ============================================================
-[2025-07-22T07:50:33.818+0000] {monitoring_audit.py:424} INFO - ============================================================
-[2025-07-22T07:50:33.819+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - DATA CLEANING SUMMARY
-[2025-07-22T07:50:33.819+0000] {monitoring_audit.py:425} INFO - DATA CLEANING SUMMARY
-[2025-07-22T07:50:33.820+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - ============================================================
-[2025-07-22T07:50:33.820+0000] {monitoring_audit.py:426} INFO - ============================================================
-[2025-07-22T07:50:33.821+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - customer: 1611/1999 (80.59%) clean
-[2025-07-22T07:50:33.821+0000] {monitoring_audit.py:435} INFO - customer: 1611/1999 (80.59%) clean
-[2025-07-22T07:50:33.823+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - customer_device: 1467/2287 (64.15%) clean
-[2025-07-22T07:50:33.822+0000] {monitoring_audit.py:435} INFO - customer_device: 1467/2287 (64.15%) clean
-[2025-07-22T07:50:33.824+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - authentication_log: 63376/97839 (64.78%) clean
-[2025-07-22T07:50:33.824+0000] {monitoring_audit.py:435} INFO - authentication_log: 63376/97839 (64.78%) clean
-[2025-07-22T07:50:33.825+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - bank_account: 1929/2393 (80.61%) clean
-[2025-07-22T07:50:33.825+0000] {monitoring_audit.py:435} INFO - bank_account: 1929/2393 (80.61%) clean
-[2025-07-22T07:50:33.826+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - face_template: 1367/1699 (80.46%) clean
-[2025-07-22T07:50:33.826+0000] {monitoring_audit.py:435} INFO - face_template: 1367/1699 (80.46%) clean
-[2025-07-22T07:50:33.827+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - transaction: 57831/71526 (80.85%) clean
-[2025-07-22T07:50:33.827+0000] {monitoring_audit.py:435} INFO - transaction: 57831/71526 (80.85%) clean
-[2025-07-22T07:50:33.828+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - OVERALL: 127581/177743 (71.78%) records retained
-[2025-07-22T07:50:33.828+0000] {monitoring_audit.py:439} INFO - OVERALL: 127581/177743 (71.78%) records retained
-[2025-07-22T07:50:33.829+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Generating audit reports...
-[2025-07-22T07:50:33.829+0000] {monitoring_audit.py:442} INFO - Generating audit reports...
-[2025-07-22T07:50:33.834+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Detailed audit log generated: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_075033.txt
-[2025-07-22T07:50:33.834+0000] {monitoring_audit.py:259} INFO - Detailed audit log generated: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_075033.txt
-[2025-07-22T07:50:33.859+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Summary table generated: /opt/***/reports/2025-07-22/audit_summary_table_20250722_075033.csv
-[2025-07-22T07:50:33.858+0000] {monitoring_audit.py:313} INFO - Summary table generated: /opt/***/reports/2025-07-22/audit_summary_table_20250722_075033.csv
-[2025-07-22T07:50:33.866+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - JSON report generated: /opt/***/reports/2025-07-22/audit_report_20250722_075033.json
-[2025-07-22T07:50:33.865+0000] {monitoring_audit.py:343} INFO - JSON report generated: /opt/***/reports/2025-07-22/audit_report_20250722_075033.json
-[2025-07-22T07:50:33.867+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - ================================================================================
-[2025-07-22T07:50:33.867+0000] {monitoring_audit.py:463} INFO - ================================================================================
-[2025-07-22T07:50:33.868+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - DATA AUDIT & CLEANING WITH REPORTS COMPLETED
-[2025-07-22T07:50:33.868+0000] {monitoring_audit.py:464} INFO - DATA AUDIT & CLEANING WITH REPORTS COMPLETED
-[2025-07-22T07:50:33.870+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - ================================================================================
-[2025-07-22T07:50:33.870+0000] {monitoring_audit.py:465} INFO - ================================================================================
-[2025-07-22T07:50:33.871+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Audit Status: FAIL
-[2025-07-22T07:50:33.871+0000] {monitoring_audit.py:466} INFO - Audit Status: FAIL
-[2025-07-22T07:50:33.872+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Checks Pass Rate: 62.5%
-[2025-07-22T07:50:33.872+0000] {monitoring_audit.py:467} INFO - Checks Pass Rate: 62.5%
-[2025-07-22T07:50:33.873+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Checks: 5/8 passed
-[2025-07-22T07:50:33.873+0000] {monitoring_audit.py:468} INFO - Checks: 5/8 passed
-[2025-07-22T07:50:33.875+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Data Quality: 127581/177743 (71.78%) clean records
-[2025-07-22T07:50:33.875+0000] {monitoring_audit.py:469} INFO - Data Quality: 127581/177743 (71.78%) clean records
-[2025-07-22T07:50:33.876+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO -
-[2025-07-22T07:50:33.876+0000] {monitoring_audit.py:470} INFO - 
-[2025-07-22T07:50:33.877+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Generated Reports:
-[2025-07-22T07:50:33.877+0000] {monitoring_audit.py:471} INFO - Generated Reports:
-[2025-07-22T07:50:33.878+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO -   Detailed Log: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_075033.txt
-[2025-07-22T07:50:33.878+0000] {monitoring_audit.py:472} INFO -   Detailed Log: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_075033.txt
-[2025-07-22T07:50:33.879+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO -   Summary Table: /opt/***/reports/2025-07-22/audit_summary_table_20250722_075033.csv
-[2025-07-22T07:50:33.879+0000] {monitoring_audit.py:473} INFO -   Summary Table: /opt/***/reports/2025-07-22/audit_summary_table_20250722_075033.csv
-[2025-07-22T07:50:33.880+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO -   JSON Report: /opt/***/reports/2025-07-22/audit_report_20250722_075033.json
-[2025-07-22T07:50:33.880+0000] {monitoring_audit.py:474} INFO -   JSON Report: /opt/***/reports/2025-07-22/audit_report_20250722_075033.json
-[2025-07-22T07:50:33.881+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO -
-[2025-07-22T07:50:33.881+0000] {monitoring_audit.py:475} INFO - 
-[2025-07-22T07:50:33.882+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Clean data prepared for downstream database loading task
-[2025-07-22T07:50:33.882+0000] {monitoring_audit.py:476} INFO - Clean data prepared for downstream database loading task
-[2025-07-22T07:50:33.883+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - ================================================================================
-[2025-07-22T07:50:33.883+0000] {monitoring_audit.py:477} INFO - ================================================================================
-[2025-07-22T07:50:33.884+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Audit completed - Status: FAIL
-[2025-07-22T07:50:33.884+0000] {banking_dq_dag.py:171} INFO - Audit completed - Status: FAIL
-[2025-07-22T07:50:33.885+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Pass rate: 62.5%
-[2025-07-22T07:50:33.885+0000] {banking_dq_dag.py:172} INFO - Pass rate: 62.5%
-[2025-07-22T07:50:33.885+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Checks: 5/8 passed
-[2025-07-22T07:50:33.885+0000] {banking_dq_dag.py:173} INFO - Checks: 5/8 passed
-[2025-07-22T07:50:33.886+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Clean data: 127581/177743 (71.78%) records
-[2025-07-22T07:50:33.886+0000] {banking_dq_dag.py:185} INFO - Clean data: 127581/177743 (71.78%) records
-[2025-07-22T07:50:33.887+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:33] INFO - Reports generated: audit logs, summary tables, JSON reports
-[2025-07-22T07:50:33.887+0000] {banking_dq_dag.py:186} INFO - Reports generated: audit logs, summary tables, JSON reports
-[2025-07-22T07:50:37.497+0000] {python.py:240} INFO - Done. Returned value was: {'audit_results': {'audit_summary': {'audit_timestamp': '2025-07-22T07:50:33.628625', 'overall_status': 'FAIL', 'total_checks': 8, 'passed_checks': 5, 'failed_checks': 3, 'skipped_checks': 0, 'pass_rate': 62.5, 'data_tables_analyzed': ['customer', 'customer_device', 'authentication_log', 'bank_account', 'face_template', 'transaction'], 'total_records_analyzed': 177743}, 'check_results': {'null_missing_values': {'check_type': 'null_missing_values', 'status': 'PASS', 'issues': [], 'summary': {'customer': {'total_records': 1999, 'issues_count': 0, 'failed_records': 0}, 'customer_device': {'total_records': 2287, 'issues_count': 0, 'failed_records': 0}, 'authentication_log': {'total_records': 97839, 'issues_count': 0, 'failed_records': 0}, 'bank_account': {'total_records': 2393, 'issues_count': 0, 'failed_records': 0}, 'face_template': {'total_records': 1699, 'issues_count': 0, 'failed_records': 0}, 'transaction': {'total_records': 71526, 'issues_count': 0, 'failed_records': 0}}, 'failed_rows': {}, 'requirement': 'Null/missing values - Required fields must not be empty'}, 'uniqueness_constraints': {'check_type': 'uniqueness_constraints', 'status': 'PASS', 'issues': [], 'summary': {'customer': {'total_records': 1999, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'customer_device': {'total_records': 2287, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'authentication_log': {'total_records': 97839, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'bank_account': {'total_records': 2393, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'face_template': {'total_records': 1699, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'transaction': {'total_records': 71526, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}}, 'failed_rows': {}, 'requirement': 'Uniqueness - Primary keys and unique fields must be unique across table'}, 'format_validation': {'check_type': 'format_validation', 'status': 'FAIL', 'issues': [{'table': 'customer', 'field': 'id_passport_number', 'invalid_count': 189, 'total_count': 1999, 'invalid_percentage': 9.45, 'expected_patterns': ['cccd_number', 'passport_number'], 'sample_invalid': ['E703277', 'PY729151', '0177230893795', '4334842738139', '9832432642689'], 'failed_row_indices': [3, 6, 19, 29, 37, 56, 71, 93, 99, 102, 109, 111, 123, 134, 144, 155, 156, 164, 167, 168, 172, 183, 208, 215, 218, 225, 242, 250, 256, 264, 271, 273, 282, 292, 305, 307, 329, 331, 355, 364, 368, 389, 395, 398, 401, 417, 423, 425, 431, 433, 452, 471, 482, 484, 489, 491, 493, 497, 501, 518, 537, 540, 544, 554, 555, 560, 562, 565, 566, 575, 603, 604, 639, 667, 668, 671, 682, 698, 703, 729, 741, 742, 744, 754, 766, 791, 799, 805, 850, 853, 866, 871, 872, 892, 904, 920, 923, 957, 969, 974, 981, 1003, 1005, 1023, 1025, 1034, 1042, 1046, 1050, 1060, 1065, 1066, 1070, 1071, 1072, 1094, 1118, 1119, 1120, 1123, 1126, 1139, 1157, 1164, 1179, 1188, 1195, 1207, 1234, 1237, 1276, 1281, 1295, 1311, 1318, 1322, 1325, 1328, 1348, 1349, 1370, 1380, 1385, 1404, 1409, 1430, 1431, 1460, 1504, 1509, 1520, 1541, 1542, 1543, 1554, 1574, 1576, 1595, 1597, 1604, 1609, 1629, 1647, 1660, 1662, 1673, 1699, 1705, 1706, 1726, 1734, 1769, 1817, 1824, 1863, 1867, 1880, 1892, 1897, 1898, 1900, 1901, 1913, 1935, 1958, 1960, 1978, 1979, 1994]}, {'table': 'customer', 'field': 'phone_number', 'invalid_count': 218, 'total_count': 1999, 'invalid_percentage': 10.91, 'expected_patterns': ['vietnamese_phone'], 'sample_invalid': ['037658859654', '03319855226', '05843455684', '05969933950', '08432901278'], 'failed_row_indices': [10, 24, 35, 42, 44, 51, 55, 57, 59, 77, 79, 83, 85, 91, 114, 135, 147, 160, 162, 170, 189, 190, 194, 199, 205, 206, 208, 227, 231, 237, 252, 254, 275, 287, 288, 311, 312, 332, 333, 338, 346, 350, 353, 355, 357, 372, 374, 382, 384, 401, 403, 408, 424, 433, 435, 438, 457, 460, 473, 474, 476, 491, 492, 527, 532, 544, 546, 554, 568, 569, 589, 606, 633, 645, 650, 660, 662, 665, 679, 683, 689, 692, 699, 726, 736, 770, 781, 786, 794, 805, 809, 811, 819, 832, 869, 877, 894, 906, 908, 909, 910, 914, 926, 952, 954, 982, 983, 989, 993, 999, 1006, 1014, 1015, 1020, 1023, 1028, 1035, 1051, 1060, 1076, 1078, 1086, 1092, 1104, 1120, 1121, 1122, 1139, 1161, 1162, 1166, 1170, 1174, 1178, 1183, 1214, 1232, 1252, 1253, 1262, 1267, 1273, 1292, 1295, 1296, 1304, 1307, 1325, 1344, 1364, 1372, 1377, 1399, 1400, 1401, 1402, 1412, 1420, 1432, 1445, 1448, 1454, 1457, 1461, 1479, 1502, 1509, 1517, 1531, 1540, 1556, 1563, 1584, 1587, 1595, 1610, 1626, 1627, 1635, 1638, 1639, 1640, 1662, 1665, 1683, 1698, 1708, 1711, 1723, 1726, 1736, 1751, 1759, 1763, 1785, 1811, 1820, 1829, 1837, 1852, 1858, 1874, 1880, 1881, 1883, 1885, 1890, 1891, 1894, 1895, 1904, 1906, 1908, 1917, 1919, 1929, 1953, 1959]}], 'summary': {'customer': {'total_records': 1999, 'issues_count': 2, 'failed_records': 388}, 'customer_device': {'total_records': 2287, 'issues_count': 0, 'failed_records': 0}, 'authentication_log': {'total_records': 97839, 'issues_count': 0, 'failed_records': 0}, 'bank_account': {'total_records': 2393, 'issues_count': 0, 'failed_records': 0}, 'face_template': {'total_records': 1699, 'issues_count': 0, 'failed_records': 0}, 'transaction': {'total_records': 71526, 'issues_count': 0, 'failed_records': 0}}, 'failed_rows': {'customer': [3, 6, 10, 19, 24, 29, 35, 37, 42, 44, 51, 55, 56, 57, 59, 71, 77, 79, 83, 85, 91, 93, 99, 102, 109, 111, 114, 123, 134, 135, 144, 147, 155, 156, 160, 162, 164, 167, 168, 170, 172, 183, 189, 190, 194, 199, 205, 206, 208, 215, 218, 225, 227, 231, 237, 242, 250, 252, 254, 256, 264, 271, 273, 275, 282, 287, 288, 292, 305, 307, 311, 312, 329, 331, 332, 333, 338, 346, 350, 353, 355, 357, 364, 368, 372, 374, 382, 384, 389, 395, 398, 401, 403, 408, 417, 423, 424, 425, 431, 433, 435, 438, 452, 457, 460, 471, 473, 474, 476, 482, 484, 489, 491, 492, 493, 497, 501, 518, 527, 532, 537, 540, 544, 546, 554, 555, 560, 562, 565, 566, 568, 569, 575, 589, 603, 604, 606, 633, 639, 645, 650, 660, 662, 665, 667, 668, 671, 679, 682, 683, 689, 692, 698, 699, 703, 726, 729, 736, 741, 742, 744, 754, 766, 770, 781, 786, 791, 794, 799, 805, 809, 811, 819, 832, 850, 853, 866, 869, 871, 872, 877, 892, 894, 904, 906, 908, 909, 910, 914, 920, 923, 926, 952, 954, 957, 969, 974, 981, 982, 983, 989, 993, 999, 1003, 1005, 1006, 1014, 1015, 1020, 1023, 1025, 1028, 1034, 1035, 1042, 1046, 1050, 1051, 1060, 1065, 1066, 1070, 1071, 1072, 1076, 1078, 1086, 1092, 1094, 1104, 1118, 1119, 1120, 1121, 1122, 1123, 1126, 1139, 1157, 1161, 1162, 1164, 1166, 1170, 1174, 1178, 1179, 1183, 1188, 1195, 1207, 1214, 1232, 1234, 1237, 1252, 1253, 1262, 1267, 1273, 1276, 1281, 1292, 1295, 1296, 1304, 1307, 1311, 1318, 1322, 1325, 1328, 1344, 1348, 1349, 1364, 1370, 1372, 1377, 1380, 1385, 1399, 1400, 1401, 1402, 1404, 1409, 1412, 1420, 1430, 1431, 1432, 1445, 1448, 1454, 1457, 1460, 1461, 1479, 1502, 1504, 1509, 1517, 1520, 1531, 1540, 1541, 1542, 1543, 1554, 1556, 1563, 1574, 1576, 1584, 1587, 1595, 1597, 1604, 1609, 1610, 1626, 1627, 1629, 1635, 1638, 1639, 1640, 1647, 1660, 1662, 1665, 1673, 1683, 1698, 1699, 1705, 1706, 1708, 1711, 1723, 1726, 1734, 1736, 1751, 1759, 1763, 1769, 1785, 1811, 1817, 1820, 1824, 1829, 1837, 1852, 1858, 1863, 1867, 1874, 1880, 1881, 1883, 1885, 1890, 1891, 1892, 1894, 1895, 1897, 1898, 1900, 1901, 1904, 1906, 1908, 1913, 1917, 1919, 1929, 1935, 1953, 1958, 1959, 1960, 1978, 1979, 1994]}, 'requirement': 'Format/length validation - Data must match specified formats (phone numbers, emails, account numbers, etc.)'}, 'foreign_key_integrity': {'check_type': 'foreign_key_integrity', 'status': 'PASS', 'issues': [], 'summary': {'total_relationships_checked': 7, 'failed_relationships': 0, 'total_failed_records': 0}, 'failed_rows': {}, 'requirement': 'Foreign key integrity - All foreign key references must exist in parent tables'}, 'high_value_transaction_auth': {'check_type': 'high_value_transaction_auth', 'status': 'PASS', 'issues': [], 'summary': {'total_transactions': 71526, 'high_value_transactions': 9393, 'violations': 0, 'compliance_rate': 100.0}, 'failed_rows': {}, 'requirement': 'Transactions more than 10M VND must use strong auth (biometric or OTP) - per 2345/QĐ-NHNN 2023'}, 'device_verification_requirement': {'check_type': 'device_verification_requirement', 'status': 'FAIL', 'issues': [{'rule': 'Active devices must be trusted/verified', 'untrusted_active_devices': 467, 'total_active_devices': 1956, 'violation_percentage': 20.42, 'untrusted_by_device_type': {'Desktop': 41, 'Mobile': 390, 'Tablet': 36}, 'sample_violations': [{'device_identifier': 'IMEI:353289101339744', 'device_type': 'Mobile', 'customer_id': '64f0fc75-60b7-418b-83b9-c0cca4e2f81e'}, {'device_identifier': 'UUID:85bc4d11-e299-1b8a-88d7-a67992e9fd40', 'device_type': 'Mobile', 'customer_id': '3fb4ab54-f6bd-454a-9c78-cb6b7a13a8f5'}, {'device_identifier': 'IMEI:867819056365577', 'device_type': 'Mobile', 'customer_id': '8b82230c-13ae-4d77-a375-a7bcd96b6f38'}, {'device_identifier': 'IMEI:354045111107433', 'device_type': 'Mobile', 'customer_id': '572b41a6-fb52-4af1-936f-9cb062840b20'}, {'device_identifier': 'UUID:85e73008-ed78-c0b6-8da7-e8be05049671', 'device_type': 'Mobile', 'customer_id': '423d6cf7-e589-4783-82b9-c3c11d2f116d'}], 'failed_row_indices': [6, 12, 13, 28, 29, 48, 50, 51, 53, 57, 62, 63, 74, 79, 86, 90, 98, 103, 107, 108, 124, 125, 134, 151, 153, 155, 157, 160, 161, 165, 166, 169, 174, 179, 181, 188, 192, 194, 197, 200, 206, 208, 209, 211, 213, 215, 218, 219, 234, 244, 258, 259, 264, 268, 269, 277, 280, 282, 283, 284, 290, 297, 298, 299, 308, 310, 321, 328, 337, 341, 348, 353, 376, 384, 385, 387, 398, 399, 402, 407, 409, 416, 418, 420, 423, 427, 440, 442, 445, 447, 450, 454, 459, 467, 469, 480, 481, 483, 485, 491, 494, 512, 519, 522, 533, 540, 543, 550, 552, 554, 555, 561, 564, 579, 584, 593, 595, 600, 608, 621, 629, 631, 633, 638, 641, 649, 650, 662, 671, 672, 674, 676, 678, 681, 687, 690, 692, 696, 704, 705, 706, 711, 715, 717, 718, 719, 723, 725, 726, 729, 731, 734, 739, 741, 742, 766, 772, 775, 785, 789, 792, 797, 799, 803, 806, 810, 824, 825, 826, 840, 842, 843, 864, 866, 872, 887, 891, 893, 894, 896, 899, 902, 904, 906, 908, 913, 920, 921, 940, 941, 945, 953, 956, 965, 970, 971, 973, 975, 977, 978, 988, 991, 995, 998, 1012, 1016, 1025, 1027, 1031, 1035, 1037, 1039, 1042, 1045, 1046, 1047, 1048, 1050, 1052, 1054, 1059, 1064, 1065, 1077, 1079, 1082, 1083, 1090, 1093, 1096, 1103, 1105, 1110, 1114, 1116, 1120, 1135, 1140, 1152, 1154, 1157, 1159, 1167, 1169, 1180, 1183, 1189, 1192, 1193, 1206, 1212, 1217, 1219, 1224, 1225, 1228, 1229, 1231, 1234, 1240, 1245, 1248, 1258, 1260, 1264, 1267, 1271, 1274, 1283, 1284, 1290, 1312, 1313, 1319, 1325, 1327, 1338, 1344, 1345, 1348, 1352, 1367, 1375, 1376, 1381, 1393, 1395, 1399, 1403, 1405, 1410, 1423, 1426, 1431, 1437, 1438, 1444, 1445, 1446, 1454, 1462, 1465, 1466, 1481, 1489, 1490, 1494, 1498, 1501, 1507, 1515, 1518, 1528, 1537, 1543, 1551, 1552, 1557, 1566, 1570, 1577, 1584, 1585, 1588, 1592, 1599, 1602, 1605, 1606, 1611, 1614, 1622, 1623, 1637, 1639, 1651, 1652, 1671, 1675, 1681, 1686, 1688, 1690, 1691, 1696, 1697, 1707, 1710, 1728, 1731, 1741, 1743, 1745, 1747, 1757, 1759, 1760, 1769, 1770, 1772, 1775, 1783, 1800, 1807, 1811, 1816, 1823, 1824, 1828, 1831, 1832, 1835, 1842, 1843, 1852, 1857, 1861, 1865, 1870, 1881, 1887, 1894, 1896, 1901, 1905, 1913, 1915, 1916, 1926, 1928, 1930, 1931, 1934, 1938, 1948, 1959, 1963, 1966, 1970, 1974, 1977, 1980, 1986, 1988, 1990, 1992, 1995, 2009, 2011, 2023, 2024, 2034, 2036, 2037, 2042, 2046, 2049, 2051, 2055, 2072, 2084, 2094, 2096, 2098, 2101, 2118, 2119, 2120, 2125, 2129, 2134, 2143, 2148, 2149, 2158, 2165, 2174, 2175, 2178, 2180, 2184, 2189, 2191, 2193, 2194, 2201, 2203, 2205, 2209, 2219, 2220, 2224, 2229, 2231, 2234, 2240, 2242, 2243, 2245, 2249, 2254, 2263, 2269, 2271, 2272, 2278, 2283]}], 'summary': {'total_devices': 2287, 'active_devices': 1956, 'trusted_devices': 1738, 'untrusted_active_devices': 467, 'trust_rate': 75.99}, 'failed_rows': {'customer_device': [6, 12, 13, 28, 29, 48, 50, 51, 53, 57, 62, 63, 74, 79, 86, 90, 98, 103, 107, 108, 124, 125, 134, 151, 153, 155, 157, 160, 161, 165, 166, 169, 174, 179, 181, 188, 192, 194, 197, 200, 206, 208, 209, 211, 213, 215, 218, 219, 234, 244, 258, 259, 264, 268, 269, 277, 280, 282, 283, 284, 290, 297, 298, 299, 308, 310, 321, 328, 337, 341, 348, 353, 376, 384, 385, 387, 398, 399, 402, 407, 409, 416, 418, 420, 423, 427, 440, 442, 445, 447, 450, 454, 459, 467, 469, 480, 481, 483, 485, 491, 494, 512, 519, 522, 533, 540, 543, 550, 552, 554, 555, 561, 564, 579, 584, 593, 595, 600, 608, 621, 629, 631, 633, 638, 641, 649, 650, 662, 671, 672, 674, 676, 678, 681, 687, 690, 692, 696, 704, 705, 706, 711, 715, 717, 718, 719, 723, 725, 726, 729, 731, 734, 739, 741, 742, 766, 772, 775, 785, 789, 792, 797, 799, 803, 806, 810, 824, 825, 826, 840, 842, 843, 864, 866, 872, 887, 891, 893, 894, 896, 899, 902, 904, 906, 908, 913, 920, 921, 940, 941, 945, 953, 956, 965, 970, 971, 973, 975, 977, 978, 988, 991, 995, 998, 1012, 1016, 1025, 1027, 1031, 1035, 1037, 1039, 1042, 1045, 1046, 1047, 1048, 1050, 1052, 1054, 1059, 1064, 1065, 1077, 1079, 1082, 1083, 1090, 1093, 1096, 1103, 1105, 1110, 1114, 1116, 1120, 1135, 1140, 1152, 1154, 1157, 1159, 1167, 1169, 1180, 1183, 1189, 1192, 1193, 1206, 1212, 1217, 1219, 1224, 1225, 1228, 1229, 1231, 1234, 1240, 1245, 1248, 1258, 1260, 1264, 1267, 1271, 1274, 1283, 1284, 1290, 1312, 1313, 1319, 1325, 1327, 1338, 1344, 1345, 1348, 1352, 1367, 1375, 1376, 1381, 1393, 1395, 1399, 1403, 1405, 1410, 1423, 1426, 1431, 1437, 1438, 1444, 1445, 1446, 1454, 1462, 1465, 1466, 1481, 1489, 1490, 1494, 1498, 1501, 1507, 1515, 1518, 1528, 1537, 1543, 1551, 1552, 1557, 1566, 1570, 1577, 1584, 1585, 1588, 1592, 1599, 1602, 1605, 1606, 1611, 1614, 1622, 1623, 1637, 1639, 1651, 1652, 1671, 1675, 1681, 1686, 1688, 1690, 1691, 1696, 1697, 1707, 1710, 1728, 1731, 1741, 1743, 1745, 1747, 1757, 1759, 1760, 1769, 1770, 1772, 1775, 1783, 1800, 1807, 1811, 1816, 1823, 1824, 1828, 1831, 1832, 1835, 1842, 1843, 1852, 1857, 1861, 1865, 1870, 1881, 1887, 1894, 1896, 1901, 1905, 1913, 1915, 1916, 1926, 1928, 1930, 1931, 1934, 1938, 1948, 1959, 1963, 1966, 1970, 1974, 1977, 1980, 1986, 1988, 1990, 1992, 1995, 2009, 2011, 2023, 2024, 2034, 2036, 2037, 2042, 2046, 2049, 2051, 2055, 2072, 2084, 2094, 2096, 2098, 2101, 2118, 2119, 2120, 2125, 2129, 2134, 2143, 2148, 2149, 2158, 2165, 2174, 2175, 2178, 2180, 2184, 2189, 2191, 2193, 2194, 2201, 2203, 2205, 2209, 2219, 2220, 2224, 2229, 2231, 2234, 2240, 2242, 2243, 2245, 2249, 2254, 2263, 2269, 2271, 2272, 2278, 2283]}, 'requirement': 'Device must be verified if new or untrusted - Active devices must be trusted/verified'}, 'daily_transaction_limit_auth': {'check_type': 'daily_transaction_limit_auth', 'status': 'FAIL', 'issues': [{'rule': 'Daily transactions >= 20M VND must have at least one strong authentication (PIN_OTP or PIN_OTP_Biometric)', 'violation_count': 4, 'total_high_daily_volume_cases': 4153, 'violation_percentage': 0.1, 'sample_violations': [{'customer_id': '0d9766c0-18c2-4130-bfe7-80b1a94b58a3', 'transaction_date': '2025-06-27', 'total_amount': 20790000.0, 'transaction_count': 3, 'auth_methods_used': ['PIN']}, {'customer_id': '3324573c-ded1-48df-98ee-e712e7be7c1a', 'transaction_date': '2025-07-10', 'total_amount': 20050000.0, 'transaction_count': 3, 'auth_methods_used': ['PIN']}, {'customer_id': '66221a64-0e1b-4864-a2b2-c6067212af08', 'transaction_date': '2025-07-10', 'total_amount': 24050000.0, 'transaction_count': 3, 'auth_methods_used': ['PIN']}, {'customer_id': 'a7aafad5-f4c7-4f13-ba23-2ac23f4bde93', 'transaction_date': '2025-07-14', 'total_amount': 22050000.0, 'transaction_count': 6, 'auth_methods_used': ['PIN']}]}], 'summary': {'total_customer_days_analyzed': 33818, 'high_volume_days': 4153, 'violation_days': 4, 'compliance_rate': 99.9}, 'failed_rows': {}, 'requirement': 'Total transaction amount per customer more than 20M VND in a day must have at least one strong auth method - per 2345/QĐ-NHNN 2023'}, 'transaction_type_constraints': {'check_type': 'transaction_type_constraints', 'status': 'PASS', 'issues': [], 'summary': {'total_transactions': 71526, 'internal_transfers': 32307, 'external_transfers': 24846, 'bill_payments': 14373, 'constraint_violations': 0}, 'failed_rows': {}, 'requirement': 'Transaction type constraints - Transaction-specific field requirements must be satisfied based on transaction type'}}, 'cleaning_summary': {'customer': {'original_count': 1999, 'removed_count': 388, 'final_count': 1611, 'cleaned_percentage': 80.59, 'final_count_after_fk_cleanup': 1611, 'total_removed': 388, 'final_cleaned_percentage': 80.59}, 'customer_device': {'original_count': 2287, 'removed_count': 467, 'final_count': 1820, 'cleaned_percentage': 79.58, 'final_count_after_fk_cleanup': 1467, 'total_removed': 820, 'final_cleaned_percentage': 64.15}, 'authentication_log': {'original_count': 97839, 'removed_count': 0, 'final_count': 97839, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 63376, 'total_removed': 34463, 'final_cleaned_percentage': 64.78}, 'bank_account': {'original_count': 2393, 'removed_count': 0, 'final_count': 2393, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 1929, 'total_removed': 464, 'final_cleaned_percentage': 80.61}, 'face_template': {'original_count': 1699, 'removed_count': 0, 'final_count': 1699, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 1367, 'total_removed': 332, 'final_cleaned_percentage': 80.46}, 'transaction': {'original_count': 71526, 'removed_count': 0, 'final_count': 71526, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 57831, 'total_removed': 13695, 'final_cleaned_percentage': 80.85}}, 'failed_rows_aggregated': {'customer': [3, 6, 10, 19, 24, 29, 35, 37, 42, 44, 51, 55, 56, 57, 59, 71, 77, 79, 83, 85, 91, 93, 99, 102, 109, 111, 114, 123, 134, 135, 144, 147, 155, 156, 160, 162, 164, 167, 168, 170, 172, 183, 189, 190, 194, 199, 205, 206, 208, 215, 218, 225, 227, 231, 237, 242, 250, 252, 254, 256, 264, 271, 273, 275, 282, 287, 288, 292, 305, 307, 311, 312, 329, 331, 332, 333, 338, 346, 350, 353, 355, 357, 364, 368, 372, 374, 382, 384, 389, 395, 398, 401, 403, 408, 417, 423, 424, 425, 431, 433, 435, 438, 452, 457, 460, 471, 473, 474, 476, 482, 484, 489, 491, 492, 493, 497, 501, 518, 527, 532, 537, 540, 544, 546, 554, 555, 560, 562, 565, 566, 568, 569, 575, 589, 603, 604, 606, 633, 639, 645, 650, 660, 662, 665, 667, 668, 671, 679, 682, 683, 689, 692, 698, 699, 703, 726, 729, 736, 741, 742, 744, 754, 766, 770, 781, 786, 791, 794, 799, 805, 809, 811, 819, 832, 850, 853, 866, 869, 871, 872, 877, 892, 894, 904, 906, 908, 909, 910, 914, 920, 923, 926, 952, 954, 957, 969, 974, 981, 982, 983, 989, 993, 999, 1003, 1005, 1006, 1014, 1015, 1020, 1023, 1025, 1028, 1034, 1035, 1042, 1046, 1050, 1051, 1060, 1065, 1066, 1070, 1071, 1072, 1076, 1078, 1086, 1092, 1094, 1104, 1118, 1119, 1120, 1121, 1122, 1123, 1126, 1139, 1157, 1161, 1162, 1164, 1166, 1170, 1174, 1178, 1179, 1183, 1188, 1195, 1207, 1214, 1232, 1234, 1237, 1252, 1253, 1262, 1267, 1273, 1276, 1281, 1292, 1295, 1296, 1304, 1307, 1311, 1318, 1322, 1325, 1328, 1344, 1348, 1349, 1364, 1370, 1372, 1377, 1380, 1385, 1399, 1400, 1401, 1402, 1404, 1409, 1412, 1420, 1430, 1431, 1432, 1445, 1448, 1454, 1457, 1460, 1461, 1479, 1502, 1504, 1509, 1517, 1520, 1531, 1540, 1541, 1542, 1543, 1554, 1556, 1563, 1574, 1576, 1584, 1587, 1595, 1597, 1604, 1609, 1610, 1626, 1627, 1629, 1635, 1638, 1639, 1640, 1647, 1660, 1662, 1665, 1673, 1683, 1698, 1699, 1705, 1706, 1708, 1711, 1723, 1726, 1734, 1736, 1751, 1759, 1763, 1769, 1785, 1811, 1817, 1820, 1824, 1829, 1837, 1852, 1858, 1863, 1867, 1874, 1880, 1881, 1883, 1885, 1890, 1891, 1892, 1894, 1895, 1897, 1898, 1900, 1901, 1904, 1906, 1908, 1913, 1917, 1919, 1929, 1935, 1953, 1958, 1959, 1960, 1978, 1979, 1994], 'customer_device': [6, 12, 13, 28, 29, 48, 50, 51, 53, 57, 62, 63, 74, 79, 86, 90, 98, 103, 107, 108, 124, 125, 134, 151, 153, 155, 157, 160, 161, 165, 166, 169, 174, 179, 181, 188, 192, 194, 197, 200, 206, 208, 209, 211, 213, 215, 218, 219, 234, 244, 258, 259, 264, 268, 269, 277, 280, 282, 283, 284, 290, 297, 298, 299, 308, 310, 321, 328, 337, 341, 348, 353, 376, 384, 385, 387, 398, 399, 402, 407, 409, 416, 418, 420, 423, 427, 440, 442, 445, 447, 450, 454, 459, 467, 469, 480, 481, 483, 485, 491, 494, 512, 519, 522, 533, 540, 543, 550, 552, 554, 555, 561, 564, 579, 584, 593, 595, 600, 608, 621, 629, 631, 633, 638, 641, 649, 650, 662, 671, 672, 674, 676, 678, 681, 687, 690, 692, 696, 704, 705, 706, 711, 715, 717, 718, 719, 723, 725, 726, 729, 731, 734, 739, 741, 742, 766, 772, 775, 785, 789, 792, 797, 799, 803, 806, 810, 824, 825, 826, 840, 842, 843, 864, 866, 872, 887, 891, 893, 894, 896, 899, 902, 904, 906, 908, 913, 920, 921, 940, 941, 945, 953, 956, 965, 970, 971, 973, 975, 977, 978, 988, 991, 995, 998, 1012, 1016, 1025, 1027, 1031, 1035, 1037, 1039, 1042, 1045, 1046, 1047, 1048, 1050, 1052, 1054, 1059, 1064, 1065, 1077, 1079, 1082, 1083, 1090, 1093, 1096, 1103, 1105, 1110, 1114, 1116, 1120, 1135, 1140, 1152, 1154, 1157, 1159, 1167, 1169, 1180, 1183, 1189, 1192, 1193, 1206, 1212, 1217, 1219, 1224, 1225, 1228, 1229, 1231, 1234, 1240, 1245, 1248, 1258, 1260, 1264, 1267, 1271, 1274, 1283, 1284, 1290, 1312, 1313, 1319, 1325, 1327, 1338, 1344, 1345, 1348, 1352, 1367, 1375, 1376, 1381, 1393, 1395, 1399, 1403, 1405, 1410, 1423, 1426, 1431, 1437, 1438, 1444, 1445, 1446, 1454, 1462, 1465, 1466, 1481, 1489, 1490, 1494, 1498, 1501, 1507, 1515, 1518, 1528, 1537, 1543, 1551, 1552, 1557, 1566, 1570, 1577, 1584, 1585, 1588, 1592, 1599, 1602, 1605, 1606, 1611, 1614, 1622, 1623, 1637, 1639, 1651, 1652, 1671, 1675, 1681, 1686, 1688, 1690, 1691, 1696, 1697, 1707, 1710, 1728, 1731, 1741, 1743, 1745, 1747, 1757, 1759, 1760, 1769, 1770, 1772, 1775, 1783, 1800, 1807, 1811, 1816, 1823, 1824, 1828, 1831, 1832, 1835, 1842, 1843, 1852, 1857, 1861, 1865, 1870, 1881, 1887, 1894, 1896, 1901, 1905, 1913, 1915, 1916, 1926, 1928, 1930, 1931, 1934, 1938, 1948, 1959, 1963, 1966, 1970, 1974, 1977, 1980, 1986, 1988, 1990, 1992, 1995, 2009, 2011, 2023, 2024, 2034, 2036, 2037, 2042, 2046, 2049, 2051, 2055, 2072, 2084, 2094, 2096, 2098, 2101, 2118, 2119, 2120, 2125, 2129, 2134, 2143, 2148, 2149, 2158, 2165, 2174, 2175, 2178, 2180, 2184, 2189, 2191, 2193, 2194, 2201, 2203, 2205, 2209, 2219, 2220, 2224, 2229, 2231, 2234, 2240, 2242, 2243, 2245, 2249, 2254, 2263, 2269, 2271, 2272, 2278, 2283]}, 'data_cleaning': {'total_original_records': 177743, 'total_clean_records': 127581, 'overall_clean_percentage': 71.78, 'records_removed': 50162, 'cleaning_approach': 'row_level_intelligent_cleaning'}, 'cleaned_data': {'customer':                                customer_id  ...  status
-0     205494b5-6a4e-427b-aaef-6cac84886f61  ...  Active
-1     86ffcc07-1a39-4bcb-a34a-10c48f411a06  ...  Closed
-2     44bce99f-039d-45e8-a139-e71aa1f22c14  ...  Active
-3     5d0bfe77-e7d3-468d-acf1-413da9c2716d  ...  Active
-4     64f0fc75-60b7-418b-83b9-c0cca4e2f81e  ...  Active
-...                                    ...  ...     ...
-1606  3fd32182-55c6-49fe-bccb-cf99a1611eda  ...  Active
-1607  5d034659-6295-4e91-9fbf-ec0550b469b5  ...  Active
-1608  efae3767-335e-4687-b158-4a5a4cd3d27d  ...  Closed
-1609  d983321b-9246-4aac-93ee-06bd88d8cbcb  ...  Active
-1610  f1a0b3d2-5d17-4c4e-b9c9-8841255963e3  ...  Active
+[2025-07-22T08:45:35.608+0000] {standard_task_runner.py:72} INFO - Started process 147 to run task
+[2025-07-22T08:45:35.609+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'banking_data_quality_daily', 'quality_audit_task', 'scheduled__2025-07-21T02:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/banking_dq_dag.py', '--cfg-path', '/tmp/tmpo_hsue7n']
+[2025-07-22T08:45:35.612+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask quality_audit_task
+[2025-07-22T08:45:35.682+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_data_quality_daily.quality_audit_task scheduled__2025-07-21T02:00:00+00:00 [running]> on host 28ec9070224c
+[2025-07-22T08:45:35.776+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='vulocninh1@gmail.com' AIRFLOW_CTX_DAG_OWNER='banking-data-assignment' AIRFLOW_CTX_DAG_ID='banking_data_quality_daily' AIRFLOW_CTX_TASK_ID='quality_audit_task' AIRFLOW_CTX_EXECUTION_DATE='2025-07-21T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-21T02:00:00+00:00'
+[2025-07-22T08:45:35.777+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-07-22T08:45:35.793+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:35] INFO - Starting banking data quality audit...
+[2025-07-22T08:45:35.793+0000] {banking_dq_dag.py:151} INFO - Starting banking data quality audit...
+[2025-07-22T08:45:36.610+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Running comprehensive quality audit with report generation...
+[2025-07-22T08:45:36.609+0000] {banking_dq_dag.py:162} INFO - Running comprehensive quality audit with report generation...
+[2025-07-22T08:45:36.614+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Logging configured. Log file: /opt/***/logs/scheduler/2025-07-22/banking_audit_20250722_084536.log
+[2025-07-22T08:45:36.614+0000] {monitoring_audit.py:85} INFO - Logging configured. Log file: /opt/***/logs/scheduler/2025-07-22/banking_audit_20250722_084536.log
+[2025-07-22T08:45:36.616+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Starting comprehensive banking data audit with intelligent cleaning...
+[2025-07-22T08:45:36.615+0000] {monitoring_audit.py:407} INFO - Starting comprehensive banking data audit with intelligent cleaning...
+[2025-07-22T08:45:36.616+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Received data: 6 tables, 174774 total records
+[2025-07-22T08:45:36.616+0000] {monitoring_audit.py:415} INFO - Received data: 6 tables, 174774 total records
+[2025-07-22T08:45:36.617+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Data structure validation: 6/6 expected tables found
+[2025-07-22T08:45:36.617+0000] {monitoring_audit.py:389} INFO - Data structure validation: 6/6 expected tables found
+[2025-07-22T08:45:36.618+0000] {data_quality_standards.py:1012} INFO - Starting comprehensive data quality audit and cleaning...
+[2025-07-22T08:45:36.619+0000] {data_quality_standards.py:790} INFO - Starting comprehensive data quality audit...
+[2025-07-22T08:45:36.619+0000] {data_quality_standards.py:73} INFO - Starting null/missing values check...
+[2025-07-22T08:45:36.650+0000] {data_quality_standards.py:130} INFO - Null check completed: PASS
+[2025-07-22T08:45:36.650+0000] {data_quality_standards.py:145} INFO - Starting uniqueness constraints check (with database comparison)...
+[2025-07-22T08:45:36.651+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Connecting to database: banking-db:5433/banking_system as postgres
+[2025-07-22T08:45:36.651+0000] {monitoring_audit.py:117} INFO - Connecting to database: banking-db:5433/banking_system as postgres
+[2025-07-22T08:45:36.666+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:36] INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[2025-07-22T08:45:36.666+0000] {monitoring_audit.py:132} INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[2025-07-22T08:45:36.674+0000] {data_quality_standards.py:162} INFO - Database connection established for uniqueness check
+[2025-07-22T08:45:36.778+0000] {data_quality_standards.py:246} INFO - Enhanced uniqueness check completed: PASS
+[2025-07-22T08:45:36.781+0000] {data_quality_standards.py:259} INFO - Starting format/length validation check...
+[2025-07-22T08:45:36.794+0000] {data_quality_standards.py:341} INFO - Format validation completed: FAIL
+[2025-07-22T08:45:36.795+0000] {data_quality_standards.py:354} INFO - Starting foreign key integrity check...
+[2025-07-22T08:45:36.874+0000] {data_quality_standards.py:413} INFO - Foreign key check completed: PASS
+[2025-07-22T08:45:36.878+0000] {data_quality_standards.py:430} INFO - Starting high value transaction authentication check...
+[2025-07-22T08:45:36.887+0000] {data_quality_standards.py:496} INFO - High value transaction auth check completed: PASS
+[2025-07-22T08:45:36.888+0000] {data_quality_standards.py:510} INFO - Starting device verification requirement check...
+[2025-07-22T08:45:36.897+0000] {data_quality_standards.py:563} INFO - Device verification check completed: FAIL
+[2025-07-22T08:45:36.897+0000] {data_quality_standards.py:577} INFO - Starting daily transaction limit authentication check...
+[2025-07-22T08:45:39.857+0000] {data_quality_standards.py:663} INFO - Daily transaction limit auth check completed: FAIL
+[2025-07-22T08:45:39.864+0000] {data_quality_standards.py:676} INFO - Starting transaction type constraints check...
+[2025-07-22T08:45:44.130+0000] {data_quality_standards.py:774} INFO - Transaction type constraints check completed: PASS
+[2025-07-22T08:45:44.143+0000] {data_quality_standards.py:845} INFO - Data quality audit completed: FAIL (5/8 checks passed)
+[2025-07-22T08:45:44.144+0000] {data_quality_standards.py:861} INFO - Aggregating failed rows from all quality checks...
+[2025-07-22T08:45:44.144+0000] {data_quality_standards.py:879} INFO - Aggregated 834 failed rows across 2 tables
+[2025-07-22T08:45:44.145+0000] {data_quality_standards.py:948} INFO - Cleaning DataFrames by removing failed rows...
+[2025-07-22T08:45:44.147+0000] {data_quality_standards.py:976} INFO - customer: 1627/1998 (81.43%) clean rows
+[2025-07-22T08:45:44.149+0000] {data_quality_standards.py:976} INFO - customer_device: 1829/2292 (79.8%) clean rows
+[2025-07-22T08:45:44.163+0000] {data_quality_standards.py:894} INFO - Handling foreign key dependencies after cleaning...
+[2025-07-22T08:45:44.166+0000] {data_quality_standards.py:929} INFO - Removed 308 face_template records due to missing customer references
+[2025-07-22T08:45:44.170+0000] {data_quality_standards.py:929} INFO - Removed 427 bank_account records due to missing customer references
+[2025-07-22T08:45:44.173+0000] {data_quality_standards.py:929} INFO - Removed 322 customer_device records due to missing customer references
+[2025-07-22T08:45:44.196+0000] {data_quality_standards.py:929} INFO - Removed 12406 transaction records due to missing bank_account references
+[2025-07-22T08:45:44.227+0000] {data_quality_standards.py:929} INFO - Removed 17336 authentication_log records due to missing customer references
+[2025-07-22T08:45:44.311+0000] {data_quality_standards.py:929} INFO - Removed 14158 authentication_log records due to missing customer_device references
+[2025-07-22T08:45:44.312+0000] {data_quality_standards.py:932} INFO - Foreign key dependency handling completed: 44957 additional records removed
+[2025-07-22T08:45:44.318+0000] {data_quality_standards.py:998} INFO - Data cleaning completed: 128983/174774 (73.8%) records retained
+[2025-07-22T08:45:44.321+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - ============================================================
+[2025-07-22T08:45:44.321+0000] {monitoring_audit.py:424} INFO - ============================================================
+[2025-07-22T08:45:44.322+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - DATA CLEANING SUMMARY
+[2025-07-22T08:45:44.322+0000] {monitoring_audit.py:425} INFO - DATA CLEANING SUMMARY
+[2025-07-22T08:45:44.323+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - ============================================================
+[2025-07-22T08:45:44.323+0000] {monitoring_audit.py:426} INFO - ============================================================
+[2025-07-22T08:45:44.325+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - customer: 1627/1998 (81.43%) clean
+[2025-07-22T08:45:44.325+0000] {monitoring_audit.py:435} INFO - customer: 1627/1998 (81.43%) clean
+[2025-07-22T08:45:44.326+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - customer_device: 1507/2292 (65.75%) clean
+[2025-07-22T08:45:44.326+0000] {monitoring_audit.py:435} INFO - customer_device: 1507/2292 (65.75%) clean
+[2025-07-22T08:45:44.327+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - authentication_log: 64597/96091 (67.22%) clean
+[2025-07-22T08:45:44.327+0000] {monitoring_audit.py:435} INFO - authentication_log: 64597/96091 (67.22%) clean
+[2025-07-22T08:45:44.328+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - bank_account: 1944/2371 (81.99%) clean
+[2025-07-22T08:45:44.328+0000] {monitoring_audit.py:435} INFO - bank_account: 1944/2371 (81.99%) clean
+[2025-07-22T08:45:44.329+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - face_template: 1393/1701 (81.89%) clean
+[2025-07-22T08:45:44.329+0000] {monitoring_audit.py:435} INFO - face_template: 1393/1701 (81.89%) clean
+[2025-07-22T08:45:44.330+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - transaction: 57915/70321 (82.36%) clean
+[2025-07-22T08:45:44.330+0000] {monitoring_audit.py:435} INFO - transaction: 57915/70321 (82.36%) clean
+[2025-07-22T08:45:44.332+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - OVERALL: 128983/174774 (73.8%) records retained
+[2025-07-22T08:45:44.332+0000] {monitoring_audit.py:439} INFO - OVERALL: 128983/174774 (73.8%) records retained
+[2025-07-22T08:45:44.333+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Generating audit reports...
+[2025-07-22T08:45:44.333+0000] {monitoring_audit.py:442} INFO - Generating audit reports...
+[2025-07-22T08:45:44.338+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Detailed audit log generated: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_084544.txt
+[2025-07-22T08:45:44.338+0000] {monitoring_audit.py:259} INFO - Detailed audit log generated: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_084544.txt
+[2025-07-22T08:45:44.352+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Summary table generated: /opt/***/reports/2025-07-22/audit_summary_table_20250722_084544.csv
+[2025-07-22T08:45:44.352+0000] {monitoring_audit.py:313} INFO - Summary table generated: /opt/***/reports/2025-07-22/audit_summary_table_20250722_084544.csv
+[2025-07-22T08:45:44.359+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - JSON report generated: /opt/***/reports/2025-07-22/audit_report_20250722_084544.json
+[2025-07-22T08:45:44.359+0000] {monitoring_audit.py:343} INFO - JSON report generated: /opt/***/reports/2025-07-22/audit_report_20250722_084544.json
+[2025-07-22T08:45:44.361+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - ================================================================================
+[2025-07-22T08:45:44.361+0000] {monitoring_audit.py:463} INFO - ================================================================================
+[2025-07-22T08:45:44.362+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - DATA AUDIT & CLEANING WITH REPORTS COMPLETED
+[2025-07-22T08:45:44.362+0000] {monitoring_audit.py:464} INFO - DATA AUDIT & CLEANING WITH REPORTS COMPLETED
+[2025-07-22T08:45:44.363+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - ================================================================================
+[2025-07-22T08:45:44.363+0000] {monitoring_audit.py:465} INFO - ================================================================================
+[2025-07-22T08:45:44.364+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Audit Status: FAIL
+[2025-07-22T08:45:44.364+0000] {monitoring_audit.py:466} INFO - Audit Status: FAIL
+[2025-07-22T08:45:44.365+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Checks Pass Rate: 62.5%
+[2025-07-22T08:45:44.365+0000] {monitoring_audit.py:467} INFO - Checks Pass Rate: 62.5%
+[2025-07-22T08:45:44.367+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Checks: 5/8 passed
+[2025-07-22T08:45:44.367+0000] {monitoring_audit.py:468} INFO - Checks: 5/8 passed
+[2025-07-22T08:45:44.368+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Data Quality: 128983/174774 (73.8%) clean records
+[2025-07-22T08:45:44.368+0000] {monitoring_audit.py:469} INFO - Data Quality: 128983/174774 (73.8%) clean records
+[2025-07-22T08:45:44.370+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO -
+[2025-07-22T08:45:44.370+0000] {monitoring_audit.py:470} INFO - 
+[2025-07-22T08:45:44.371+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Generated Reports:
+[2025-07-22T08:45:44.371+0000] {monitoring_audit.py:471} INFO - Generated Reports:
+[2025-07-22T08:45:44.372+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO -   Detailed Log: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_084544.txt
+[2025-07-22T08:45:44.372+0000] {monitoring_audit.py:472} INFO -   Detailed Log: /opt/***/reports/2025-07-22/audit_detailed_log_20250722_084544.txt
+[2025-07-22T08:45:44.373+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO -   Summary Table: /opt/***/reports/2025-07-22/audit_summary_table_20250722_084544.csv
+[2025-07-22T08:45:44.373+0000] {monitoring_audit.py:473} INFO -   Summary Table: /opt/***/reports/2025-07-22/audit_summary_table_20250722_084544.csv
+[2025-07-22T08:45:44.374+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO -   JSON Report: /opt/***/reports/2025-07-22/audit_report_20250722_084544.json
+[2025-07-22T08:45:44.374+0000] {monitoring_audit.py:474} INFO -   JSON Report: /opt/***/reports/2025-07-22/audit_report_20250722_084544.json
+[2025-07-22T08:45:44.375+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO -
+[2025-07-22T08:45:44.375+0000] {monitoring_audit.py:475} INFO - 
+[2025-07-22T08:45:44.376+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Clean data prepared for downstream database loading task
+[2025-07-22T08:45:44.376+0000] {monitoring_audit.py:476} INFO - Clean data prepared for downstream database loading task
+[2025-07-22T08:45:44.377+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - ================================================================================
+[2025-07-22T08:45:44.377+0000] {monitoring_audit.py:477} INFO - ================================================================================
+[2025-07-22T08:45:44.378+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Audit completed - Status: FAIL
+[2025-07-22T08:45:44.378+0000] {banking_dq_dag.py:171} INFO - Audit completed - Status: FAIL
+[2025-07-22T08:45:44.379+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Pass rate: 62.5%
+[2025-07-22T08:45:44.378+0000] {banking_dq_dag.py:172} INFO - Pass rate: 62.5%
+[2025-07-22T08:45:44.379+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Checks: 5/8 passed
+[2025-07-22T08:45:44.379+0000] {banking_dq_dag.py:173} INFO - Checks: 5/8 passed
+[2025-07-22T08:45:44.380+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Clean data: 128983/174774 (73.8%) records
+[2025-07-22T08:45:44.380+0000] {banking_dq_dag.py:185} INFO - Clean data: 128983/174774 (73.8%) records
+[2025-07-22T08:45:44.381+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:44] INFO - Reports generated: audit logs, summary tables, JSON reports
+[2025-07-22T08:45:44.381+0000] {banking_dq_dag.py:186} INFO - Reports generated: audit logs, summary tables, JSON reports
+[2025-07-22T08:45:48.058+0000] {python.py:240} INFO - Done. Returned value was: {'audit_results': {'audit_summary': {'audit_timestamp': '2025-07-22T08:45:44.143222', 'overall_status': 'FAIL', 'total_checks': 8, 'passed_checks': 5, 'failed_checks': 3, 'skipped_checks': 0, 'pass_rate': 62.5, 'data_tables_analyzed': ['customer', 'customer_device', 'authentication_log', 'bank_account', 'face_template', 'transaction'], 'total_records_analyzed': 174774}, 'check_results': {'null_missing_values': {'check_type': 'null_missing_values', 'status': 'PASS', 'issues': [], 'summary': {'customer': {'total_records': 1998, 'issues_count': 0, 'failed_records': 0}, 'customer_device': {'total_records': 2292, 'issues_count': 0, 'failed_records': 0}, 'authentication_log': {'total_records': 96091, 'issues_count': 0, 'failed_records': 0}, 'bank_account': {'total_records': 2371, 'issues_count': 0, 'failed_records': 0}, 'face_template': {'total_records': 1701, 'issues_count': 0, 'failed_records': 0}, 'transaction': {'total_records': 70321, 'issues_count': 0, 'failed_records': 0}}, 'failed_rows': {}, 'requirement': 'Null/missing values - Required fields must not be empty'}, 'uniqueness_constraints': {'check_type': 'uniqueness_constraints', 'status': 'PASS', 'issues': [], 'summary': {'customer': {'total_records': 1998, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'customer_device': {'total_records': 2292, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'authentication_log': {'total_records': 96091, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'bank_account': {'total_records': 2371, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'face_template': {'total_records': 1701, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}, 'transaction': {'total_records': 70321, 'issues_count': 0, 'failed_records': 0, 'database_check_available': True}}, 'failed_rows': {}, 'requirement': 'Uniqueness - Primary keys and unique fields must be unique across table'}, 'format_validation': {'check_type': 'format_validation', 'status': 'FAIL', 'issues': [{'table': 'customer', 'field': 'id_passport_number', 'invalid_count': 163, 'total_count': 1998, 'invalid_percentage': 8.16, 'expected_patterns': ['cccd_number', 'passport_number'], 'sample_invalid': ['59017264110085', 'AY254210', 'K859440', '0666315607', '78348506367'], 'failed_row_indices': [2, 6, 8, 14, 40, 52, 57, 58, 76, 84, 136, 151, 168, 169, 172, 174, 180, 181, 184, 191, 193, 214, 215, 220, 235, 249, 256, 275, 282, 286, 287, 304, 308, 317, 347, 372, 377, 389, 432, 469, 482, 510, 527, 542, 585, 586, 594, 604, 605, 609, 622, 626, 673, 682, 707, 709, 715, 718, 721, 733, 734, 742, 758, 760, 766, 772, 774, 777, 785, 788, 795, 809, 816, 850, 871, 873, 895, 930, 937, 967, 970, 984, 993, 1020, 1025, 1065, 1092, 1099, 1100, 1103, 1106, 1110, 1112, 1117, 1122, 1145, 1152, 1157, 1160, 1176, 1177, 1190, 1217, 1227, 1231, 1238, 1270, 1273, 1277, 1317, 1327, 1330, 1347, 1353, 1365, 1388, 1393, 1413, 1425, 1428, 1452, 1458, 1459, 1472, 1478, 1480, 1505, 1517, 1524, 1533, 1566, 1577, 1606, 1611, 1612, 1635, 1653, 1673, 1692, 1698, 1704, 1721, 1737, 1751, 1756, 1770, 1791, 1792, 1808, 1819, 1821, 1836, 1878, 1921, 1923, 1924, 1928, 1933, 1941, 1955, 1968, 1975, 1984]}, {'table': 'customer', 'field': 'phone_number', 'invalid_count': 224, 'total_count': 1998, 'invalid_percentage': 11.21, 'expected_patterns': ['vietnamese_phone'], 'sample_invalid': ['09264290', '09307030', '082173899218', '08555242', '08859599516'], 'failed_row_indices': [4, 33, 39, 41, 43, 44, 55, 57, 70, 83, 94, 101, 109, 115, 127, 131, 132, 145, 156, 159, 165, 188, 195, 215, 219, 220, 233, 239, 245, 249, 252, 254, 255, 262, 275, 281, 284, 289, 291, 295, 312, 315, 316, 350, 351, 353, 354, 366, 374, 398, 419, 426, 449, 452, 458, 469, 480, 489, 508, 520, 522, 530, 541, 542, 563, 577, 613, 624, 646, 664, 683, 689, 725, 731, 749, 770, 778, 781, 787, 796, 802, 807, 815, 825, 830, 833, 844, 852, 860, 881, 884, 885, 892, 893, 895, 906, 907, 914, 918, 919, 932, 966, 993, 997, 1000, 1001, 1002, 1004, 1005, 1007, 1015, 1028, 1033, 1035, 1038, 1043, 1049, 1050, 1063, 1075, 1079, 1083, 1085, 1095, 1099, 1106, 1124, 1136, 1149, 1156, 1174, 1198, 1206, 1210, 1218, 1226, 1236, 1242, 1249, 1252, 1254, 1256, 1276, 1283, 1297, 1319, 1320, 1323, 1329, 1332, 1336, 1337, 1342, 1344, 1351, 1356, 1359, 1366, 1392, 1415, 1417, 1432, 1441, 1442, 1443, 1469, 1473, 1483, 1488, 1489, 1510, 1524, 1529, 1577, 1587, 1593, 1596, 1599, 1601, 1602, 1612, 1626, 1633, 1645, 1654, 1656, 1658, 1664, 1686, 1690, 1691, 1692, 1695, 1697, 1699, 1713, 1714, 1725, 1727, 1741, 1751, 1762, 1774, 1804, 1815, 1816, 1823, 1824, 1825, 1839, 1859, 1861, 1875, 1886, 1892, 1902, 1904, 1915, 1936, 1957, 1974, 1977, 1980, 1988]}], 'summary': {'customer': {'total_records': 1998, 'issues_count': 2, 'failed_records': 371}, 'customer_device': {'total_records': 2292, 'issues_count': 0, 'failed_records': 0}, 'authentication_log': {'total_records': 96091, 'issues_count': 0, 'failed_records': 0}, 'bank_account': {'total_records': 2371, 'issues_count': 0, 'failed_records': 0}, 'face_template': {'total_records': 1701, 'issues_count': 0, 'failed_records': 0}, 'transaction': {'total_records': 70321, 'issues_count': 0, 'failed_records': 0}}, 'failed_rows': {'customer': [2, 4, 6, 8, 14, 33, 39, 40, 41, 43, 44, 52, 55, 57, 58, 70, 76, 83, 84, 94, 101, 109, 115, 127, 131, 132, 136, 145, 151, 156, 159, 165, 168, 169, 172, 174, 180, 181, 184, 188, 191, 193, 195, 214, 215, 219, 220, 233, 235, 239, 245, 249, 252, 254, 255, 256, 262, 275, 281, 282, 284, 286, 287, 289, 291, 295, 304, 308, 312, 315, 316, 317, 347, 350, 351, 353, 354, 366, 372, 374, 377, 389, 398, 419, 426, 432, 449, 452, 458, 469, 480, 482, 489, 508, 510, 520, 522, 527, 530, 541, 542, 563, 577, 585, 586, 594, 604, 605, 609, 613, 622, 624, 626, 646, 664, 673, 682, 683, 689, 707, 709, 715, 718, 721, 725, 731, 733, 734, 742, 749, 758, 760, 766, 770, 772, 774, 777, 778, 781, 785, 787, 788, 795, 796, 802, 807, 809, 815, 816, 825, 830, 833, 844, 850, 852, 860, 871, 873, 881, 884, 885, 892, 893, 895, 906, 907, 914, 918, 919, 930, 932, 937, 966, 967, 970, 984, 993, 997, 1000, 1001, 1002, 1004, 1005, 1007, 1015, 1020, 1025, 1028, 1033, 1035, 1038, 1043, 1049, 1050, 1063, 1065, 1075, 1079, 1083, 1085, 1092, 1095, 1099, 1100, 1103, 1106, 1110, 1112, 1117, 1122, 1124, 1136, 1145, 1149, 1152, 1156, 1157, 1160, 1174, 1176, 1177, 1190, 1198, 1206, 1210, 1217, 1218, 1226, 1227, 1231, 1236, 1238, 1242, 1249, 1252, 1254, 1256, 1270, 1273, 1276, 1277, 1283, 1297, 1317, 1319, 1320, 1323, 1327, 1329, 1330, 1332, 1336, 1337, 1342, 1344, 1347, 1351, 1353, 1356, 1359, 1365, 1366, 1388, 1392, 1393, 1413, 1415, 1417, 1425, 1428, 1432, 1441, 1442, 1443, 1452, 1458, 1459, 1469, 1472, 1473, 1478, 1480, 1483, 1488, 1489, 1505, 1510, 1517, 1524, 1529, 1533, 1566, 1577, 1587, 1593, 1596, 1599, 1601, 1602, 1606, 1611, 1612, 1626, 1633, 1635, 1645, 1653, 1654, 1656, 1658, 1664, 1673, 1686, 1690, 1691, 1692, 1695, 1697, 1698, 1699, 1704, 1713, 1714, 1721, 1725, 1727, 1737, 1741, 1751, 1756, 1762, 1770, 1774, 1791, 1792, 1804, 1808, 1815, 1816, 1819, 1821, 1823, 1824, 1825, 1836, 1839, 1859, 1861, 1875, 1878, 1886, 1892, 1902, 1904, 1915, 1921, 1923, 1924, 1928, 1933, 1936, 1941, 1955, 1957, 1968, 1974, 1975, 1977, 1980, 1984, 1988]}, 'requirement': 'Format/length validation - Data must match specified formats (phone numbers, emails, account numbers, etc.)'}, 'foreign_key_integrity': {'check_type': 'foreign_key_integrity', 'status': 'PASS', 'issues': [], 'summary': {'total_relationships_checked': 7, 'failed_relationships': 0, 'total_failed_records': 0}, 'failed_rows': {}, 'requirement': 'Foreign key integrity - All foreign key references must exist in parent tables'}, 'high_value_transaction_auth': {'check_type': 'high_value_transaction_auth', 'status': 'PASS', 'issues': [], 'summary': {'total_transactions': 70321, 'high_value_transactions': 9082, 'violations': 0, 'compliance_rate': 100.0}, 'failed_rows': {}, 'requirement': 'Transactions more than 10M VND must use strong auth (biometric or OTP) - per 2345/QĐ-NHNN 2023'}, 'device_verification_requirement': {'check_type': 'device_verification_requirement', 'status': 'FAIL', 'issues': [{'rule': 'Active devices must be trusted/verified', 'untrusted_active_devices': 463, 'total_active_devices': 1923, 'violation_percentage': 20.2, 'untrusted_by_device_type': {'Desktop': 41, 'Mobile': 379, 'Tablet': 43}, 'sample_violations': [{'device_identifier': 'IMEI:358755101359266', 'device_type': 'Mobile', 'customer_id': 'd8b5f3b8-d780-46d9-92e7-3dde761fbc2e'}, {'device_identifier': 'MAC:CA:AF:07:C2:90:5A', 'device_type': 'Desktop', 'customer_id': 'b170577b-e210-4fc6-89d0-03b9c9ad6e9b'}, {'device_identifier': 'UUID:b9890791-eefb-cef3-5d46-fad8656b5718', 'device_type': 'Tablet', 'customer_id': 'bf26675e-65e1-4472-9a4a-8947bd3420b3'}, {'device_identifier': 'IMEI:353289102240788', 'device_type': 'Mobile', 'customer_id': 'eba89b93-2886-4b9f-8a4f-a1596ea45c22'}, {'device_identifier': 'IMEI:867819052092799', 'device_type': 'Mobile', 'customer_id': '70a6704e-e1ae-47b0-bcfc-b5c353ddec06'}], 'failed_row_indices': [8, 11, 15, 17, 27, 35, 37, 40, 43, 46, 47, 52, 53, 57, 66, 68, 84, 85, 87, 92, 115, 121, 123, 125, 130, 133, 145, 148, 149, 150, 159, 167, 172, 175, 176, 184, 190, 200, 201, 208, 210, 226, 228, 229, 231, 247, 261, 262, 266, 267, 293, 297, 314, 315, 317, 335, 339, 343, 350, 353, 359, 364, 369, 371, 373, 395, 401, 407, 410, 411, 412, 413, 425, 431, 432, 435, 445, 447, 448, 451, 453, 464, 466, 469, 478, 483, 484, 486, 488, 491, 498, 502, 504, 505, 520, 525, 540, 542, 544, 549, 562, 565, 567, 572, 577, 585, 587, 589, 592, 594, 598, 606, 607, 609, 612, 615, 628, 629, 631, 632, 636, 640, 641, 649, 661, 666, 675, 689, 692, 693, 696, 704, 713, 728, 730, 733, 734, 737, 741, 742, 744, 745, 746, 750, 752, 775, 778, 785, 788, 792, 794, 800, 802, 809, 818, 819, 821, 827, 828, 839, 843, 845, 850, 865, 871, 875, 879, 880, 889, 892, 901, 904, 905, 908, 911, 919, 921, 926, 930, 931, 936, 942, 943, 949, 958, 959, 963, 968, 972, 980, 988, 994, 995, 997, 1004, 1005, 1006, 1010, 1013, 1014, 1023, 1024, 1030, 1032, 1033, 1036, 1037, 1041, 1043, 1050, 1052, 1056, 1079, 1083, 1085, 1089, 1090, 1092, 1094, 1095, 1104, 1109, 1110, 1111, 1116, 1118, 1120, 1124, 1125, 1134, 1135, 1136, 1144, 1147, 1148, 1149, 1157, 1165, 1169, 1176, 1184, 1185, 1190, 1191, 1192, 1194, 1198, 1207, 1208, 1214, 1219, 1220, 1228, 1235, 1236, 1239, 1244, 1245, 1246, 1261, 1262, 1274, 1286, 1287, 1290, 1291, 1294, 1296, 1298, 1300, 1301, 1312, 1324, 1326, 1329, 1338, 1339, 1340, 1343, 1351, 1359, 1362, 1363, 1368, 1372, 1378, 1381, 1396, 1398, 1400, 1408, 1416, 1417, 1419, 1424, 1428, 1429, 1435, 1437, 1439, 1455, 1458, 1461, 1469, 1477, 1480, 1482, 1502, 1503, 1509, 1514, 1523, 1527, 1528, 1534, 1537, 1540, 1544, 1555, 1560, 1562, 1574, 1585, 1591, 1593, 1606, 1607, 1610, 1613, 1614, 1618, 1620, 1621, 1625, 1626, 1627, 1633, 1637, 1639, 1643, 1653, 1654, 1657, 1658, 1667, 1669, 1670, 1676, 1679, 1683, 1686, 1687, 1692, 1700, 1709, 1715, 1718, 1721, 1734, 1739, 1743, 1753, 1757, 1764, 1765, 1779, 1781, 1789, 1799, 1800, 1801, 1802, 1803, 1805, 1806, 1814, 1815, 1821, 1831, 1835, 1840, 1846, 1847, 1862, 1863, 1872, 1874, 1877, 1878, 1882, 1885, 1895, 1896, 1901, 1902, 1904, 1906, 1908, 1912, 1913, 1914, 1915, 1923, 1928, 1929, 1930, 1934, 1935, 1938, 1939, 1951, 1961, 1964, 1973, 1975, 1979, 1984, 1986, 1988, 1989, 1996, 1999, 2034, 2050, 2054, 2055, 2058, 2066, 2071, 2073, 2074, 2092, 2102, 2106, 2113, 2114, 2128, 2136, 2140, 2148, 2168, 2174, 2179, 2186, 2194, 2197, 2201, 2214, 2218, 2222, 2224, 2226, 2230, 2234, 2246, 2251, 2254, 2259, 2262, 2266, 2271, 2276, 2282]}], 'summary': {'total_devices': 2292, 'active_devices': 1923, 'trusted_devices': 1730, 'untrusted_active_devices': 463, 'trust_rate': 75.48}, 'failed_rows': {'customer_device': [8, 11, 15, 17, 27, 35, 37, 40, 43, 46, 47, 52, 53, 57, 66, 68, 84, 85, 87, 92, 115, 121, 123, 125, 130, 133, 145, 148, 149, 150, 159, 167, 172, 175, 176, 184, 190, 200, 201, 208, 210, 226, 228, 229, 231, 247, 261, 262, 266, 267, 293, 297, 314, 315, 317, 335, 339, 343, 350, 353, 359, 364, 369, 371, 373, 395, 401, 407, 410, 411, 412, 413, 425, 431, 432, 435, 445, 447, 448, 451, 453, 464, 466, 469, 478, 483, 484, 486, 488, 491, 498, 502, 504, 505, 520, 525, 540, 542, 544, 549, 562, 565, 567, 572, 577, 585, 587, 589, 592, 594, 598, 606, 607, 609, 612, 615, 628, 629, 631, 632, 636, 640, 641, 649, 661, 666, 675, 689, 692, 693, 696, 704, 713, 728, 730, 733, 734, 737, 741, 742, 744, 745, 746, 750, 752, 775, 778, 785, 788, 792, 794, 800, 802, 809, 818, 819, 821, 827, 828, 839, 843, 845, 850, 865, 871, 875, 879, 880, 889, 892, 901, 904, 905, 908, 911, 919, 921, 926, 930, 931, 936, 942, 943, 949, 958, 959, 963, 968, 972, 980, 988, 994, 995, 997, 1004, 1005, 1006, 1010, 1013, 1014, 1023, 1024, 1030, 1032, 1033, 1036, 1037, 1041, 1043, 1050, 1052, 1056, 1079, 1083, 1085, 1089, 1090, 1092, 1094, 1095, 1104, 1109, 1110, 1111, 1116, 1118, 1120, 1124, 1125, 1134, 1135, 1136, 1144, 1147, 1148, 1149, 1157, 1165, 1169, 1176, 1184, 1185, 1190, 1191, 1192, 1194, 1198, 1207, 1208, 1214, 1219, 1220, 1228, 1235, 1236, 1239, 1244, 1245, 1246, 1261, 1262, 1274, 1286, 1287, 1290, 1291, 1294, 1296, 1298, 1300, 1301, 1312, 1324, 1326, 1329, 1338, 1339, 1340, 1343, 1351, 1359, 1362, 1363, 1368, 1372, 1378, 1381, 1396, 1398, 1400, 1408, 1416, 1417, 1419, 1424, 1428, 1429, 1435, 1437, 1439, 1455, 1458, 1461, 1469, 1477, 1480, 1482, 1502, 1503, 1509, 1514, 1523, 1527, 1528, 1534, 1537, 1540, 1544, 1555, 1560, 1562, 1574, 1585, 1591, 1593, 1606, 1607, 1610, 1613, 1614, 1618, 1620, 1621, 1625, 1626, 1627, 1633, 1637, 1639, 1643, 1653, 1654, 1657, 1658, 1667, 1669, 1670, 1676, 1679, 1683, 1686, 1687, 1692, 1700, 1709, 1715, 1718, 1721, 1734, 1739, 1743, 1753, 1757, 1764, 1765, 1779, 1781, 1789, 1799, 1800, 1801, 1802, 1803, 1805, 1806, 1814, 1815, 1821, 1831, 1835, 1840, 1846, 1847, 1862, 1863, 1872, 1874, 1877, 1878, 1882, 1885, 1895, 1896, 1901, 1902, 1904, 1906, 1908, 1912, 1913, 1914, 1915, 1923, 1928, 1929, 1930, 1934, 1935, 1938, 1939, 1951, 1961, 1964, 1973, 1975, 1979, 1984, 1986, 1988, 1989, 1996, 1999, 2034, 2050, 2054, 2055, 2058, 2066, 2071, 2073, 2074, 2092, 2102, 2106, 2113, 2114, 2128, 2136, 2140, 2148, 2168, 2174, 2179, 2186, 2194, 2197, 2201, 2214, 2218, 2222, 2224, 2226, 2230, 2234, 2246, 2251, 2254, 2259, 2262, 2266, 2271, 2276, 2282]}, 'requirement': 'Device must be verified if new or untrusted - Active devices must be trusted/verified'}, 'daily_transaction_limit_auth': {'check_type': 'daily_transaction_limit_auth', 'status': 'FAIL', 'issues': [{'rule': 'Daily transactions >= 20M VND must have at least one strong authentication (PIN_OTP or PIN_OTP_Biometric)', 'violation_count': 11, 'total_high_daily_volume_cases': 4128, 'violation_percentage': 0.27, 'sample_violations': [{'customer_id': '041761da-0aae-452e-97ca-0bf6c8eda73f', 'transaction_date': '2025-07-06', 'total_amount': 24790000.0, 'transaction_count': 3, 'auth_methods_used': ['PIN']}, {'customer_id': '0424e077-47dc-4035-83e3-99fb76f7e81b', 'transaction_date': '2025-07-10', 'total_amount': 24620000.0, 'transaction_count': 3, 'auth_methods_used': ['PIN']}, {'customer_id': '044bdbc4-a26c-43d6-91e6-d825f60e173c', 'transaction_date': '2025-07-03', 'total_amount': 22610000.0, 'transaction_count': 4, 'auth_methods_used': ['PIN']}, {'customer_id': '123952e0-ff9f-4175-a41d-397802aa21f5', 'transaction_date': '2025-06-24', 'total_amount': 24540000.0, 'transaction_count': 4, 'auth_methods_used': ['PIN']}, {'customer_id': '34dafbe1-c906-4538-b151-a88c4d0aa8ec', 'transaction_date': '2025-07-15', 'total_amount': 20170000.0, 'transaction_count': 3, 'auth_methods_used': ['PIN']}]}], 'summary': {'total_customer_days_analyzed': 33805, 'high_volume_days': 4128, 'violation_days': 11, 'compliance_rate': 99.73}, 'failed_rows': {}, 'requirement': 'Total transaction amount per customer more than 20M VND in a day must have at least one strong auth method - per 2345/QĐ-NHNN 2023'}, 'transaction_type_constraints': {'check_type': 'transaction_type_constraints', 'status': 'PASS', 'issues': [], 'summary': {'total_transactions': 70321, 'internal_transfers': 31759, 'external_transfers': 24710, 'bill_payments': 13852, 'constraint_violations': 0}, 'failed_rows': {}, 'requirement': 'Transaction type constraints - Transaction-specific field requirements must be satisfied based on transaction type'}}, 'cleaning_summary': {'customer': {'original_count': 1998, 'removed_count': 371, 'final_count': 1627, 'cleaned_percentage': 81.43, 'final_count_after_fk_cleanup': 1627, 'total_removed': 371, 'final_cleaned_percentage': 81.43}, 'customer_device': {'original_count': 2292, 'removed_count': 463, 'final_count': 1829, 'cleaned_percentage': 79.8, 'final_count_after_fk_cleanup': 1507, 'total_removed': 785, 'final_cleaned_percentage': 65.75}, 'authentication_log': {'original_count': 96091, 'removed_count': 0, 'final_count': 96091, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 64597, 'total_removed': 31494, 'final_cleaned_percentage': 67.22}, 'bank_account': {'original_count': 2371, 'removed_count': 0, 'final_count': 2371, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 1944, 'total_removed': 427, 'final_cleaned_percentage': 81.99}, 'face_template': {'original_count': 1701, 'removed_count': 0, 'final_count': 1701, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 1393, 'total_removed': 308, 'final_cleaned_percentage': 81.89}, 'transaction': {'original_count': 70321, 'removed_count': 0, 'final_count': 70321, 'cleaned_percentage': 100.0, 'final_count_after_fk_cleanup': 57915, 'total_removed': 12406, 'final_cleaned_percentage': 82.36}}, 'failed_rows_aggregated': {'customer': [2, 4, 6, 8, 14, 33, 39, 40, 41, 43, 44, 52, 55, 57, 58, 70, 76, 83, 84, 94, 101, 109, 115, 127, 131, 132, 136, 145, 151, 156, 159, 165, 168, 169, 172, 174, 180, 181, 184, 188, 191, 193, 195, 214, 215, 219, 220, 233, 235, 239, 245, 249, 252, 254, 255, 256, 262, 275, 281, 282, 284, 286, 287, 289, 291, 295, 304, 308, 312, 315, 316, 317, 347, 350, 351, 353, 354, 366, 372, 374, 377, 389, 398, 419, 426, 432, 449, 452, 458, 469, 480, 482, 489, 508, 510, 520, 522, 527, 530, 541, 542, 563, 577, 585, 586, 594, 604, 605, 609, 613, 622, 624, 626, 646, 664, 673, 682, 683, 689, 707, 709, 715, 718, 721, 725, 731, 733, 734, 742, 749, 758, 760, 766, 770, 772, 774, 777, 778, 781, 785, 787, 788, 795, 796, 802, 807, 809, 815, 816, 825, 830, 833, 844, 850, 852, 860, 871, 873, 881, 884, 885, 892, 893, 895, 906, 907, 914, 918, 919, 930, 932, 937, 966, 967, 970, 984, 993, 997, 1000, 1001, 1002, 1004, 1005, 1007, 1015, 1020, 1025, 1028, 1033, 1035, 1038, 1043, 1049, 1050, 1063, 1065, 1075, 1079, 1083, 1085, 1092, 1095, 1099, 1100, 1103, 1106, 1110, 1112, 1117, 1122, 1124, 1136, 1145, 1149, 1152, 1156, 1157, 1160, 1174, 1176, 1177, 1190, 1198, 1206, 1210, 1217, 1218, 1226, 1227, 1231, 1236, 1238, 1242, 1249, 1252, 1254, 1256, 1270, 1273, 1276, 1277, 1283, 1297, 1317, 1319, 1320, 1323, 1327, 1329, 1330, 1332, 1336, 1337, 1342, 1344, 1347, 1351, 1353, 1356, 1359, 1365, 1366, 1388, 1392, 1393, 1413, 1415, 1417, 1425, 1428, 1432, 1441, 1442, 1443, 1452, 1458, 1459, 1469, 1472, 1473, 1478, 1480, 1483, 1488, 1489, 1505, 1510, 1517, 1524, 1529, 1533, 1566, 1577, 1587, 1593, 1596, 1599, 1601, 1602, 1606, 1611, 1612, 1626, 1633, 1635, 1645, 1653, 1654, 1656, 1658, 1664, 1673, 1686, 1690, 1691, 1692, 1695, 1697, 1698, 1699, 1704, 1713, 1714, 1721, 1725, 1727, 1737, 1741, 1751, 1756, 1762, 1770, 1774, 1791, 1792, 1804, 1808, 1815, 1816, 1819, 1821, 1823, 1824, 1825, 1836, 1839, 1859, 1861, 1875, 1878, 1886, 1892, 1902, 1904, 1915, 1921, 1923, 1924, 1928, 1933, 1936, 1941, 1955, 1957, 1968, 1974, 1975, 1977, 1980, 1984, 1988], 'customer_device': [8, 11, 15, 17, 27, 35, 37, 40, 43, 46, 47, 52, 53, 57, 66, 68, 84, 85, 87, 92, 115, 121, 123, 125, 130, 133, 145, 148, 149, 150, 159, 167, 172, 175, 176, 184, 190, 200, 201, 208, 210, 226, 228, 229, 231, 247, 261, 262, 266, 267, 293, 297, 314, 315, 317, 335, 339, 343, 350, 353, 359, 364, 369, 371, 373, 395, 401, 407, 410, 411, 412, 413, 425, 431, 432, 435, 445, 447, 448, 451, 453, 464, 466, 469, 478, 483, 484, 486, 488, 491, 498, 502, 504, 505, 520, 525, 540, 542, 544, 549, 562, 565, 567, 572, 577, 585, 587, 589, 592, 594, 598, 606, 607, 609, 612, 615, 628, 629, 631, 632, 636, 640, 641, 649, 661, 666, 675, 689, 692, 693, 696, 704, 713, 728, 730, 733, 734, 737, 741, 742, 744, 745, 746, 750, 752, 775, 778, 785, 788, 792, 794, 800, 802, 809, 818, 819, 821, 827, 828, 839, 843, 845, 850, 865, 871, 875, 879, 880, 889, 892, 901, 904, 905, 908, 911, 919, 921, 926, 930, 931, 936, 942, 943, 949, 958, 959, 963, 968, 972, 980, 988, 994, 995, 997, 1004, 1005, 1006, 1010, 1013, 1014, 1023, 1024, 1030, 1032, 1033, 1036, 1037, 1041, 1043, 1050, 1052, 1056, 1079, 1083, 1085, 1089, 1090, 1092, 1094, 1095, 1104, 1109, 1110, 1111, 1116, 1118, 1120, 1124, 1125, 1134, 1135, 1136, 1144, 1147, 1148, 1149, 1157, 1165, 1169, 1176, 1184, 1185, 1190, 1191, 1192, 1194, 1198, 1207, 1208, 1214, 1219, 1220, 1228, 1235, 1236, 1239, 1244, 1245, 1246, 1261, 1262, 1274, 1286, 1287, 1290, 1291, 1294, 1296, 1298, 1300, 1301, 1312, 1324, 1326, 1329, 1338, 1339, 1340, 1343, 1351, 1359, 1362, 1363, 1368, 1372, 1378, 1381, 1396, 1398, 1400, 1408, 1416, 1417, 1419, 1424, 1428, 1429, 1435, 1437, 1439, 1455, 1458, 1461, 1469, 1477, 1480, 1482, 1502, 1503, 1509, 1514, 1523, 1527, 1528, 1534, 1537, 1540, 1544, 1555, 1560, 1562, 1574, 1585, 1591, 1593, 1606, 1607, 1610, 1613, 1614, 1618, 1620, 1621, 1625, 1626, 1627, 1633, 1637, 1639, 1643, 1653, 1654, 1657, 1658, 1667, 1669, 1670, 1676, 1679, 1683, 1686, 1687, 1692, 1700, 1709, 1715, 1718, 1721, 1734, 1739, 1743, 1753, 1757, 1764, 1765, 1779, 1781, 1789, 1799, 1800, 1801, 1802, 1803, 1805, 1806, 1814, 1815, 1821, 1831, 1835, 1840, 1846, 1847, 1862, 1863, 1872, 1874, 1877, 1878, 1882, 1885, 1895, 1896, 1901, 1902, 1904, 1906, 1908, 1912, 1913, 1914, 1915, 1923, 1928, 1929, 1930, 1934, 1935, 1938, 1939, 1951, 1961, 1964, 1973, 1975, 1979, 1984, 1986, 1988, 1989, 1996, 1999, 2034, 2050, 2054, 2055, 2058, 2066, 2071, 2073, 2074, 2092, 2102, 2106, 2113, 2114, 2128, 2136, 2140, 2148, 2168, 2174, 2179, 2186, 2194, 2197, 2201, 2214, 2218, 2222, 2224, 2226, 2230, 2234, 2246, 2251, 2254, 2259, 2262, 2266, 2271, 2276, 2282]}, 'data_cleaning': {'total_original_records': 174774, 'total_clean_records': 128983, 'overall_clean_percentage': 73.8, 'records_removed': 45791, 'cleaning_approach': 'row_level_intelligent_cleaning'}, 'cleaned_data': {'customer':                                customer_id  ...    status
+0     ad1390df-6760-41e9-887e-f31cbc6afb2f  ...    Active
+1     69685ee0-507f-436c-b9f7-2dc203172558  ...    Active
+2     67afa773-25ac-4bad-a0ad-0db65cfea1fc  ...    Active
+3     637650ef-478e-4731-8620-7a553b8ee7bc  ...    Active
+4     d8b5f3b8-d780-46d9-92e7-3dde761fbc2e  ...  Inactive
+...                                    ...  ...       ...
+1622  78f213a4-fc33-414c-bb1d-94822f70efbf  ...    Active
+1623  e37606d6-6911-47b0-b7f4-732f10b5890e  ...  Inactive
+1624  d14fed35-d0e2-43a3-8951-0950bb230b54  ...    Active
+1625  8b7e45c2-810f-41a1-ab2a-a8afa389ad5d  ...    Active
+1626  fda80596-9c7b-4e83-af6a-efccb33119f8  ...    Active
 
-[1611 rows x 33 columns], 'customer_device':                               device_identifier  ...               last_used_at
-0                          IMEI:867819051780599  ... 2025-07-25 13:43:27.562236
-1                         MAC:40:C5:DB:A5:2F:63  ... 2025-07-27 22:00:27.562425
-2                          IMEI:353289103105955  ... 2025-07-27 22:23:27.562590
-3                          IMEI:354045111651655  ... 2025-07-25 08:24:27.562938
-4     UUID:b58dadd7-5a63-d11a-fdf2-51167867b0f5  ... 2025-07-25 04:35:27.563094
+[1627 rows x 33 columns], 'customer_device':                               device_identifier  ...               last_used_at
+0     UUID:80c842f1-4c08-6bf9-4114-896b8307e9db  ... 2025-07-26 18:26:41.183331
+1                          IMEI:867819059401499  ... 2025-07-28 02:58:41.183546
+2                          IMEI:354045111545955  ... 2025-07-23 07:41:41.183895
+3                   ANDROID_ID:b613ba959b03c74e  ... 2025-07-28 05:34:41.184176
+4                         MAC:7E:DE:11:F4:FA:30  ... 2025-07-29 07:04:41.184512
 ...                                         ...  ...                        ...
-1462                       IMEI:358755104187199  ... 2025-07-28 11:41:27.880144
-1463  UUID:3514473d-3013-3024-07ef-45430d581568  ... 2025-07-29 05:17:27.880282
-1464                       IMEI:867819055204677  ... 2025-07-24 03:22:27.880719
-1465                       IMEI:358755105860100  ... 2025-07-29 10:45:27.880877
-1466                       IMEI:353289102927400  ... 2025-07-31 01:05:27.881004
+1502                ANDROID_ID:c7d96db758cce9b6  ... 2025-07-24 15:52:41.498297
+1503  UUID:5345ed5a-21d8-ba4e-a704-454843065a51  ... 2025-07-27 16:36:41.498459
+1504                       IMEI:354045113771033  ... 2025-07-28 06:57:41.498593
+1505                       IMEI:867819059948633  ... 2025-07-25 04:46:41.498721
+1506                      MAC:E2:85:C5:FE:2D:BF  ... 2025-07-26 14:03:41.498859
 
-[1467 rows x 8 columns], 'authentication_log':                                      log_id  ...                 created_at
-0      1f5054aa-17a0-432e-8a40-6bae72bf164a  ... 2025-07-24 11:38:03.069995
-1      48fdef56-c3aa-42ce-8cfa-872fd990ebc7  ... 2025-07-25 11:56:19.304586
-2      a5f4f01c-2631-48ca-b9d7-1d5e267094d2  ... 2025-07-24 19:14:40.565905
-3      09a4a6ec-ebc2-4c27-8916-1a346061860f  ... 2025-07-24 18:23:44.334592
-4      8502b1a8-5f0c-454e-9632-bbec99eb337b  ... 2025-07-27 21:27:42.139649
+[1507 rows x 8 columns], 'authentication_log':                                      log_id  ...                 created_at
+0      9eb8f893-a7cd-45df-a112-9bafed08d492  ... 2025-07-26 10:30:00.374959
+1      61008b91-4018-47b4-bdc2-9f32bfb2ea7d  ... 2025-07-25 22:09:37.323856
+2      a8392de6-cca1-4f3b-8135-6182505e5e6a  ... 2025-07-26 17:07:30.630742
+3      5bb27560-88dc-4f1f-8ba5-b3e8afe4d182  ... 2025-07-26 09:23:17.583837
+4      00964436-159a-4681-a5bf-e2a63275ea17  ... 2025-07-26 11:33:22.563879
 ...                                     ...  ...                        ...
-63371  bf63a085-683b-4bef-a617-20ea14614f49  ... 2025-07-14 22:12:19.869048
-63372  a064531f-f9ad-4b5d-a282-faa4c94a7d3f  ... 2025-07-04 07:49:19.869452
-63373  ef36d30b-4fbc-4015-b58e-8994da25fb40  ... 2025-07-17 16:02:19.869828
-63374  d1c25157-caff-42d5-b66e-2e37ecf814b2  ... 2025-07-21 00:05:19.870213
-63375  d2bfc717-1ea4-4dc4-b1f1-5782859fcbf0  ... 2025-07-10 07:57:19.870604
+64592  3dcae77b-5d78-4c76-8795-cff63c354d5d  ... 2025-06-28 08:01:30.764593
+64593  cc1484e6-7f9d-4fb7-b52f-71a5b592aed4  ... 2025-07-03 20:12:30.764958
+64594  7f683d62-8d23-403c-8b68-44c67a1c06e3  ... 2025-07-09 17:46:30.765325
+64595  658f82ac-de1e-4707-a83f-19a1a0057b9a  ... 2025-07-15 16:02:30.765691
+64596  74abc51f-7cca-47a1-a35c-15080057f118  ... 2025-07-16 07:03:30.766071
 
-[63376 rows x 13 columns], 'bank_account':                                 account_id  ...                 updated_at
-0     ed5e13ad-1ef7-4d38-a0ba-eac787def2cc  ... 2025-07-26 05:43:27.562236
-1     503d055c-6009-4ad3-a8a7-47a1e7cf2156  ... 2025-07-29 01:00:27.562425
-2     aa29f322-493a-458e-933d-0b7bb96175cc  ... 2025-07-30 08:23:27.562590
-3     433c336f-ee57-4e76-87be-82b2ac4c0044  ... 2025-07-26 20:24:27.562938
-4     2ed0b62a-bef5-4a3f-ab7a-9bb5456e096e  ... 2025-07-26 01:24:27.562938
+[64597 rows x 13 columns], 'bank_account':                                 account_id  ...                 updated_at
+0     1898d981-1b0d-4fbe-9310-20271ae0841b  ... 2025-07-28 21:26:41.183331
+1     2cca1ef8-ceb2-407c-94fe-dcdd0d3b2fb0  ... 2025-07-28 10:26:41.183331
+2     158e0b92-8fc2-4176-8936-ab8ace809890  ... 2025-07-28 23:58:41.183546
+3     ac1a6740-ddcd-4116-a641-fdf10210fac4  ... 2025-07-24 11:41:41.183895
+4     405a0e4f-ac06-4246-8d0d-58b4e02ed9e0  ... 2025-07-29 01:34:41.184176
 ...                                    ...  ...                        ...
-1924  6492c680-ac7c-4051-902a-64ca199b7de3  ... 2025-07-30 01:17:27.880282
-1925  a0804972-c318-4700-b9b5-282604ccf3e0  ... 2025-07-29 12:00:27.880563
-1926  aa0e1e7e-8d3c-4701-8d48-c0aeeb5d4bd5  ... 2025-07-24 21:22:27.880719
-1927  a8ca6be3-0c9b-4cad-8894-53bc523753ad  ... 2025-07-31 18:45:27.880877
-1928  e29990f3-af84-4fa4-8d32-8ef46863bef1  ... 2025-07-31 07:05:27.881004
+1939  4fc6f0ac-bb0d-4689-9aaa-108666d536c8  ... 2025-07-26 11:52:41.498297
+1940  b4d6a8cf-c019-4c94-a3ab-ee65366c09d1  ... 2025-07-29 09:36:41.498459
+1941  8083ff96-28bf-41e1-ba78-6948772ff66f  ... 2025-07-30 19:57:41.498593
+1942  b6f75088-78b9-436a-a15a-83b76d29a4cd  ... 2025-07-25 16:46:41.498721
+1943  97bc0f07-2750-41e0-90f0-3b73515df2af  ... 2025-07-29 14:03:41.498859
 
-[1929 rows x 17 columns], 'face_template':                                template_id  ...               last_used_at
-0     0cc26968-dbfc-4c00-a0b5-4ffd102cffdb  ... 2025-07-22 07:49:45.924205
-1     a401af5b-aeb2-4c7c-a629-d2844d879c0a  ... 2025-07-22 07:49:45.924509
-2     6bf7c1c0-48fc-45d0-92ea-3d0139db2ce7  ... 2025-07-22 07:49:45.924751
-3     0a329a7b-d03e-4a17-8f77-b5ec0c195ca7  ... 2025-07-22 07:49:45.925216
-4     2023816f-3ff1-4282-acc7-1434d524ee3b  ... 2025-07-22 07:49:45.925446
+[1944 rows x 17 columns], 'face_template':                                template_id  ...               last_used_at
+0     f6ec9f66-2b9c-4a62-8d49-66e7d0a2cd77  ... 2025-07-22 08:44:57.969960
+1     00bf182a-18cf-422c-83dc-0d13fe59dc15  ... 2025-07-22 08:44:57.970405
+2     e0bf445d-4dd9-4e1a-a28c-4c4e30ccd75c  ... 2025-07-22 08:44:57.970994
+3     69461d39-7f96-4703-bd86-27dd60cb31cd  ... 2025-07-22 08:44:57.971499
+4     a630d18a-59b3-4510-a263-3c70593f6fe9  ... 2025-07-22 08:44:57.971787
 ...                                    ...  ...                        ...
-1362  80142d17-126a-4510-a94b-eb219d048cd4  ... 2025-07-22 07:49:46.410057
-1363  e7ce2ad6-3ba7-4b21-94c9-cb11d25a0940  ... 2025-07-22 07:49:46.410651
-1364  c6557e05-6f46-4410-917f-6d2cc2b883d8  ... 2025-07-22 07:49:46.410916
-1365  d557a708-37bc-42de-a413-0bb75bc7e81c  ... 2025-07-22 07:49:46.411182
-1366  bcccd270-162d-4a32-8cb2-d502987e5cd4  ... 2025-07-22 07:49:46.411447
+1388  47362acf-2bcd-4a2a-a9d3-6629542b2c6a  ... 2025-07-22 08:44:58.478541
+1389  5ae22944-5f09-43b1-a374-3024079f2b16  ... 2025-07-22 08:44:58.478827
+1390  0bcf8be3-229e-4010-80a0-d1af6ca179bd  ... 2025-07-22 08:44:58.479098
+1391  1d8927a7-ce26-4fdc-b797-4727870bea70  ... 2025-07-22 08:44:58.479376
+1392  666165bd-28e0-45e5-b6fa-372c7fd6373e  ... 2025-07-22 08:44:58.479628
 
-[1367 rows x 5 columns], 'transaction':                              transaction_id  ...               completed_at
-0      f993ba0b-cea1-4c8e-882d-de6f43b3b488  ... 2025-06-26 01:30:47.049396
-1      72ebfe9f-33e8-41df-b081-3a77cf5c47cc  ... 2025-07-07 22:07:47.049866
-2      df72b073-b4c3-4fc3-b273-e165926481fb  ... 2025-07-18 21:12:47.050257
-3      01d70659-ad57-4b91-a1a6-95f7f8f08cc6  ... 2025-07-16 08:40:47.050722
-4      e1582b4c-c526-475c-b3e1-c9b9e6228ad5  ... 2025-06-30 11:36:47.051230
+[1393 rows x 5 columns], 'transaction':                              transaction_id  ...               completed_at
+0      0bcf9a78-1fa2-4df2-9ef8-219e072481b8  ... 2025-06-23 18:48:59.151584
+1      291918c3-71b3-44d1-88dd-574a87db0b6a  ...                        NaT
+2      ea945eca-ec52-4429-aee0-29b0428663a5  ... 2025-07-07 17:19:59.152416
+3      304da26d-c7ed-4cdb-8b68-ca2364260bb0  ... 2025-07-09 06:03:59.152819
+4      75092850-be46-468c-a331-a1a2ba2bfc62  ... 2025-06-29 21:17:59.153241
 ...                                     ...  ...                        ...
-57826  9f80d955-ceec-41c2-997e-c698844f4743  ... 2025-07-14 22:23:19.869048
-57827  33ad9d4d-a0d4-417d-bd20-e161cc22a77f  ... 2025-07-04 07:57:19.869452
-57828  2ffbcbc8-394d-4d36-ba31-c8c964bf8721  ... 2025-07-17 17:12:19.869828
-57829  b0843ce6-8d30-483a-af95-ab21fd28b4ea  ... 2025-07-21 00:12:19.870213
-57830  28c5980d-0b7d-41dc-a568-ddceac4b838d  ... 2025-07-10 08:05:19.870604
+57910  69d709e1-678a-4bf1-9cd3-383d2196704b  ... 2025-06-28 09:01:30.764593
+57911  f7858aef-ce01-4edd-9c5b-ab1f68165435  ... 2025-07-03 20:24:30.764958
+57912  7b7f5fe8-81ef-4b4e-ac82-b15dacc8a7be  ... 2025-07-09 18:43:30.765325
+57913  4de90d4b-7281-414b-86be-21288bf6291e  ... 2025-07-15 16:41:30.765691
+57914  f6f43bba-d728-4393-b833-34a73be30a21  ... 2025-07-16 08:38:30.766071
 
-[57831 rows x 18 columns]}}, 'cleaned_data': {'customer':                                customer_id  ...  status
-0     205494b5-6a4e-427b-aaef-6cac84886f61  ...  Active
-1     86ffcc07-1a39-4bcb-a34a-10c48f411a06  ...  Closed
-2     44bce99f-039d-45e8-a139-e71aa1f22c14  ...  Active
-3     5d0bfe77-e7d3-468d-acf1-413da9c2716d  ...  Active
-4     64f0fc75-60b7-418b-83b9-c0cca4e2f81e  ...  Active
-...                                    ...  ...     ...
-1606  3fd32182-55c6-49fe-bccb-cf99a1611eda  ...  Active
-1607  5d034659-6295-4e91-9fbf-ec0550b469b5  ...  Active
-1608  efae3767-335e-4687-b158-4a5a4cd3d27d  ...  Closed
-1609  d983321b-9246-4aac-93ee-06bd88d8cbcb  ...  Active
-1610  f1a0b3d2-5d17-4c4e-b9c9-8841255963e3  ...  Active
+[57915 rows x 18 columns]}}, 'cleaned_data': {'customer':                                customer_id  ...    status
+0     ad1390df-6760-41e9-887e-f31cbc6afb2f  ...    Active
+1     69685ee0-507f-436c-b9f7-2dc203172558  ...    Active
+2     67afa773-25ac-4bad-a0ad-0db65cfea1fc  ...    Active
+3     637650ef-478e-4731-8620-7a553b8ee7bc  ...    Active
+4     d8b5f3b8-d780-46d9-92e7-3dde761fbc2e  ...  Inactive
+...                                    ...  ...       ...
+1622  78f213a4-fc33-414c-bb1d-94822f70efbf  ...    Active
+1623  e37606d6-6911-47b0-b7f4-732f10b5890e  ...  Inactive
+1624  d14fed35-d0e2-43a3-8951-0950bb230b54  ...    Active
+1625  8b7e45c2-810f-41a1-ab2a-a8afa389ad5d  ...    Active
+1626  fda80596-9c7b-4e83-af6a-efccb33119f8  ...    Active
 
-[1611 rows x 33 columns], 'customer_device':                               device_identifier  ...               last_used_at
-0                          IMEI:867819051780599  ... 2025-07-25 13:43:27.562236
-1                         MAC:40:C5:DB:A5:2F:63  ... 2025-07-27 22:00:27.562425
-2                          IMEI:353289103105955  ... 2025-07-27 22:23:27.562590
-3                          IMEI:354045111651655  ... 2025-07-25 08:24:27.562938
-4     UUID:b58dadd7-5a63-d11a-fdf2-51167867b0f5  ... 2025-07-25 04:35:27.563094
+[1627 rows x 33 columns], 'customer_device':                               device_identifier  ...               last_used_at
+0     UUID:80c842f1-4c08-6bf9-4114-896b8307e9db  ... 2025-07-26 18:26:41.183331
+1                          IMEI:867819059401499  ... 2025-07-28 02:58:41.183546
+2                          IMEI:354045111545955  ... 2025-07-23 07:41:41.183895
+3                   ANDROID_ID:b613ba959b03c74e  ... 2025-07-28 05:34:41.184176
+4                         MAC:7E:DE:11:F4:FA:30  ... 2025-07-29 07:04:41.184512
 ...                                         ...  ...                        ...
-1462                       IMEI:358755104187199  ... 2025-07-28 11:41:27.880144
-1463  UUID:3514473d-3013-3024-07ef-45430d581568  ... 2025-07-29 05:17:27.880282
-1464                       IMEI:867819055204677  ... 2025-07-24 03:22:27.880719
-1465                       IMEI:358755105860100  ... 2025-07-29 10:45:27.880877
-1466                       IMEI:353289102927400  ... 2025-07-31 01:05:27.881004
+1502                ANDROID_ID:c7d96db758cce9b6  ... 2025-07-24 15:52:41.498297
+1503  UUID:5345ed5a-21d8-ba4e-a704-454843065a51  ... 2025-07-27 16:36:41.498459
+1504                       IMEI:354045113771033  ... 2025-07-28 06:57:41.498593
+1505                       IMEI:867819059948633  ... 2025-07-25 04:46:41.498721
+1506                      MAC:E2:85:C5:FE:2D:BF  ... 2025-07-26 14:03:41.498859
 
-[1467 rows x 8 columns], 'authentication_log':                                      log_id  ...                 created_at
-0      1f5054aa-17a0-432e-8a40-6bae72bf164a  ... 2025-07-24 11:38:03.069995
-1      48fdef56-c3aa-42ce-8cfa-872fd990ebc7  ... 2025-07-25 11:56:19.304586
-2      a5f4f01c-2631-48ca-b9d7-1d5e267094d2  ... 2025-07-24 19:14:40.565905
-3      09a4a6ec-ebc2-4c27-8916-1a346061860f  ... 2025-07-24 18:23:44.334592
-4      8502b1a8-5f0c-454e-9632-bbec99eb337b  ... 2025-07-27 21:27:42.139649
+[1507 rows x 8 columns], 'authentication_log':                                      log_id  ...                 created_at
+0      9eb8f893-a7cd-45df-a112-9bafed08d492  ... 2025-07-26 10:30:00.374959
+1      61008b91-4018-47b4-bdc2-9f32bfb2ea7d  ... 2025-07-25 22:09:37.323856
+2      a8392de6-cca1-4f3b-8135-6182505e5e6a  ... 2025-07-26 17:07:30.630742
+3      5bb27560-88dc-4f1f-8ba5-b3e8afe4d182  ... 2025-07-26 09:23:17.583837
+4      00964436-159a-4681-a5bf-e2a63275ea17  ... 2025-07-26 11:33:22.563879
 ...                                     ...  ...                        ...
-63371  bf63a085-683b-4bef-a617-20ea14614f49  ... 2025-07-14 22:12:19.869048
-63372  a064531f-f9ad-4b5d-a282-faa4c94a7d3f  ... 2025-07-04 07:49:19.869452
-63373  ef36d30b-4fbc-4015-b58e-8994da25fb40  ... 2025-07-17 16:02:19.869828
-63374  d1c25157-caff-42d5-b66e-2e37ecf814b2  ... 2025-07-21 00:05:19.870213
-63375  d2bfc717-1ea4-4dc4-b1f1-5782859fcbf0  ... 2025-07-10 07:57:19.870604
+64592  3dcae77b-5d78-4c76-8795-cff63c354d5d  ... 2025-06-28 08:01:30.764593
+64593  cc1484e6-7f9d-4fb7-b52f-71a5b592aed4  ... 2025-07-03 20:12:30.764958
+64594  7f683d62-8d23-403c-8b68-44c67a1c06e3  ... 2025-07-09 17:46:30.765325
+64595  658f82ac-de1e-4707-a83f-19a1a0057b9a  ... 2025-07-15 16:02:30.765691
+64596  74abc51f-7cca-47a1-a35c-15080057f118  ... 2025-07-16 07:03:30.766071
 
-[63376 rows x 13 columns], 'bank_account':                                 account_id  ...                 updated_at
-0     ed5e13ad-1ef7-4d38-a0ba-eac787def2cc  ... 2025-07-26 05:43:27.562236
-1     503d055c-6009-4ad3-a8a7-47a1e7cf2156  ... 2025-07-29 01:00:27.562425
-2     aa29f322-493a-458e-933d-0b7bb96175cc  ... 2025-07-30 08:23:27.562590
-3     433c336f-ee57-4e76-87be-82b2ac4c0044  ... 2025-07-26 20:24:27.562938
-4     2ed0b62a-bef5-4a3f-ab7a-9bb5456e096e  ... 2025-07-26 01:24:27.562938
+[64597 rows x 13 columns], 'bank_account':                                 account_id  ...                 updated_at
+0     1898d981-1b0d-4fbe-9310-20271ae0841b  ... 2025-07-28 21:26:41.183331
+1     2cca1ef8-ceb2-407c-94fe-dcdd0d3b2fb0  ... 2025-07-28 10:26:41.183331
+2     158e0b92-8fc2-4176-8936-ab8ace809890  ... 2025-07-28 23:58:41.183546
+3     ac1a6740-ddcd-4116-a641-fdf10210fac4  ... 2025-07-24 11:41:41.183895
+4     405a0e4f-ac06-4246-8d0d-58b4e02ed9e0  ... 2025-07-29 01:34:41.184176
 ...                                    ...  ...                        ...
-1924  6492c680-ac7c-4051-902a-64ca199b7de3  ... 2025-07-30 01:17:27.880282
-1925  a0804972-c318-4700-b9b5-282604ccf3e0  ... 2025-07-29 12:00:27.880563
-1926  aa0e1e7e-8d3c-4701-8d48-c0aeeb5d4bd5  ... 2025-07-24 21:22:27.880719
-1927  a8ca6be3-0c9b-4cad-8894-53bc523753ad  ... 2025-07-31 18:45:27.880877
-1928  e29990f3-af84-4fa4-8d32-8ef46863bef1  ... 2025-07-31 07:05:27.881004
+1939  4fc6f0ac-bb0d-4689-9aaa-108666d536c8  ... 2025-07-26 11:52:41.498297
+1940  b4d6a8cf-c019-4c94-a3ab-ee65366c09d1  ... 2025-07-29 09:36:41.498459
+1941  8083ff96-28bf-41e1-ba78-6948772ff66f  ... 2025-07-30 19:57:41.498593
+1942  b6f75088-78b9-436a-a15a-83b76d29a4cd  ... 2025-07-25 16:46:41.498721
+1943  97bc0f07-2750-41e0-90f0-3b73515df2af  ... 2025-07-29 14:03:41.498859
 
-[1929 rows x 17 columns], 'face_template':                                template_id  ...               last_used_at
-0     0cc26968-dbfc-4c00-a0b5-4ffd102cffdb  ... 2025-07-22 07:49:45.924205
-1     a401af5b-aeb2-4c7c-a629-d2844d879c0a  ... 2025-07-22 07:49:45.924509
-2     6bf7c1c0-48fc-45d0-92ea-3d0139db2ce7  ... 2025-07-22 07:49:45.924751
-3     0a329a7b-d03e-4a17-8f77-b5ec0c195ca7  ... 2025-07-22 07:49:45.925216
-4     2023816f-3ff1-4282-acc7-1434d524ee3b  ... 2025-07-22 07:49:45.925446
+[1944 rows x 17 columns], 'face_template':                                template_id  ...               last_used_at
+0     f6ec9f66-2b9c-4a62-8d49-66e7d0a2cd77  ... 2025-07-22 08:44:57.969960
+1     00bf182a-18cf-422c-83dc-0d13fe59dc15  ... 2025-07-22 08:44:57.970405
+2     e0bf445d-4dd9-4e1a-a28c-4c4e30ccd75c  ... 2025-07-22 08:44:57.970994
+3     69461d39-7f96-4703-bd86-27dd60cb31cd  ... 2025-07-22 08:44:57.971499
+4     a630d18a-59b3-4510-a263-3c70593f6fe9  ... 2025-07-22 08:44:57.971787
 ...                                    ...  ...                        ...
-1362  80142d17-126a-4510-a94b-eb219d048cd4  ... 2025-07-22 07:49:46.410057
-1363  e7ce2ad6-3ba7-4b21-94c9-cb11d25a0940  ... 2025-07-22 07:49:46.410651
-1364  c6557e05-6f46-4410-917f-6d2cc2b883d8  ... 2025-07-22 07:49:46.410916
-1365  d557a708-37bc-42de-a413-0bb75bc7e81c  ... 2025-07-22 07:49:46.411182
-1366  bcccd270-162d-4a32-8cb2-d502987e5cd4  ... 2025-07-22 07:49:46.411447
+1388  47362acf-2bcd-4a2a-a9d3-6629542b2c6a  ... 2025-07-22 08:44:58.478541
+1389  5ae22944-5f09-43b1-a374-3024079f2b16  ... 2025-07-22 08:44:58.478827
+1390  0bcf8be3-229e-4010-80a0-d1af6ca179bd  ... 2025-07-22 08:44:58.479098
+1391  1d8927a7-ce26-4fdc-b797-4727870bea70  ... 2025-07-22 08:44:58.479376
+1392  666165bd-28e0-45e5-b6fa-372c7fd6373e  ... 2025-07-22 08:44:58.479628
 
-[1367 rows x 5 columns], 'transaction':                              transaction_id  ...               completed_at
-0      f993ba0b-cea1-4c8e-882d-de6f43b3b488  ... 2025-06-26 01:30:47.049396
-1      72ebfe9f-33e8-41df-b081-3a77cf5c47cc  ... 2025-07-07 22:07:47.049866
-2      df72b073-b4c3-4fc3-b273-e165926481fb  ... 2025-07-18 21:12:47.050257
-3      01d70659-ad57-4b91-a1a6-95f7f8f08cc6  ... 2025-07-16 08:40:47.050722
-4      e1582b4c-c526-475c-b3e1-c9b9e6228ad5  ... 2025-06-30 11:36:47.051230
+[1393 rows x 5 columns], 'transaction':                              transaction_id  ...               completed_at
+0      0bcf9a78-1fa2-4df2-9ef8-219e072481b8  ... 2025-06-23 18:48:59.151584
+1      291918c3-71b3-44d1-88dd-574a87db0b6a  ...                        NaT
+2      ea945eca-ec52-4429-aee0-29b0428663a5  ... 2025-07-07 17:19:59.152416
+3      304da26d-c7ed-4cdb-8b68-ca2364260bb0  ... 2025-07-09 06:03:59.152819
+4      75092850-be46-468c-a331-a1a2ba2bfc62  ... 2025-06-29 21:17:59.153241
 ...                                     ...  ...                        ...
-57826  9f80d955-ceec-41c2-997e-c698844f4743  ... 2025-07-14 22:23:19.869048
-57827  33ad9d4d-a0d4-417d-bd20-e161cc22a77f  ... 2025-07-04 07:57:19.869452
-57828  2ffbcbc8-394d-4d36-ba31-c8c964bf8721  ... 2025-07-17 17:12:19.869828
-57829  b0843ce6-8d30-483a-af95-ab21fd28b4ea  ... 2025-07-21 00:12:19.870213
-57830  28c5980d-0b7d-41dc-a568-ddceac4b838d  ... 2025-07-10 08:05:19.870604
+57910  69d709e1-678a-4bf1-9cd3-383d2196704b  ... 2025-06-28 09:01:30.764593
+57911  f7858aef-ce01-4edd-9c5b-ab1f68165435  ... 2025-07-03 20:24:30.764958
+57912  7b7f5fe8-81ef-4b4e-ac82-b15dacc8a7be  ... 2025-07-09 18:43:30.765325
+57913  4de90d4b-7281-414b-86be-21288bf6291e  ... 2025-07-15 16:41:30.765691
+57914  f6f43bba-d728-4393-b833-34a73be30a21  ... 2025-07-16 08:38:30.766071
 
-[57831 rows x 18 columns]}, 'total_clean_records': 127581, 'reports_generated': True}
-[2025-07-22T07:50:41.786+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2025-07-22T07:50:41.787+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=banking_data_quality_daily, task_id=quality_audit_task, run_id=scheduled__2025-07-21T02:00:00+00:00, execution_date=20250721T020000, start_date=20250722T075022, end_date=20250722T075041
-[2025-07-22T07:50:41.856+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
-[2025-07-22T07:50:41.885+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
-[2025-07-22T07:50:41.888+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[57915 rows x 18 columns]}, 'total_clean_records': 128983, 'reports_generated': True}
+[2025-07-22T08:45:52.085+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-07-22T08:45:52.085+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=banking_data_quality_daily, task_id=quality_audit_task, run_id=scheduled__2025-07-21T02:00:00+00:00, execution_date=20250721T020000, start_date=20250722T084535, end_date=20250722T084552
+[2025-07-22T08:45:52.188+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-07-22T08:45:52.216+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-22T08:45:52.219+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

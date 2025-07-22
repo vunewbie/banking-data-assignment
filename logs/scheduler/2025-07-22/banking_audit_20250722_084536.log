@@ -1,0 +1,35 @@
+[2025-07-22 08:45:36] INFO - Logging configured. Log file: /opt/airflow/logs/scheduler/2025-07-22/banking_audit_20250722_084536.log
+[2025-07-22 08:45:36] INFO - Starting comprehensive banking data audit with intelligent cleaning...
+[2025-07-22 08:45:36] INFO - Received data: 6 tables, 174774 total records
+[2025-07-22 08:45:36] INFO - Data structure validation: 6/6 expected tables found
+[2025-07-22 08:45:36] INFO - Connecting to database: banking-db:5433/banking_system as postgres
+[2025-07-22 08:45:36] INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[2025-07-22 08:45:44] INFO - ============================================================
+[2025-07-22 08:45:44] INFO - DATA CLEANING SUMMARY
+[2025-07-22 08:45:44] INFO - ============================================================
+[2025-07-22 08:45:44] INFO - customer: 1627/1998 (81.43%) clean
+[2025-07-22 08:45:44] INFO - customer_device: 1507/2292 (65.75%) clean
+[2025-07-22 08:45:44] INFO - authentication_log: 64597/96091 (67.22%) clean
+[2025-07-22 08:45:44] INFO - bank_account: 1944/2371 (81.99%) clean
+[2025-07-22 08:45:44] INFO - face_template: 1393/1701 (81.89%) clean
+[2025-07-22 08:45:44] INFO - transaction: 57915/70321 (82.36%) clean
+[2025-07-22 08:45:44] INFO - OVERALL: 128983/174774 (73.8%) records retained
+[2025-07-22 08:45:44] INFO - Generating audit reports...
+[2025-07-22 08:45:44] INFO - Detailed audit log generated: /opt/airflow/reports/2025-07-22/audit_detailed_log_20250722_084544.txt
+[2025-07-22 08:45:44] INFO - Summary table generated: /opt/airflow/reports/2025-07-22/audit_summary_table_20250722_084544.csv
+[2025-07-22 08:45:44] INFO - JSON report generated: /opt/airflow/reports/2025-07-22/audit_report_20250722_084544.json
+[2025-07-22 08:45:44] INFO - ================================================================================
+[2025-07-22 08:45:44] INFO - DATA AUDIT & CLEANING WITH REPORTS COMPLETED
+[2025-07-22 08:45:44] INFO - ================================================================================
+[2025-07-22 08:45:44] INFO - Audit Status: FAIL
+[2025-07-22 08:45:44] INFO - Checks Pass Rate: 62.5%
+[2025-07-22 08:45:44] INFO - Checks: 5/8 passed
+[2025-07-22 08:45:44] INFO - Data Quality: 128983/174774 (73.8%) clean records
+[2025-07-22 08:45:44] INFO - 
+[2025-07-22 08:45:44] INFO - Generated Reports:
+[2025-07-22 08:45:44] INFO -   Detailed Log: /opt/airflow/reports/2025-07-22/audit_detailed_log_20250722_084544.txt
+[2025-07-22 08:45:44] INFO -   Summary Table: /opt/airflow/reports/2025-07-22/audit_summary_table_20250722_084544.csv
+[2025-07-22 08:45:44] INFO -   JSON Report: /opt/airflow/reports/2025-07-22/audit_report_20250722_084544.json
+[2025-07-22 08:45:44] INFO - 
+[2025-07-22 08:45:44] INFO - Clean data prepared for downstream database loading task
+[2025-07-22 08:45:44] INFO - ================================================================================

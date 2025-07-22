@@ -15,7 +15,8 @@ sys.path.append('/opt/airflow/src')
 # Import banking data modules
 try:
     from generate_data import generate_data
-    from monitoring_audit import run_comprehensive_audit
+    from monitoring_audit import run_audit_with_reports
+    from monitoring_audit import save_data_only
     import logging
 except ImportError as e:
     print(f"Import error: {e}")
@@ -70,10 +71,9 @@ def setup_logging() -> logging.Logger:
 def check_dependencies():
     """Check if all required dependencies are available"""
     logger = setup_logging()
-    
     try:
         # Test that already imported modules are accessible
-        if callable(generate_data) and callable(run_comprehensive_audit):
+        if (callable(generate_data) and callable(run_audit_with_reports) and callable(save_data_only)):
             logger.info("All dependencies available")
             return True
         else:
@@ -160,7 +160,7 @@ def run_data_quality_audit(**context):
         
         # Run comprehensive audit with reports generation (no database save)
         logger.info("Running comprehensive quality audit with report generation...")
-        from monitoring_audit import run_audit_with_reports
+        
         
         # Run full audit + cleaning + reports (no database save)
         audit_results = run_audit_with_reports(data)
@@ -232,7 +232,7 @@ def load_clean_data_to_database(**context):
         
         # Load clean data to database using dedicated function
         logger.info(f"Loading {total_clean} clean records to database...")
-        from monitoring_audit import save_data_only
+        
         
         save_results = save_data_only(cleaned_data)
         

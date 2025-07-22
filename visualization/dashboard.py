@@ -67,48 +67,84 @@ class BankingDashboard:
             self.db_connection = None
     
     def load_audit_reports(self):
-        """Load latest audit reports from file system"""
-        reports_dir = Path("../reports")
+        """Load latest audit report JSON file based on timestamp inside latest reports/yyyy-mm-dd folder"""
+        project_root = Path(__file__).resolve().parent.parent
+        reports_dir = project_root / "reports"
+
         if not reports_dir.exists():
+            st.sidebar.warning("❌ Reports directory not found.")
             return None
-        
-        # Find latest report folder
+
+        # Step 1: Find latest date folder (yyyy-mm-dd)
         latest_folder = None
         for folder in reports_dir.iterdir():
             if folder.is_dir():
-                if latest_folder is None or folder.name > latest_folder.name:
-                    latest_folder = folder
+                try:
+                    datetime.strptime(folder.name, "%Y-%m-%d")
+                    if latest_folder is None or folder.name > latest_folder.name:
+                        latest_folder = folder
+                except ValueError:
+                    continue
+
+        if not latest_folder:
+            return None
+
+        # Step 2: Find latest audit_report_*.json inside that folder
+        latest_json = None
+        latest_time = None
+        for file in latest_folder.glob("audit_report_*.json"):
+            try:
+                timestamp_str = file.stem.split("audit_report_")[1]
+                timestamp = datetime.strptime(timestamp_str, "%Y%m%d_%H%M%S")
+                if latest_time is None or timestamp > latest_time:
+                    latest_json = file
+                    latest_time = timestamp
+            except Exception:
+                continue
         
-        if latest_folder:
-            json_file = latest_folder / f"data_quality_report_{latest_folder.name}.json"
-            if json_file.exists():
-                with open(json_file, 'r', encoding='utf-8') as f:
-                    return json.load(f)
+        if latest_json and latest_json.exists():
+            with open(latest_json, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                return data
+
         return None
-    
+
     def get_failed_checks_data(self):
-        """Phân tích top failed checks từ audit reports"""
+        """Analyze failed checks from audit reports"""
         audit_data = self.load_audit_reports()
         if not audit_data:
             return pd.DataFrame()
-        
-        # Extract failed checks information
+
         failed_checks = []
-        if 'audit_results' in audit_data:
-            for check_name, result in audit_data['audit_results'].items():
-                if isinstance(result, dict) and result.get('status') == 'FAIL':
-                    failed_checks.append({
-                        'Check Name': check_name,
-                        'Failed Count': result.get('failed_count', 0),
-                        'Total Records': result.get('total_records', 0),
-                        'Failure Rate': (result.get('failed_count', 0) / max(result.get('total_records', 1), 1)) * 100,
-                        'Severity': 'High' if result.get('failed_count', 0) > 100 else 'Medium' if result.get('failed_count', 0) > 10 else 'Low'
-                    })
-        
+
+        check_results = audit_data.get("check_results", {})
+        for check_name, result in check_results.items():
+            if isinstance(result, dict) and result.get("status") == "FAIL":
+                total_records = 0
+                failed_count = 0
+
+                summary = result.get("summary", {})
+                for table_summary in summary.values():
+                    if isinstance(table_summary, dict):  # Chỉ cộng nếu là dict
+                        total_records += table_summary.get("total_records", 0)
+                        failed_count += table_summary.get("failed_records", 0)
+
+                failed_checks.append({
+                    "Check Name": check_name,
+                    "Failed Count": failed_count,
+                    "Total Records": total_records,
+                    "Failure Rate": (failed_count / max(total_records, 1)) * 100,
+                    "Severity": (
+                        "High" if failed_count > 100 else
+                        "Medium" if failed_count > 10 else
+                        "Low"
+                    )
+                })
+
         return pd.DataFrame(failed_checks)
-    
+
     def get_risky_transactions_data(self):
-        """Lấy dữ liệu giao dịch rủi ro từ database"""
+        """Get risky transactions data from database"""
         if not self.db_connection:
             return pd.DataFrame()
         
@@ -129,7 +165,7 @@ class BankingDashboard:
         FROM transaction t
         JOIN bank_account ba ON t.account_id = ba.account_id
         JOIN customer c ON ba.customer_id = c.customer_id
-        WHERE t.amount >= 1000000  -- Transactions >= 1M VND
+        WHERE is_fraud = True
         ORDER BY t.amount DESC, c.risk_score DESC
         LIMIT 1000;
         """
@@ -143,7 +179,7 @@ class BankingDashboard:
             return pd.DataFrame()
     
     def get_unverified_devices_data(self):
-        """Lấy dữ liệu thiết bị chưa được tin cậy"""
+        """Get unverified devices data from database"""
         if not self.db_connection:
             return pd.DataFrame()
         

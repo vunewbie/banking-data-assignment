@@ -1,48 +1,48 @@
-[2025-07-22T07:50:42.951+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
-[2025-07-22T07:50:42.978+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_data_quality_daily.load_data_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
-[2025-07-22T07:50:42.987+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_data_quality_daily.load_data_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
-[2025-07-22T07:50:42.988+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
-[2025-07-22T07:50:43.002+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_data_task> on 2025-07-21 02:00:00+00:00
-[2025-07-22T07:50:43.009+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=298) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-22T08:45:53.787+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-07-22T08:45:53.810+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: banking_data_quality_daily.load_data_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
+[2025-07-22T08:45:53.818+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: banking_data_quality_daily.load_data_task scheduled__2025-07-21T02:00:00+00:00 [queued]>
+[2025-07-22T08:45:53.819+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 4
+[2025-07-22T08:45:53.831+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_data_task> on 2025-07-21 02:00:00+00:00
+[2025-07-22T08:45:53.839+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=274) is multi-threaded, use of fork() may lead to deadlocks in the child.
   pid = os.fork()
 
-[2025-07-22T07:50:43.011+0000] {standard_task_runner.py:72} INFO - Started process 300 to run task
-[2025-07-22T07:50:43.011+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'banking_data_quality_daily', 'load_data_task', 'scheduled__2025-07-21T02:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/banking_dq_dag.py', '--cfg-path', '/tmp/tmprpk64eud']
-[2025-07-22T07:50:43.014+0000] {standard_task_runner.py:105} INFO - Job 6: Subtask load_data_task
-[2025-07-22T07:50:43.088+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_data_quality_daily.load_data_task scheduled__2025-07-21T02:00:00+00:00 [running]> on host 1e992391132c
-[2025-07-22T07:50:43.180+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='vulocninh1@gmail.com' AIRFLOW_CTX_DAG_OWNER='banking-data-assignment' AIRFLOW_CTX_DAG_ID='banking_data_quality_daily' AIRFLOW_CTX_TASK_ID='load_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-07-21T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-21T02:00:00+00:00'
-[2025-07-22T07:50:43.182+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2025-07-22T07:50:43.856+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:43] INFO - Loading 127581 clean records to database...
-[2025-07-22T07:50:43.856+0000] {banking_dq_dag.py:234} INFO - Loading 127581 clean records to database...
-[2025-07-22T07:50:43.857+0000] {monitoring_audit.py:521} INFO - Saving 127581 clean records to database...
-[2025-07-22T07:50:43.858+0000] {monitoring_audit.py:117} INFO - Connecting to database: banking-db:5433/banking_system as postgres
-[2025-07-22T07:50:43.871+0000] {monitoring_audit.py:132} INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
-[2025-07-22T07:50:43.872+0000] {monitoring_audit.py:157} INFO - Starting to save clean data to database...
-[2025-07-22T07:50:44.152+0000] {monitoring_audit.py:185} INFO - Saved 1611 records to customer
-[2025-07-22T07:50:44.222+0000] {monitoring_audit.py:185} INFO - Saved 1367 records to face_template
-[2025-07-22T07:50:44.403+0000] {monitoring_audit.py:185} INFO - Saved 1929 records to bank_account
-[2025-07-22T07:50:44.482+0000] {monitoring_audit.py:185} INFO - Saved 1467 records to customer_device
-[2025-07-22T07:50:49.722+0000] {monitoring_audit.py:185} INFO - Saved 57831 records to transaction
-[2025-07-22T07:50:52.881+0000] {monitoring_audit.py:185} INFO - Saved 63376 records to authentication_log
-[2025-07-22T07:50:52.882+0000] {monitoring_audit.py:190} INFO - Database save completed: 127581 total records saved
-[2025-07-22T07:50:52.885+0000] {monitoring_audit.py:525} INFO - Successfully saved 127581 clean records to database
-[2025-07-22T07:50:52.886+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - ==================================================
-[2025-07-22T07:50:52.886+0000] {banking_dq_dag.py:240} INFO - ==================================================
-[2025-07-22T07:50:52.887+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - DATABASE LOAD SUMMARY
-[2025-07-22T07:50:52.887+0000] {banking_dq_dag.py:241} INFO - DATABASE LOAD SUMMARY
-[2025-07-22T07:50:52.888+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - ==================================================
-[2025-07-22T07:50:52.888+0000] {banking_dq_dag.py:242} INFO - ==================================================
-[2025-07-22T07:50:52.889+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - Status: SUCCESS
-[2025-07-22T07:50:52.889+0000] {banking_dq_dag.py:243} INFO - Status: SUCCESS
-[2025-07-22T07:50:52.890+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - Records Loaded: 127581
-[2025-07-22T07:50:52.890+0000] {banking_dq_dag.py:244} INFO - Records Loaded: 127581
-[2025-07-22T07:50:52.891+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - Message: Successfully saved 127581 records
-[2025-07-22T07:50:52.891+0000] {banking_dq_dag.py:245} INFO - Message: Successfully saved 127581 records
-[2025-07-22T07:50:52.892+0000] {logging_mixin.py:190} WARNING - [2025-07-22 07:50:52] INFO - ==================================================
-[2025-07-22T07:50:52.892+0000] {banking_dq_dag.py:246} INFO - ==================================================
-[2025-07-22T07:50:52.901+0000] {python.py:240} INFO - Done. Returned value was: {'status': 'SUCCESS', 'records_saved': 127581, 'message': 'Successfully saved 127581 records'}
-[2025-07-22T07:50:52.930+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2025-07-22T07:50:52.931+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=banking_data_quality_daily, task_id=load_data_task, run_id=scheduled__2025-07-21T02:00:00+00:00, execution_date=20250721T020000, start_date=20250722T075042, end_date=20250722T075052
-[2025-07-22T07:50:53.047+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
-[2025-07-22T07:50:53.072+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
-[2025-07-22T07:50:53.075+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-07-22T08:45:53.841+0000] {standard_task_runner.py:72} INFO - Started process 276 to run task
+[2025-07-22T08:45:53.841+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'banking_data_quality_daily', 'load_data_task', 'scheduled__2025-07-21T02:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/banking_dq_dag.py', '--cfg-path', '/tmp/tmpmh7r83v_']
+[2025-07-22T08:45:53.843+0000] {standard_task_runner.py:105} INFO - Job 6: Subtask load_data_task
+[2025-07-22T08:45:53.920+0000] {task_command.py:467} INFO - Running <TaskInstance: banking_data_quality_daily.load_data_task scheduled__2025-07-21T02:00:00+00:00 [running]> on host 28ec9070224c
+[2025-07-22T08:45:54.049+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='vulocninh1@gmail.com' AIRFLOW_CTX_DAG_OWNER='banking-data-assignment' AIRFLOW_CTX_DAG_ID='banking_data_quality_daily' AIRFLOW_CTX_TASK_ID='load_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-07-21T02:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-21T02:00:00+00:00'
+[2025-07-22T08:45:54.050+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-07-22T08:45:54.630+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:45:54] INFO - Loading 128983 clean records to database...
+[2025-07-22T08:45:54.630+0000] {banking_dq_dag.py:234} INFO - Loading 128983 clean records to database...
+[2025-07-22T08:45:54.631+0000] {monitoring_audit.py:521} INFO - Saving 128983 clean records to database...
+[2025-07-22T08:45:54.632+0000] {monitoring_audit.py:117} INFO - Connecting to database: banking-db:5433/banking_system as postgres
+[2025-07-22T08:45:54.644+0000] {monitoring_audit.py:132} INFO - Database connected successfully: PostgreSQL 17.5 (Debian 17.5-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+[2025-07-22T08:45:54.644+0000] {monitoring_audit.py:157} INFO - Starting to save clean data to database...
+[2025-07-22T08:45:54.907+0000] {monitoring_audit.py:185} INFO - Saved 1627 records to customer
+[2025-07-22T08:45:54.979+0000] {monitoring_audit.py:185} INFO - Saved 1393 records to face_template
+[2025-07-22T08:45:55.156+0000] {monitoring_audit.py:185} INFO - Saved 1944 records to bank_account
+[2025-07-22T08:45:55.243+0000] {monitoring_audit.py:185} INFO - Saved 1507 records to customer_device
+[2025-07-22T08:46:00.521+0000] {monitoring_audit.py:185} INFO - Saved 57915 records to transaction
+[2025-07-22T08:46:05.335+0000] {monitoring_audit.py:185} INFO - Saved 64597 records to authentication_log
+[2025-07-22T08:46:05.336+0000] {monitoring_audit.py:190} INFO - Database save completed: 128983 total records saved
+[2025-07-22T08:46:05.339+0000] {monitoring_audit.py:525} INFO - Successfully saved 128983 clean records to database
+[2025-07-22T08:46:05.339+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - ==================================================
+[2025-07-22T08:46:05.339+0000] {banking_dq_dag.py:240} INFO - ==================================================
+[2025-07-22T08:46:05.340+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - DATABASE LOAD SUMMARY
+[2025-07-22T08:46:05.340+0000] {banking_dq_dag.py:241} INFO - DATABASE LOAD SUMMARY
+[2025-07-22T08:46:05.341+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - ==================================================
+[2025-07-22T08:46:05.341+0000] {banking_dq_dag.py:242} INFO - ==================================================
+[2025-07-22T08:46:05.342+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - Status: SUCCESS
+[2025-07-22T08:46:05.342+0000] {banking_dq_dag.py:243} INFO - Status: SUCCESS
+[2025-07-22T08:46:05.343+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - Records Loaded: 128983
+[2025-07-22T08:46:05.343+0000] {banking_dq_dag.py:244} INFO - Records Loaded: 128983
+[2025-07-22T08:46:05.344+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - Message: Successfully saved 128983 records
+[2025-07-22T08:46:05.344+0000] {banking_dq_dag.py:245} INFO - Message: Successfully saved 128983 records
+[2025-07-22T08:46:05.345+0000] {logging_mixin.py:190} WARNING - [2025-07-22 08:46:05] INFO - ==================================================
+[2025-07-22T08:46:05.345+0000] {banking_dq_dag.py:246} INFO - ==================================================
+[2025-07-22T08:46:05.353+0000] {python.py:240} INFO - Done. Returned value was: {'status': 'SUCCESS', 'records_saved': 128983, 'message': 'Successfully saved 128983 records'}
+[2025-07-22T08:46:05.382+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-07-22T08:46:05.383+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=banking_data_quality_daily, task_id=load_data_task, run_id=scheduled__2025-07-21T02:00:00+00:00, execution_date=20250721T020000, start_date=20250722T084553, end_date=20250722T084605
+[2025-07-22T08:46:05.442+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-07-22T08:46:05.467+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-22T08:46:05.470+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
