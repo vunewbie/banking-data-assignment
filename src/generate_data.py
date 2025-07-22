@@ -704,7 +704,7 @@ def generate_customer_data():
             # Step 3: Identity docs (dependent on each other)
             id_number, doc_type = generate_id_passport_number() 
             issue_date = generate_issue_date(date_of_birth)
-            expiry_date = generate_expiry_date(issue_date, doc_type)
+            expiry_date = generate_expiry_date(issue_date, doc_type, date_of_birth)
             issuing_authority = generate_issuing_authority(doc_type)
             is_resident = generate_is_resident(doc_type)
             tax_id = generate_tax_identification_number()

@@ -1,15 +1,3 @@
-"""
-DATA QUALITY STANDARDS FOR BANKING SYSTEM
-==========================================
-
-This module defines data quality rules and functions for validating 
-banking data according to regulatory requirements (2345/QĐ-NHNN 2023).
-
-Includes:
-- Data Quality Checks: null/missing, uniqueness, format validation, foreign key integrity
-- Risk-based Checks: authentication requirements, device verification
-"""
-
 import pandas as pd
 import re
 from decimal import Decimal
@@ -25,7 +13,7 @@ logger = logging.getLogger(__name__)
 # DATA QUALITY RULES CONFIGURATION
 # =====================================================
 
-# Required fields that cannot be NULL - UPDATED FOR FIXED SCHEMA
+# Required fields that cannot be NULL
 REQUIRED_FIELDS = {
     'customer': ['full_name', 'date_of_birth', 'phone_number', 'id_passport_number', 
                  'residential_address', 'pin', 'password'],
@@ -36,7 +24,7 @@ REQUIRED_FIELDS = {
     'authentication_log': ['customer_id', 'device_identifier', 'authentication_type', 'status']
 }
 
-# Unique fields that must be unique across table - UPDATED FOR FIXED SCHEMA
+# Unique fields that must be unique across table
 UNIQUE_FIELDS = {
     'customer': ['phone_number', 'email', 'tax_identification_number', 'id_passport_number'],
     'bank_account': ['account_number'],
@@ -46,7 +34,7 @@ UNIQUE_FIELDS = {
     'authentication_log': ['log_id']
 }
 
-# Foreign key relationships to validate - UPDATED FOR FIXED SCHEMA  
+# Foreign key relationships to validate
 FOREIGN_KEY_RELATIONSHIPS = [
     ('face_template', 'customer_id', 'customer', 'customer_id'),
     ('bank_account', 'customer_id', 'customer', 'customer_id'), 
@@ -60,7 +48,6 @@ FOREIGN_KEY_RELATIONSHIPS = [
 # =====================================================
 # REGEX PATTERNS FOR FORMAT VALIDATION
 # =====================================================
-
 REGEX_PATTERNS = {
     'cccd_number': r'^\d{12}$',  # 12 digits for CCCD
     'passport_number': r'^[A-Z]\d{7}$',  # 1 letter + 7 digits for passport
@@ -71,9 +58,8 @@ REGEX_PATTERNS = {
 }
 
 # =====================================================
-# DATA QUALITY CHECK FUNCTIONS (UPDATED FOR ROW-LEVEL TRACKING)
+# DATA QUALITY CHECK FUNCTIONS
 # =====================================================
-
 def check_null_missing_values(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
     """
     Check for null/missing values in required fields (with row-level tracking)
@@ -84,7 +70,7 @@ def check_null_missing_values(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, A
     Returns:
         Dictionary containing null check results with failed row indices
     """
-    logger.info("🔍 Starting null/missing values check...")
+    logger.info("Starting null/missing values check...")
     
     results = {
         'check_type': 'null_missing_values',
@@ -141,7 +127,7 @@ def check_null_missing_values(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, A
             'failed_records': len(failed_indices)
         }
     
-    logger.info(f"✅ Null check completed: {results['status']}")
+    logger.info(f"Null check completed: {results['status']}")
     return results
 
 def check_uniqueness_constraints_with_database(data_dict: Dict[str, pd.DataFrame], 
@@ -156,7 +142,7 @@ def check_uniqueness_constraints_with_database(data_dict: Dict[str, pd.DataFrame
     Returns:
         Dictionary containing uniqueness check results with failed row indices
     """
-    logger.info("🔍 Starting uniqueness constraints check (with database comparison)...")
+    logger.info("Starting uniqueness constraints check (with database comparison)...")
     
     results = {
         'check_type': 'uniqueness_constraints',
@@ -173,11 +159,11 @@ def check_uniqueness_constraints_with_database(data_dict: Dict[str, pd.DataFrame
             from monitoring_audit import create_database_connection
             database_engine = create_database_connection()
             if database_engine:
-                logger.info("✅ Database connection established for uniqueness check")
+                logger.info("Database connection established for uniqueness check")
             else:
-                logger.warning("⚠️ Database not available - checking only within new data")
+                logger.warning("Database not available - checking only within new data")
         except Exception as e:
-            logger.warning(f"⚠️ Database connection failed: {str(e)} - checking only within new data")
+            logger.warning(f"Database connection failed: {str(e)} - checking only within new data")
     
     for table_name, df in data_dict.items():
         if table_name not in UNIQUE_FIELDS:
@@ -213,10 +199,10 @@ def check_uniqueness_constraints_with_database(data_dict: Dict[str, pd.DataFrame
                             database_conflicts.append(idx)
                     
                     if database_conflicts:
-                        logger.info(f"🚨 Found {len(database_conflicts)} database conflicts for {table_name}.{field}")
+                        logger.info(f"Found {len(database_conflicts)} database conflicts for {table_name}.{field}")
                         
                 except Exception as e:
-                    logger.warning(f"⚠️ Database uniqueness check failed for {table_name}.{field}: {str(e)}")
+                    logger.warning(f"Database uniqueness check failed for {table_name}.{field}: {str(e)}")
             
             # Combine all uniqueness violations
             all_failed_indices = list(set(internal_duplicate_indices + database_conflicts))
@@ -257,86 +243,7 @@ def check_uniqueness_constraints_with_database(data_dict: Dict[str, pd.DataFrame
             'database_check_available': database_engine is not None and check_database
         }
     
-    logger.info(f"✅ Enhanced uniqueness check completed: {results['status']}")
-    return results
-
-def check_uniqueness_constraints(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
-    """
-    Check uniqueness constraints for specified fields (INTERNAL DATA ONLY - for backward compatibility)
-    
-    Args:
-        data_dict: Dictionary of table_name -> DataFrame
-        
-    Returns:
-        Dictionary containing uniqueness check results with failed row indices
-    """
-    logger.info("🔍 Starting uniqueness constraints check (internal data only)...")
-    
-    results = {
-        'check_type': 'uniqueness_constraints',
-        'status': 'PASS',
-        'issues': [],
-        'summary': {},
-        'failed_rows': {}  # Track failed row indices by table
-    }
-    
-    for table_name, df in data_dict.items():
-        if table_name not in UNIQUE_FIELDS:
-            continue
-            
-        table_issues = []
-        failed_indices = set()  # Track all failed row indices for this table
-        unique_fields = UNIQUE_FIELDS[table_name]
-        
-        for field in unique_fields:
-            if field not in df.columns:
-                continue
-                
-            # Find duplicate rows (skip null values for uniqueness check)
-            non_null_mask = df[field].notna()
-            non_null_df = df[non_null_mask]
-            
-            # Find duplicated values
-            duplicated_mask = non_null_df[field].duplicated(keep=False)  # Mark all duplicates
-            duplicate_indices = non_null_df[duplicated_mask].index.tolist()
-            
-            total_non_null = len(non_null_df)
-            unique_count = non_null_df[field].nunique()
-            duplicate_count = len(duplicate_indices)
-            
-            if duplicate_count > 0:
-                # Add to failed indices
-                failed_indices.update(duplicate_indices)
-                
-                # Find actual duplicate values
-                duplicate_values = non_null_df[duplicated_mask][field].unique()
-                
-                issue = {
-                    'table': table_name,
-                    'field': field,
-                    'total_non_null': int(total_non_null),
-                    'unique_count': int(unique_count),
-                    'duplicate_count': int(duplicate_count),
-                    'sample_duplicates': list(duplicate_values)[:5],  # First 5 duplicate values
-                    'failed_row_indices': duplicate_indices  # Track specific failed rows
-                }
-                table_issues.append(issue)
-                results['status'] = 'FAIL'
-        
-        if table_issues:
-            results['issues'].extend(table_issues)
-            
-        # Store all failed row indices for this table
-        if failed_indices:
-            results['failed_rows'][table_name] = list(failed_indices)
-            
-        results['summary'][table_name] = {
-            'total_records': len(df),
-            'issues_count': len(table_issues),
-            'failed_records': len(failed_indices)
-        }
-    
-    logger.info(f"✅ Uniqueness check completed: {results['status']}")
+    logger.info(f"Enhanced uniqueness check completed: {results['status']}")
     return results
 
 def check_format_validation(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
@@ -349,7 +256,7 @@ def check_format_validation(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any
     Returns:
         Dictionary containing format validation results with failed row indices
     """
-    logger.info("🔍 Starting format/length validation check...")
+    logger.info("Starting format/length validation check...")
     
     results = {
         'check_type': 'format_validation',
@@ -431,7 +338,7 @@ def check_format_validation(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any
             'failed_records': len(failed_indices)
         }
     
-    logger.info(f"✅ Format validation completed: {results['status']}")
+    logger.info(f"Format validation completed: {results['status']}")
     return results
 
 def check_foreign_key_integrity(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
@@ -444,7 +351,7 @@ def check_foreign_key_integrity(data_dict: Dict[str, pd.DataFrame]) -> Dict[str,
     Returns:
         Dictionary containing foreign key check results with failed row indices
     """
-    logger.info("🔍 Starting foreign key integrity check...")
+    logger.info("Starting foreign key integrity check...")
     
     results = {
         'check_type': 'foreign_key_integrity',
@@ -503,13 +410,12 @@ def check_foreign_key_integrity(data_dict: Dict[str, pd.DataFrame]) -> Dict[str,
         'total_failed_records': sum(len(indices) for indices in results['failed_rows'].values())
     }
     
-    logger.info(f"✅ Foreign key check completed: {results['status']}")
+    logger.info(f"Foreign key check completed: {results['status']}")
     return results
 
 # =====================================================
 # RISK-BASED CHECK FUNCTIONS  
 # =====================================================
-
 def check_high_value_transaction_auth(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
     """
     Check: Transactions more than 10M VND must use strong auth (biometric or OTP) - with row-level tracking
@@ -521,7 +427,7 @@ def check_high_value_transaction_auth(data_dict: Dict[str, pd.DataFrame]) -> Dic
     Returns:
         Dictionary containing high value transaction auth check results with failed row indices
     """
-    logger.info("🔍 Starting high value transaction authentication check...")
+    logger.info("Starting high value transaction authentication check...")
     
     results = {
         'check_type': 'high_value_transaction_auth',
@@ -587,7 +493,7 @@ def check_high_value_transaction_auth(data_dict: Dict[str, pd.DataFrame]) -> Dic
         'compliance_rate': round((1 - len(violation_indices) / len(high_value_transactions)) * 100, 2) if len(high_value_transactions) > 0 else 100
     }
     
-    logger.info(f"✅ High value transaction auth check completed: {results['status']}")
+    logger.info(f"High value transaction auth check completed: {results['status']}")
     return results
 
 def check_device_verification_requirement(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
@@ -601,7 +507,7 @@ def check_device_verification_requirement(data_dict: Dict[str, pd.DataFrame]) ->
     Returns:
         Dictionary containing device verification check results
     """
-    logger.info("🔍 Starting device verification requirement check...")
+    logger.info("Starting device verification requirement check...")
     
     results = {
         'check_type': 'device_verification_requirement',
@@ -654,7 +560,7 @@ def check_device_verification_requirement(data_dict: Dict[str, pd.DataFrame]) ->
         'trust_rate': round((len(device_df[device_df['is_trusted'] == True]) / len(device_df)) * 100, 2) if len(device_df) > 0 else 0
     }
     
-    logger.info(f"✅ Device verification check completed: {results['status']}")
+    logger.info(f"Device verification check completed: {results['status']}")
     return results
 
 def check_daily_transaction_limit_auth(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
@@ -668,7 +574,7 @@ def check_daily_transaction_limit_auth(data_dict: Dict[str, pd.DataFrame]) -> Di
     Returns:
         Dictionary containing daily transaction limit auth check results
     """
-    logger.info("🔍 Starting daily transaction limit authentication check...")
+    logger.info("Starting daily transaction limit authentication check...")
     
     results = {
         'check_type': 'daily_transaction_limit_auth',
@@ -754,12 +660,12 @@ def check_daily_transaction_limit_auth(data_dict: Dict[str, pd.DataFrame]) -> Di
         'compliance_rate': round((1 - violation_count / len(high_daily_transactions)) * 100, 2) if len(high_daily_transactions) > 0 else 100
     }
     
-    logger.info(f"✅ Daily transaction limit auth check completed: {results['status']}")
+    logger.info(f"Daily transaction limit auth check completed: {results['status']}")
     return results
 
 def check_transaction_type_constraints(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
     """
-    NEW CHECK: Validate transaction type specific constraints based on schema
+    Validate transaction type specific constraints based on schema
     
     Args:
         data_dict: Dictionary of table_name -> DataFrame
@@ -767,14 +673,14 @@ def check_transaction_type_constraints(data_dict: Dict[str, pd.DataFrame]) -> Di
     Returns:
         Dictionary containing transaction type constraint check results
     """
-    logger.info("🔍 Starting transaction type constraints check...")
+    logger.info("Starting transaction type constraints check...")
     
     results = {
         'check_type': 'transaction_type_constraints',
         'status': 'PASS',
         'issues': [],
         'summary': {},
-        'failed_rows': {}  # NEW: Track failed row indices by table
+        'failed_rows': {}  # Track failed row indices by table
     }
     
     if 'transaction' not in data_dict:
@@ -865,13 +771,12 @@ def check_transaction_type_constraints(data_dict: Dict[str, pd.DataFrame]) -> Di
         'constraint_violations': violation_count
     }
     
-    logger.info(f"✅ Transaction type constraints check completed: {results['status']}")
+    logger.info(f"Transaction type constraints check completed: {results['status']}")
     return results
 
 # =====================================================
 # MAIN RUNNER FUNCTION
 # =====================================================
-
 def run_all_data_quality_checks(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
     """
     Run all data quality and risk-based checks
@@ -882,7 +787,7 @@ def run_all_data_quality_checks(data_dict: Dict[str, pd.DataFrame]) -> Dict[str,
     Returns:
         Dictionary containing all check results
     """
-    logger.info("🚀 Starting comprehensive data quality audit...")
+    logger.info("Starting comprehensive data quality audit...")
     
     # Define requirement descriptions for each check (matching original assignment requirements)
     requirement_descriptions = {
@@ -937,13 +842,12 @@ def run_all_data_quality_checks(data_dict: Dict[str, pd.DataFrame]) -> Dict[str,
         'check_results': checks
     }
     
-    logger.info(f"🎯 Data quality audit completed: {overall_status} ({passed_checks}/{total_checks} checks passed)")
+    logger.info(f"Data quality audit completed: {overall_status} ({passed_checks}/{total_checks} checks passed)")
     return result
 
 # =====================================================
 # DATA CLEANING HELPER FUNCTIONS
 # =====================================================
-
 def aggregate_failed_rows(check_results: Dict[str, Any]) -> Dict[str, List[int]]:
     """
     Aggregate all failed row indices from various data quality checks
@@ -954,7 +858,7 @@ def aggregate_failed_rows(check_results: Dict[str, Any]) -> Dict[str, List[int]]
     Returns:
         Dictionary mapping table_name -> list of failed row indices
     """
-    logger.info("🔧 Aggregating failed rows from all quality checks...")
+    logger.info("Aggregating failed rows from all quality checks...")
     
     failed_rows_by_table = {}
     
@@ -972,7 +876,7 @@ def aggregate_failed_rows(check_results: Dict[str, Any]) -> Dict[str, List[int]]
     }
     
     total_failed = sum(len(indices) for indices in result.values())
-    logger.info(f"📊 Aggregated {total_failed} failed rows across {len(result)} tables")
+    logger.info(f"Aggregated {total_failed} failed rows across {len(result)} tables")
     
     return result
 
@@ -987,7 +891,7 @@ def handle_foreign_key_dependencies(cleaned_data: Dict[str, pd.DataFrame]) -> Di
     Returns:
         Dictionary of DataFrames with foreign key dependencies resolved
     """
-    logger.info("🔗 Handling foreign key dependencies after cleaning...")
+    logger.info("Handling foreign key dependencies after cleaning...")
     
     result_data = cleaned_data.copy()
     dependency_stats = {}
@@ -1022,10 +926,10 @@ def handle_foreign_key_dependencies(cleaned_data: Dict[str, pd.DataFrame]) -> Di
             }
             
             if removed_count > 0:
-                logger.info(f"🗑️  Removed {removed_count} {child_table} records due to missing {parent_table} references")
+                logger.info(f"Removed {removed_count} {child_table} records due to missing {parent_table} references")
     
     total_removed = sum(stat['removed_count'] for stat in dependency_stats.values())
-    logger.info(f"✅ Foreign key dependency handling completed: {total_removed} additional records removed")
+    logger.info(f"Foreign key dependency handling completed: {total_removed} additional records removed")
     
     return result_data
 
@@ -1041,7 +945,7 @@ def clean_dataframes_by_failed_rows(data_dict: Dict[str, pd.DataFrame],
     Returns:
         Tuple of (cleaned_data_dict, cleaning_summary)
     """
-    logger.info("🧹 Cleaning DataFrames by removing failed rows...")
+    logger.info("Cleaning DataFrames by removing failed rows...")
     
     cleaned_data = {}
     cleaning_summary = {}
@@ -1069,7 +973,7 @@ def clean_dataframes_by_failed_rows(data_dict: Dict[str, pd.DataFrame],
         }
         
         if removed_count > 0:
-            logger.info(f"🧽 {table_name}: {len(cleaned_df)}/{original_count} "
+            logger.info(f"{table_name}: {len(cleaned_df)}/{original_count} "
                        f"({cleaning_summary[table_name]['cleaned_percentage']}%) clean rows")
     
     # Handle foreign key dependencies after individual table cleaning
@@ -1091,7 +995,7 @@ def clean_dataframes_by_failed_rows(data_dict: Dict[str, pd.DataFrame],
     total_final = sum(len(df) for df in cleaned_data.values())
     overall_clean_percentage = round((total_final / total_original) * 100, 2) if total_original > 0 else 0
     
-    logger.info(f"✅ Data cleaning completed: {total_final}/{total_original} ({overall_clean_percentage}%) records retained")
+    logger.info(f"Data cleaning completed: {total_final}/{total_original} ({overall_clean_percentage}%) records retained")
     
     return cleaned_data, cleaning_summary
 
@@ -1105,7 +1009,7 @@ def run_comprehensive_data_cleaning(data_dict: Dict[str, pd.DataFrame]) -> Tuple
     Returns:
         Tuple of (cleaned_data, audit_results, cleaning_summary)
     """
-    logger.info("🎯 Starting comprehensive data quality audit and cleaning...")
+    logger.info("Starting comprehensive data quality audit and cleaning...")
     
     # Step 1: Run all quality checks
     audit_results = run_all_data_quality_checks(data_dict)

@@ -78,9 +78,9 @@ def generate_device_identifier(device_type, customer_id):
     
     raise Exception(f"Could not generate unique device identifier after {max_attempts} attempts")
 
-# =====================
-# "device_name" data
-# =====================
+# =====================================================
+# "device_identifier" data
+# =====================================================
 def _generate_imei(customer_id, attempts):
     """Generate realistic IMEI (15 digits)"""
     # Create seed for deterministic generation
@@ -105,9 +105,6 @@ def _generate_imei(customer_id, attempts):
     
     return f"{tac}{serial}{check_digit}"
 
-# =====================
-# "device_name" data
-# =====================
 def _generate_mac_address(customer_id, attempts):
     """Generate realistic MAC address"""
     seed_string = f"MAC_{customer_id}_{attempts}"
@@ -122,9 +119,6 @@ def _generate_mac_address(customer_id, attempts):
     
     return ":".join(mac_bytes)
 
-# =====================
-# "device_name" data
-# =====================
 def _generate_uuid_identifier(customer_id, attempts):
     """Generate UUID for device identification"""
     seed_string = f"UUID_{customer_id}_{attempts}"
@@ -142,7 +136,9 @@ def _generate_android_id(customer_id, attempts):
     
     return f"{seed_value:016x}"
 
-
+# =====================
+# "device_name" data
+# =====================
 def generate_device_name(device_type):
     """
     Generate realistic device name based on Vietnamese market

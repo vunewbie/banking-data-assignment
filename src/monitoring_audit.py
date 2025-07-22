@@ -1,25 +1,10 @@
-"""
-BANKING DATA MONITORING & AUDIT SYSTEM
-======================================
-
-This module handles in-memory data quality audits and database operations 
-for the banking system.
-
-Features:
-- Work with in-memory DataFrames from generate_data.py
-- Comprehensive audit execution using data_quality_standards
-- Detailed logging and summary table generation  
-- Database insertion ONLY for clean data that passes quality checks
-- Report export to logs/ and reports/ directories
-"""
-
 import os
 import sys
 import pandas as pd
 import psycopg2
 import json
 from datetime import datetime
-from typing import Dict, List, Any, Optional
+from typing import Dict, Any, Optional
 import logging
 from sqlalchemy import create_engine
 import traceback
@@ -32,7 +17,6 @@ from data_quality_standards import run_comprehensive_data_cleaning
 # =====================================================
 # HELPER FUNCTIONS
 # =====================================================
-
 def get_date_based_folder(base_dir: str, subfolder: str = "") -> str:
     """
     Create date-based folder structure (yyyy-mm-dd)
@@ -58,7 +42,6 @@ def get_date_based_folder(base_dir: str, subfolder: str = "") -> str:
 # =====================================================
 # LOGGING CONFIGURATION
 # =====================================================
-
 def setup_logging() -> logging.Logger:
     """
     Configure logging for audit operations
@@ -103,9 +86,8 @@ def setup_logging() -> logging.Logger:
     return logger
 
 # =====================================================
-# DATABASE OPERATIONS (FOR CLEAN DATA ONLY)
+# DATABASE OPERATIONS
 # =====================================================
-
 def create_database_connection(host: str = None, port: int = None, 
                              database: str = None, user: str = None, 
                              password: str = None) -> Optional[object]:
@@ -155,163 +137,6 @@ def create_database_connection(host: str = None, port: int = None,
         logger.error(f"Database connection failed: {str(e)}")
         return None
 
-def map_columns_to_database(df: pd.DataFrame, df_key: str) -> Optional[pd.DataFrame]:
-    """
-    Map DataFrame columns to match database schema
-    
-    Args:
-        df: DataFrame to map
-        df_key: Type of DataFrame (customers, devices, etc.)
-        
-    Returns:
-        Mapped DataFrame or None if mapping fails
-    """
-    logger = logging.getLogger('banking_audit')
-    
-    try:
-        # Define column mappings from generate_data.py to database schema
-        column_mappings = {
-            'customer': {
-                'customer_id': 'customer_id',
-                'full_name': 'full_name',
-                'gender': 'gender',
-                'date_of_birth': 'date_of_birth',
-                'phone_number': 'phone_number',
-                'email': 'email',
-                'tax_identification_number': 'tax_identification_number',
-                'id_passport_number': 'id_passport_number',
-                'issue_date': 'issue_date',
-                'expiry_date': 'expiry_date',
-                'issuing_authority': 'issuing_authority',
-                'is_resident': 'is_resident',
-                'occupation': 'occupation',
-                'position': 'position',
-                'work_address': 'work_address',
-                'residential_address': 'residential_address',
-                'contact_address': 'contact_address',
-                'pin': 'pin',
-                'password': 'password',
-                'risk_rating': 'risk_rating',
-                'risk_score': 'risk_score',
-                'customer_type': 'customer_type',
-                'monthly_income': 'monthly_income',
-                'created_at': 'created_at',
-                'updated_at': 'updated_at',
-                'status': 'status',
-                'kyc_completed_at': 'kyc_completed_at',
-                'last_login_at': 'last_login_at',
-                'failed_login_attempts': 'failed_login_attempts',
-                'account_locked_until': 'account_locked_until',
-                'password_last_changed': 'password_last_changed',
-                'sms_notification_enabled': 'sms_notification_enabled',
-                'email_notification_enabled': 'email_notification_enabled'
-            },
-            'face_template': {
-                'template_id': 'template_id',
-                'customer_id': 'customer_id',
-                'encrypted_face_encoding': 'encrypted_face_encoding',
-                'created_at': 'created_at',
-                'last_used_at': 'last_used_at'
-            },
-            'bank_account': {
-                'account_id': 'account_id',
-                'customer_id': 'customer_id',
-                'account_number': 'account_number',
-                'account_type': 'account_type',
-                'currency': 'currency',
-                'available_balance': 'available_balance',
-                'current_balance': 'current_balance',
-                'hold_amount': 'hold_amount',
-                'daily_transfer_limit': 'daily_transfer_limit',
-                'daily_online_payment_limit': 'daily_online_payment_limit',
-                'is_primary': 'is_primary',
-                'status': 'status',
-                'is_online_payment_enabled': 'is_online_payment_enabled',
-                'interest_rate': 'interest_rate',
-                'last_transaction_at': 'last_transaction_at',
-                'open_at': 'open_at',
-                'updated_at': 'updated_at'
-            },
-            'customer_device': {
-                'device_identifier': 'device_identifier',
-                'customer_id': 'customer_id',
-                'device_type': 'device_type',
-                'device_name': 'device_name',
-                'is_trusted': 'is_trusted',
-                'status': 'status',
-                'first_seen_at': 'first_seen_at',
-                'last_used_at': 'last_used_at'
-            },
-            'transaction': {
-                'transaction_id': 'transaction_id',
-                'account_id': 'account_id',
-                'transaction_type': 'transaction_type',
-                'amount': 'amount',
-                'currency': 'currency',
-                'fee': 'fee',
-                'status': 'status',
-                'note': 'note',
-                'authentication_method': 'authentication_method',
-                'recipient_account_number': 'recipient_account_number',
-                'recipient_bank_code': 'recipient_bank_code',
-                'recipient_name': 'recipient_name',
-                'service_provider_code': 'service_provider_code',
-                'bill_number': 'bill_number',
-                'is_fraud': 'is_fraud',
-                'fraud_score': 'fraud_score',
-                'created_at': 'created_at',
-                'completed_at': 'completed_at'
-            },
-            'authentication_log': {
-                'log_id': 'log_id',
-                'customer_id': 'customer_id',
-                'device_identifier': 'device_identifier',
-                'authentication_type': 'authentication_type',
-                'transaction_id': 'transaction_id',
-                'ip_address': 'ip_address',
-                'status': 'status',
-                'failure_reason': 'failure_reason',
-                'otp_sent_to': 'otp_sent_to',
-                'biometric_score': 'biometric_score',
-                'attempt_count': 'attempt_count',
-                'session_id': 'session_id',
-                'created_at': 'created_at'
-            }
-        }
-        
-        if df_key not in column_mappings:
-            logger.error(f"No column mapping defined for {df_key}")
-            return None
-        
-        mapping = column_mappings[df_key]
-        df_mapped = df.copy()
-        
-        # Apply column mappings
-        available_columns = {}
-        for source_col, target_col in mapping.items():
-            if source_col in df_mapped.columns:
-                available_columns[target_col] = df_mapped[source_col]
-            else:
-                logger.debug(f"Column {source_col} not found in {df_key} DataFrame")
-        
-        # Special handling for authentication_log status mapping
-        if df_key == 'authentication_log' and 'status' in df_mapped.columns:
-            if df_mapped['status'].dtype == 'bool':
-                available_columns['status'] = df_mapped['status'].map({True: 'Success', False: 'Failed'})
-            else:
-                available_columns['status'] = df_mapped['status']
-        
-        # Create new DataFrame with mapped columns
-        result_df = pd.DataFrame(available_columns)
-        
-        logger.info(f"Mapped {len(df.columns)} -> {len(result_df.columns)} columns for {df_key}")
-        return result_df
-        
-    except Exception as e:
-        logger.error(f"Column mapping failed for {df_key}: {str(e)}")
-        logger.error(f"Available columns: {list(df.columns)}")
-        return None
-
 def save_clean_data_to_database(clean_data_dict: Dict[str, pd.DataFrame]) -> bool:
     """
     Save clean data that passed quality checks to database
@@ -345,20 +170,20 @@ def save_clean_data_to_database(clean_data_dict: Dict[str, pd.DataFrame]) -> boo
         
         for db_table_name, df_key in table_order:
             if df_key in clean_data_dict:
-                df = clean_data_dict[df_key]
+                df = clean_data_dict[df_key].copy()
                 
-                # Map DataFrame columns to database columns
-                df_mapped = map_columns_to_database(df, df_key)
+                # Handle special case: authentication_log status conversion (bool -> string)
+                if df_key == 'authentication_log' and 'status' in df.columns:
+                    if df['status'].dtype == 'bool':
+                        df['status'] = df['status'].map({True: 'Success', False: 'Failed'})
+                        logger.debug(f"Converted boolean status to string for {df_key}")
                 
-                if df_mapped is not None:
-                    # Save to database
-                    rows_inserted = len(df_mapped)
-                    df_mapped.to_sql(db_table_name, engine, if_exists='append', index=False)
-                    
-                    logger.info(f"Saved {rows_inserted} records to {db_table_name}")
-                    total_saved += rows_inserted
-                else:
-                    logger.warning(f"Skipping {db_table_name} due to column mapping issues")
+                # Save directly to database (no column mapping needed)
+                rows_inserted = len(df)
+                df.to_sql(db_table_name, engine, if_exists='append', index=False)
+                
+                logger.info(f"Saved {rows_inserted} records to {db_table_name}")
+                total_saved += rows_inserted
             else:
                 logger.warning(f"No data found for {db_table_name}")
         
@@ -373,7 +198,6 @@ def save_clean_data_to_database(clean_data_dict: Dict[str, pd.DataFrame]) -> boo
 # =====================================================
 # REPORT GENERATION
 # =====================================================
-
 def generate_audit_log(audit_results: Dict[str, Any]) -> str:
     """
     Generate detailed audit log
@@ -526,7 +350,6 @@ def generate_json_report(audit_results: Dict[str, Any]) -> str:
 # =====================================================
 # DATA MAPPING
 # =====================================================
-
 def validate_data_structure(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, pd.DataFrame]:
     """
     Validate that data structure matches database schema exactly
@@ -569,7 +392,6 @@ def validate_data_structure(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, pd.
 # =====================================================
 # MAIN AUDIT ORCHESTRATOR
 # =====================================================
-
 def run_audit_with_reports(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any]:
     """
     Run complete audit, cleaning, and report generation (NO DATABASE SAVE)
@@ -757,10 +579,6 @@ def run_comprehensive_audit(data_dict: Dict[str, pd.DataFrame]) -> Dict[str, Any
         logger.info("=" * 80)
     
     return audit_results
-
-# =====================================================
-# COMMAND LINE INTERFACE
-# =====================================================
 
 def main():
     """

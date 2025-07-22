@@ -1,15 +1,12 @@
-from datetime import date
+from datetime import date, timedelta
 import random
 import hashlib
 import secrets
 
 # =====================================================
-# Customer data generation
-# =====================================================
-# =====================================================
 # "full_name" data
 # =====================================================
-VIETNAMESE_NAMES = {
+NAMES = {
     'surnames': [
         'Nguyễn', 'Trần', 'Lê', 'Phạm', 'Huỳnh', 'Hoàng', 'Võ', 'Vũ', 
         'Phan', 'Trương', 'Bùi', 'Đặng', 'Đỗ', 'Ngô', 'Hồ', 'Dương', 
@@ -30,14 +27,14 @@ VIETNAMESE_NAMES = {
 
 def generate_full_name():
     """
-    Generate a random Vietnamese full name
+    Generate a random full name
     
     Returns:
         str: Full name in format "Surname Middle_name Given_name"
     """
-    surname = random.choice(VIETNAMESE_NAMES['surnames'])
-    middle_name = random.choice(VIETNAMESE_NAMES['middle_names'])
-    given_name = random.choice(VIETNAMESE_NAMES['given_names'])
+    surname = random.choice(NAMES['surnames'])
+    middle_name = random.choice(NAMES['middle_names'])
+    given_name = random.choice(NAMES['given_names'])
     
     full_name = f"{surname} {middle_name} {given_name}"
     return full_name
@@ -56,7 +53,7 @@ GENDER_INDICATORS = {
 
 def generate_gender(full_name):
     """
-    Generate gender based on Vietnamese name patterns
+    Generate gender based on name patterns
     
     Args:
         full_name (str): Full name in "Surname Middle_name Given_name" format
@@ -88,8 +85,8 @@ def generate_gender(full_name):
 # =====================================================
 def generate_date_of_birth():
     """
-    Generate realistic date of birth for banking customers
-    Age distribution: 18-70 years old, peak at 25-45 years
+    Generate realistic date of birth for customers
+    Age distribution: 18-70, peak at 25-45
     
     Returns:
         date: Date of birth as Python date object
@@ -134,9 +131,8 @@ def generate_date_of_birth():
 # =====================================================
 # "phone_number" data
 # =====================================================
-# Vietnamese mobile prefixes (official VNPT, Viettel, MobiFone, Vietnamobile, Gmobile)
-# 2-digit prefixes (without leading 0)
-VIETNAMESE_PHONE_PREFIXES = [
+# Mobile prefixes without leading 0 (official VNPT, Viettel, MobiFone, Vietnamobile, Gmobile)
+PHONE_PREFIXES = [
     # Viettel
     '86', '96', '97', '98', '32', '33', '34', '35', '36', '37', '38', '39',
     # VNPT (VinaPhone)
@@ -154,7 +150,7 @@ _used_phone_numbers = set()
 
 def generate_phone_number():
     """
-    Generate a Vietnamese mobile phone number (90% valid format, 10% invalid for testing)
+    Generate a mobile phone number (90% valid format, 10% invalid for testing)
     Valid format: 0xxxxxxxxx (total 10 digits: 0 + 2-digit prefix + 7-digit suffix)
     Invalid format: Wrong suffix length for data quality testing
     
@@ -165,8 +161,8 @@ def generate_phone_number():
     attempts = 0
     
     while attempts < max_attempts:
-        # Select random Vietnamese mobile prefix
-        prefix = random.choice(VIETNAMESE_PHONE_PREFIXES)
+        # Select random mobile prefix
+        prefix = random.choice(PHONE_PREFIXES)
         
         # Generate suffix: 90% correct (7 digits), 10% incorrect (different length)
         if random.random() < 0.9:
@@ -178,7 +174,7 @@ def generate_phone_number():
             wrong_length = random.choice(wrong_lengths)
             suffix = ''.join([str(random.randint(0, 9)) for _ in range(wrong_length)])
         
-        # Vietnamese phone format: 0 + prefix + suffix
+        # Phone format: 0 + prefix + suffix
         phone_number = f"0{prefix}{suffix}"
         
         # Check uniqueness
@@ -188,9 +184,7 @@ def generate_phone_number():
         
         attempts += 1
     
-    # Fallback if somehow we can't generate unique number
     raise Exception(f"Could not generate unique phone number after {max_attempts} attempts")
-
 
 def reset_phone_tracking():
     """
@@ -198,7 +192,6 @@ def reset_phone_tracking():
     """
     global _used_phone_numbers
     _used_phone_numbers.clear()
-
 
 # =====================================================
 # "email" data
@@ -312,7 +305,6 @@ def generate_tax_identification_number():
         tax_id = ''.join([str(random.randint(0, 9)) for _ in range(wrong_length)])
     
     return tax_id
-
 
 # =====================================================================================
 # "id_passport_number", "issue_date", "expiry_date", "issuing_authority" data
@@ -450,9 +442,6 @@ def generate_issue_date(date_of_birth):
     Returns:
         datetime.date: Issue date
     """
-    from datetime import date, timedelta
-    import random
-    
     # CCCD/Passport is issued after 15th birthday
     # Handle leap year edge case (Feb 29)
     try:
@@ -478,25 +467,41 @@ def generate_issue_date(date_of_birth):
     
     return issue_date
 
-def generate_expiry_date(issue_date, document_type):
+def generate_expiry_date(issue_date, document_type, date_of_birth):
     """
-    Generate expiry date based on issue date and document type
+    Generate expiry date based on issue date, document type and date of birth
+    Following Vietnamese law requirements
     
     Args:
         issue_date (datetime.date): Date when document was issued
         document_type (str): 'CCCD' or 'Passport'
+        date_of_birth (datetime.date): Customer's date of birth
         
     Returns:
-        datetime.date: Expiry date
+        datetime.date or None: Expiry date (None for CCCD 60+ years old - unlimited validity)
     """
-    from datetime import date
+    # Calculate age at issue date
+    age_at_issue = issue_date.year - date_of_birth.year
+    if issue_date < date_of_birth.replace(year=issue_date.year):
+        age_at_issue -= 1
     
     if document_type == 'CCCD':
-        # CCCD valid for 25 years (Vietnamese law)
-        years_to_add = 25
+        # CCCD must be renewed at ages 25, 40, 60 (Vietnamese Citizen ID Law 2023)
+        if age_at_issue < 25:
+            years_to_add = 25 - age_at_issue
+        elif age_at_issue < 40:
+            years_to_add = 40 - age_at_issue
+        elif age_at_issue < 60:
+            years_to_add = 60 - age_at_issue
+        else:
+            # 60+ years old: unlimited validity
+            return None
     else:  # Passport
-        # Passport valid for 10 years (Vietnamese passport)
-        years_to_add = 10
+        # Vietnamese passport validity (Law 23/2023/QH15)
+        if age_at_issue < 14:
+            years_to_add = 5  # Under 14: 5 years validity
+        else:
+            years_to_add = 10  # 14+ years: 10 years validity
     
     # Handle leap year edge case (Feb 29)
     try:
@@ -550,7 +555,6 @@ def generate_is_resident(document_type):
 # =====================================================================================
 # "occupation", "position" data
 # =====================================================================================
-
 # Vietnamese occupations with realistic distribution
 VIETNAMESE_OCCUPATIONS = {
     'Công chức/Viên chức': [
@@ -1097,11 +1101,9 @@ def generate_contact_address(residential_address, work_address, age):
     else:
         return selected
 
-
 # =====================================================================================
 # "pin", "password" data
 # =====================================================================================
-
 def generate_pin_hash(full_name, date_of_birth, phone_number):
     """
     Generate PIN based on realistic user patterns, then hash it immediately
@@ -1253,7 +1255,6 @@ def generate_password_hash(full_name, date_of_birth, phone_number):
 # =====================================================================================
 # "risk_score", "risk_rating" data
 # =====================================================================================
-
 # Occupation risk scoring (lower scores for realistic distribution)
 OCCUPATION_RISK = {
     # Very Low Risk (0-3 points) - Stable government/professional jobs

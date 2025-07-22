@@ -1,7 +1,6 @@
 import hashlib
 import random
 
-#
 # =====================================================================================
 # "account_number" data
 # =====================================================================================
@@ -61,9 +60,9 @@ def reset_account_number_tracking():
     _used_account_numbers.clear()
 
 
-# =====================
+# =====================================================
 # "account_type" data
-# =====================
+# =====================================================
 def generate_account_type():
     """
     Generate account type with realistic distribution for Vietnamese banking
@@ -105,9 +104,9 @@ def generate_account_currency(customer_type='Individual'):
     
     return random.choices(currencies, weights=weights)[0]
 
-# ====================================
-# "available_balance", "current_balance", "hold_amount" data - FIXED TO MATCH SCHEMA
-# ====================================
+# ==================================================================================
+# "available_balance", "current_balance", "hold_amount" data
+# ==================================================================================
 def generate_balance_info(account_type, customer_income):
     """
     Generate balance information according to schema constraints
@@ -270,7 +269,7 @@ def generate_account_status():
     return random.choices(statuses, weights=weights)[0]
 
 # ====================================
-# "is_online_payment_enabled" data - ADDED MISSING FIELD
+# "is_online_payment_enabled" data
 # ====================================
 def generate_is_online_payment_enabled(account_type, account_status):
     """
@@ -301,7 +300,7 @@ def generate_is_online_payment_enabled(account_type, account_status):
     return random.random() < 0.95  # 95% chance
 
 # ====================================
-# "interest_rate" data - ADDED MISSING FIELD
+# "interest_rate" data
 # ====================================
 def generate_interest_rate(account_type):
     """
@@ -332,7 +331,7 @@ def generate_interest_rate(account_type):
         return round(random.uniform(0.080, 0.180), 4)
 
 # ====================================
-# "last_transaction_at" data - ADDED MISSING FIELD
+# "last_transaction_at" data
 # ====================================
 def generate_last_transaction_at(account_creation_time, account_status):
     """
